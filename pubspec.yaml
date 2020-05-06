@@ -11,3 +11,4 @@ dependencies:
 
 dev_dependencies:
   pedantic: ^1.8.0
+  intl_translation: ^0.17.10

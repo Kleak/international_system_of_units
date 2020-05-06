@@ -47,21 +47,21 @@ String localeLength(num lengthInMetre, UnitSystem unitSystem) {
 String localeVolume(num volumeInLitre, UnitSystem unitSystem) {
   switch (unitSystem) {
     case UnitSystem.international:
-      return '$volumeInLitre ${localeMile(volumeInLitre)}';
+      return '$volumeInLitre ${localeLitre(volumeInLitre)}';
     case UnitSystem.imperial:
       return '${volumeInLitre.toImperialGallon} ${localeGallon(volumeInLitre.toImperialGallon)}';
     case UnitSystem.us:
       return '${volumeInLitre.toUSLiquidGallon} ${localeGallon(volumeInLitre.toUSLiquidGallon)}';
     default:
-      return '$volumeInLitre ${localeMile(volumeInLitre)}';
+      return '$volumeInLitre ${localeLitre(volumeInLitre)}';
   }
 }
 
-String localeMile(num length) =>
-    Intl.plural(length, one: 'mile', other: 'miles');
+String localeMile(num length) => Intl.plural(length,
+    name: 'localeMile', one: 'mile', other: 'miles', args: [length]);
 
-String localeLitre(num volume) =>
-    Intl.plural(volume, one: 'litre', other: 'litres');
+String localeLitre(num volume) => Intl.plural(volume,
+    name: 'localeLitre', one: 'litre', other: 'litres', args: [volume]);
 
-String localeGallon(num volume) =>
-    Intl.plural(volume.toUSLiquidGallon, one: 'gallon', other: 'gallons');
+String localeGallon(num volume) => Intl.plural(volume,
+    name: 'localeGallon', one: 'gallon', other: 'gallons', args: [volume]);

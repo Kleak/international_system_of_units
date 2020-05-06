@@ -1,0 +1,24 @@
+{
+  "@@last_modified": "2020-05-06T20:08:00.998191",
+  "localeMile": "{length,plural, =1{mile}other{miles}}",
+  "@localeMile": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeLitre": "{volume,plural, =1{liter}other{liters}}",
+  "@localeLitre": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeGallon": "{volume,plural, =1{gallon}other{gallons}}",
+  "@localeGallon": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  }
+}
