@@ -4,53 +4,64 @@ import 'package:international_system_of_units/src/utils.dart';
 import 'package:international_system_of_units/src/volume/international_system.dart';
 import 'package:intl/intl.dart';
 
+final _numberFormatter = NumberFormat();
+
 String localeVolumeByLength(num litrePerKilometre, UnitSystem unitSystem) {
   switch (unitSystem) {
     case UnitSystem.international:
-      return '$litrePerKilometre l/km';
+      return '${_numberFormatter.format(litrePerKilometre)} l/km';
     case UnitSystem.imperial:
-      return '${toImperialGallonPerMile(litrePerKilometre)} gpm';
+      return '${_numberFormatter.format(toImperialGallonPerMile(litrePerKilometre))} gpm';
     case UnitSystem.us:
-      return '${toUsGallonPerMile(litrePerKilometre)} gpm';
+      return '${_numberFormatter.format(toUsGallonPerMile(litrePerKilometre))} gpm';
     default:
-      return '$litrePerKilometre l/km';
+      return '${_numberFormatter.format(litrePerKilometre)} l/km';
   }
 }
 
 String localeLengthByVolume(num kilometrePerLitre, UnitSystem unitSystem) {
   switch (unitSystem) {
     case UnitSystem.international:
-      return '$kilometrePerLitre km/l';
+      return '${_numberFormatter.format(kilometrePerLitre)} km/l';
     case UnitSystem.imperial:
-      return '${toMilePerImperialGallon(kilometrePerLitre)} mpg';
+      return '${_numberFormatter.format(toMilePerImperialGallon(kilometrePerLitre))} mpg';
     case UnitSystem.us:
-      return '${toMilePerUsGallon(kilometrePerLitre)} mpg';
+      return '${_numberFormatter.format(toMilePerUsGallon(kilometrePerLitre))} mpg';
     default:
-      return '$kilometrePerLitre km/l';
+      return '${_numberFormatter.format(kilometrePerLitre)} km/l';
   }
 }
 
-String localeLength(num length, UnitSystem unitSystem) {
+String localeLength(num lengthInMetre, UnitSystem unitSystem) {
   switch (unitSystem) {
     case UnitSystem.international:
-      return '${length.toKilometre} km';
+      return '${_numberFormatter.format(lengthInMetre.toKilometre)} km';
     case UnitSystem.imperial:
     case UnitSystem.us:
-      return '${length.toMile} ${Intl.plural(length, one: 'mile', other: 'miles')}';
+      return '${_numberFormatter.format(lengthInMetre.toMile)} ${localeMile(lengthInMetre.toMile)}';
     default:
-      return '${length.toKilometre} km';
+      return '${lengthInMetre.toKilometre} km';
   }
 }
 
-String localeVolume(num volume, UnitSystem unitSystem) {
+String localeVolume(num volumeInLitre, UnitSystem unitSystem) {
   switch (unitSystem) {
     case UnitSystem.international:
-      return '$volume ${Intl.plural(volume, one: 'litre', other: 'litres')}';
+      return '$volumeInLitre ${localeMile(volumeInLitre)}';
     case UnitSystem.imperial:
-      return '${volume.toImperialGallons} ${Intl.plural(volume, one: 'gallon', other: 'gallons')}';
+      return '${volumeInLitre.toImperialGallon} ${localeGallon(volumeInLitre.toImperialGallon)}';
     case UnitSystem.us:
-      return '${volume.toUSLiquidGallon} ${Intl.plural(volume, one: 'gallon', other: 'gallons')}';
+      return '${volumeInLitre.toUSLiquidGallon} ${localeGallon(volumeInLitre.toUSLiquidGallon)}';
     default:
-      return '$volume ${Intl.plural(volume, one: 'litre', other: 'litres')}';
+      return '$volumeInLitre ${localeMile(volumeInLitre)}';
   }
 }
+
+String localeMile(num length) =>
+    Intl.plural(length, one: 'mile', other: 'miles');
+
+String localeLitre(num volume) =>
+    Intl.plural(volume, one: 'litre', other: 'litres');
+
+String localeGallon(num volume) =>
+    Intl.plural(volume.toUSLiquidGallon, one: 'gallon', other: 'gallons');

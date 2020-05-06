@@ -4,7 +4,7 @@ num toUsGallonPerMile(num litrePerKilometre) =>
     litrePerKilometre.toUSLiquidGallon.toKilometre.toMetre(LengthUnit.mile);
 
 num toImperialGallonPerMile(num litrePerKilometre) =>
-    litrePerKilometre.toImperialGallons.toKilometre.toMetre(LengthUnit.mile);
+    litrePerKilometre.toImperialGallon.toKilometre.toMetre(LengthUnit.mile);
 
 num toMilePerUsGallon(num kilometrePerLitre) => kilometrePerLitre
     .toMetre(LengthUnit.kilometre)

@@ -10,7 +10,7 @@ extension ISVolume on num {
 
   num get toMillilitres => this * 1000;
 
-  num get toImperialGallons => this * 0.219969;
+  num get toImperialGallon => this * 0.219969;
   num get toImperialQuart => this * 0.879877;
   num get toImperialPint => this * 1.75975;
   num get toImperialCup => this * 3.51951;
