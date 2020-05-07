@@ -1,4 +1,5 @@
 import 'package:international_system_of_units/international_system_of_units.dart';
+import 'package:intl/intl.dart';
 import 'package:intl/locale.dart';
 
 void main(List<String> arguments) async {
@@ -6,6 +7,7 @@ void main(List<String> arguments) async {
     print('load $language');
     final sIi18n =
         await InternationalSystemLocalizations.load(Locale.parse(language));
+    Intl.defaultLocale = language;
 
     final litrePer100Kilometre = 4;
     final litrePerKilometre = litrePer100Kilometre / 100;
