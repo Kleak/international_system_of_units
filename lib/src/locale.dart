@@ -11,6 +11,7 @@ class InternationalSystemLocalizations {
     final name =
         locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
+    print(localeName);
     await initializeMessages(localeName);
     return InternationalSystemLocalizations(localeName);
   }
