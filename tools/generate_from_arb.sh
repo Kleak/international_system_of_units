@@ -1,0 +1,1 @@
+pub run intl_translation:generate_from_arb --output-dir lib/src/i18n lib/src/locale.dart --codegen_mode release lib/src/i18n/intl_*.arb

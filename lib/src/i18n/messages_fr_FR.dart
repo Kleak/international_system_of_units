@@ -40,14 +40,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
 
-  static m1(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
+  static m1(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m2(length) => "${Intl.plural(length, one: 'mile', other: 'miles')}";
+  static m2(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
+
+  static m3(length) => "${Intl.plural(length, zero: 'metre', one: 'metre', other: 'metres')}";
+
+  static m4(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "localeGallon" : m0,
-    "localeLitre" : m1,
-    "localeMile" : m2
+    "localeInch" : m1,
+    "localeLitre" : m2,
+    "localeMetre" : m3,
+    "localeMile" : m4
   };
 }

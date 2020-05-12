@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en_UK locale. All the
+// This is a library that provides messages for a messages locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,7 +17,7 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en_UK';
+  String get localeName => 'messages';
 
   String lookupMessage(
       String message_str,
@@ -40,20 +40,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
 
-  static m1(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m3(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m2(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
+  static m1(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
 
-  static m3(length) => "${Intl.plural(length, zero: 'metre', one: 'metre', other: 'metres')}";
-
-  static m4(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m2(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "localeGallon" : m0,
-    "localeInch" : m1,
-    "localeLitre" : m2,
-    "localeMetre" : m3,
-    "localeMile" : m4
+    "localeInch" : m3,
+    "localeLitre" : m1,
+    "localeMile" : m2
   };
 }

@@ -1,7 +1,21 @@
 {
-  "@@last_modified": "2020-05-06T22:30:56.019625",
-  "localeMile": "{length,plural, =1{mile}other{miles}}",
+  "@@last_modified": "2020-05-12T17:55:38.098759",
+  "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeInch": "{length,plural, =0{inches}=1{inche}other{inches}}",
+  "@localeInch": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeMetre": "{length,plural, =0{metre}=1{metre}other{metres}}",
+  "@localeMetre": {
     "type": "text",
     "placeholders": {
       "length": {}

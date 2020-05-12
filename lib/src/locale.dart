@@ -39,9 +39,6 @@ class InternationalSystemLocalizations {
       {NumberFormat customNumberFormat, bool withUnit = true}) {
     num volumeByLength;
     switch (unitSystem) {
-      case UnitSystem.international:
-        volumeByLength = litrePerMetre;
-        break;
       case UnitSystem.imperial:
         volumeByLength = toImperialGallonPerMile(litrePerMetre);
         break;
@@ -77,9 +74,6 @@ class InternationalSystemLocalizations {
       {NumberFormat customNumberFormat, bool withUnit = true}) {
     num lengthByVolume;
     switch (unitSystem) {
-      case UnitSystem.international:
-        lengthByVolume = metrePerLitre;
-        break;
       case UnitSystem.imperial:
         lengthByVolume = toMilePerImperialGallon(metrePerLitre);
         break;
@@ -98,31 +92,33 @@ class InternationalSystemLocalizations {
     return sb.toString();
   }
 
-  String localeLengthUnit(final num length, UnitSystem unitSystem) {
+  String localeLengthUnit(
+      final num length, UnitSystem unitSystem, LengthUnit lengthUnit) {
     switch (unitSystem) {
-      case UnitSystem.international:
-        return 'km';
       case UnitSystem.imperial:
       case UnitSystem.us:
-        return localeMile(length);
+        if (lengthUnit == LengthUnit.mile) {
+          return localeMile(length);
+        } else if (lengthUnit == LengthUnit.inch) {
+          return localeInch(length);
+        }
+        break;
       default:
-        return 'km';
+        if (lengthUnit == LengthUnit.kilometre) {
+          return 'km';
+        } else if (lengthUnit == LengthUnit.metre) {
+          return localeMetre(length);
+        }
+        break;
     }
+    throw UnsupportedError('We currently do not support this combinaison');
   }
 
-  String localeLength(num lengthInMetre, UnitSystem unitSystem,
-      {bool withUnit = true,
-      NumberFormat customNumberFormat,
-      LengthUnit toInternationalUnit = LengthUnit.kilometre,
+  num localeLengthNumber(num lengthInMetre, UnitSystem unitSystem,
+      {LengthUnit toInternationalUnit = LengthUnit.kilometre,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
     num distance;
     switch (unitSystem) {
-      case UnitSystem.international:
-        distance = lengthInMetre;
-        if (toInternationalUnit == LengthUnit.kilometre) {
-          distance = lengthInMetre.toKilometre;
-        }
-        break;
       case UnitSystem.imperial:
       case UnitSystem.us:
         distance = lengthInMetre;
@@ -135,11 +131,33 @@ class InternationalSystemLocalizations {
         if (toInternationalUnit == LengthUnit.kilometre) {
           distance = lengthInMetre.toKilometre;
         }
+        break;
+    }
+    return distance;
+  }
+
+  String localeLength(num lengthInMetre, UnitSystem unitSystem,
+      {bool withUnit = true,
+      NumberFormat customNumberFormat,
+      LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
+    final distance = localeLengthNumber(lengthInMetre, unitSystem,
+        toInternationalUnit: toInternationalUnit,
+        toImperialOrUsUnit: toImperialOrUsUnit);
+    LengthUnit lengthUnit;
+    switch (unitSystem) {
+      case UnitSystem.imperial:
+      case UnitSystem.us:
+        lengthUnit = toImperialOrUsUnit;
+        break;
+      default:
+        lengthUnit = toInternationalUnit;
+        break;
     }
     final sb =
         StringBuffer((customNumberFormat ?? numberFormat).format(distance));
     if (withUnit) {
-      sb.write(' ${localeLengthUnit(distance, unitSystem)}');
+      sb.write(' ${localeLengthUnit(distance, unitSystem, lengthUnit)}');
     }
     return sb.toString();
   }
@@ -172,8 +190,29 @@ class InternationalSystemLocalizations {
   String localeMile(num length) => Intl.plural(
         length,
         name: 'localeMile',
+        zero: 'miles',
         one: 'mile',
         other: 'miles',
+        args: [length],
+        locale: localeName,
+      );
+
+  String localeInch(num length) => Intl.plural(
+        length,
+        name: 'localeInch',
+        zero: 'inches',
+        one: 'inche',
+        other: 'inches',
+        args: [length],
+        locale: localeName,
+      );
+
+  String localeMetre(num length) => Intl.plural(
+        length,
+        name: 'localeMetre',
+        zero: 'metre',
+        one: 'metre',
+        other: 'metres',
         args: [length],
         locale: localeName,
       );
