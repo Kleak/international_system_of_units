@@ -1,8 +1,8 @@
 import 'package:international_system_of_units/src/i18n/messages_all.dart';
-import 'package:international_system_of_units/src/length/international_system.dart';
 import 'package:international_system_of_units/src/unit_system.dart';
 import 'package:international_system_of_units/src/utils.dart';
 import 'package:international_system_of_units/src/volume/international_system.dart';
+import 'package:international_system_of_units/src/length/international_system.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/locale.dart';
 
@@ -22,41 +22,137 @@ class InternationalSystemLocalizations {
         numberFormat =
             NumberFormat(null, Intl.canonicalizedLocale(locale.toString()));
 
-  String localeVolumeByLength(num litrePerKilometre, UnitSystem unitSystem) {
+  String localeVolumeByLengthUnit(
+      final num volumeByLength, UnitSystem unitSystem) {
     switch (unitSystem) {
       case UnitSystem.international:
-        return '${numberFormat.format(litrePerKilometre)} l/km';
+        return 'l/km';
       case UnitSystem.imperial:
-        return '${numberFormat.format(toImperialGallonPerMile(litrePerKilometre))} gpm';
       case UnitSystem.us:
-        return '${numberFormat.format(toUsGallonPerMile(litrePerKilometre))} gpm';
+        return 'gpm';
       default:
-        return '${numberFormat.format(litrePerKilometre)} l/km';
+        return 'km';
     }
   }
 
-  String localeLengthByVolume(num kilometrePerLitre, UnitSystem unitSystem) {
+  String localeVolumeByLength(num litrePerMetre, UnitSystem unitSystem,
+      {NumberFormat customNumberFormat, bool withUnit = true}) {
+    num volumeByLength;
     switch (unitSystem) {
       case UnitSystem.international:
-        return '${numberFormat.format(kilometrePerLitre)} km/l';
+        volumeByLength = litrePerMetre;
+        break;
       case UnitSystem.imperial:
-        return '${numberFormat.format(toMilePerImperialGallon(kilometrePerLitre))} mpg';
+        volumeByLength = toImperialGallonPerMile(litrePerMetre);
+        break;
       case UnitSystem.us:
-        return '${numberFormat.format(toMilePerUsGallon(kilometrePerLitre))} mpg';
+        volumeByLength = toUsGallonPerMile(litrePerMetre);
+        break;
       default:
-        return '${numberFormat.format(kilometrePerLitre)} km/l';
+        volumeByLength = litrePerMetre;
+        break;
+    }
+    final sb = StringBuffer(
+        (customNumberFormat ?? numberFormat).format(volumeByLength));
+    if (withUnit) {
+      sb.write('${localeVolumeByLengthUnit(volumeByLength, unitSystem)}');
+    }
+    return sb.toString();
+  }
+
+  String localeLengthByVolumeUnit(
+      final num volumeByLength, UnitSystem unitSystem) {
+    switch (unitSystem) {
+      case UnitSystem.international:
+        return 'km/l';
+      case UnitSystem.imperial:
+      case UnitSystem.us:
+        return 'mpg';
+      default:
+        return 'km/l';
     }
   }
 
-  String localeLength(num lengthInMetre, UnitSystem unitSystem) {
+  String localeLengthByVolume(num metrePerLitre, UnitSystem unitSystem,
+      {NumberFormat customNumberFormat, bool withUnit = true}) {
+    num lengthByVolume;
     switch (unitSystem) {
       case UnitSystem.international:
-        return '${numberFormat.format(lengthInMetre.toKilometre)} km';
+        lengthByVolume = metrePerLitre;
+        break;
+      case UnitSystem.imperial:
+        lengthByVolume = toMilePerImperialGallon(metrePerLitre);
+        break;
+      case UnitSystem.us:
+        lengthByVolume = toMilePerUsGallon(metrePerLitre);
+        break;
+      default:
+        lengthByVolume = metrePerLitre;
+        break;
+    }
+    final sb = StringBuffer(
+        (customNumberFormat ?? numberFormat).format(lengthByVolume));
+    if (withUnit) {
+      sb.write('${localeVolumeByLengthUnit(lengthByVolume, unitSystem)}');
+    }
+    return sb.toString();
+  }
+
+  String localeLengthUnit(final num length, UnitSystem unitSystem) {
+    switch (unitSystem) {
+      case UnitSystem.international:
+        return 'km';
       case UnitSystem.imperial:
       case UnitSystem.us:
-        return '${numberFormat.format(lengthInMetre.toMile)} ${localeMile(lengthInMetre.toMile)}';
+        return localeMile(length);
       default:
-        return '${numberFormat.format(lengthInMetre.toKilometre)} km';
+        return 'km';
+    }
+  }
+
+  String localeLength(num lengthInMetre, UnitSystem unitSystem,
+      {bool withUnit = true,
+      NumberFormat customNumberFormat,
+      LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
+    num distance;
+    switch (unitSystem) {
+      case UnitSystem.international:
+        distance = lengthInMetre;
+        if (toInternationalUnit == LengthUnit.kilometre) {
+          distance = lengthInMetre.toKilometre;
+        }
+        break;
+      case UnitSystem.imperial:
+      case UnitSystem.us:
+        distance = lengthInMetre;
+        if (toImperialOrUsUnit == LengthUnit.mile) {
+          distance = lengthInMetre.toMile;
+        }
+        break;
+      default:
+        distance = lengthInMetre;
+        if (toInternationalUnit == LengthUnit.kilometre) {
+          distance = lengthInMetre.toKilometre;
+        }
+    }
+    final sb =
+        StringBuffer((customNumberFormat ?? numberFormat).format(distance));
+    if (withUnit) {
+      sb.write(' ${localeLengthUnit(distance, unitSystem)}');
+    }
+    return sb.toString();
+  }
+
+  String localeVolumeUnit(final num volume, UnitSystem unitSystem) {
+    switch (unitSystem) {
+      case UnitSystem.international:
+        return localeLitre(volume);
+      case UnitSystem.imperial:
+      case UnitSystem.us:
+        return localeGallon(volume);
+      default:
+        return localeLitre(volume);
     }
   }
 
