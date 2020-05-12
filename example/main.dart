@@ -9,9 +9,14 @@ void main(List<String> arguments) async {
         await InternationalSystemLocalizations.load(Locale.parse(language));
     Intl.defaultLocale = language;
 
-    print(sIi18n.localeLength(
-        0.toMetre(LengthUnit.metre), UnitSystem.international,
-        toInternationalUnit: LengthUnit.metre, withUnit: true));
+    print(
+      sIi18n.length.localeLength(
+        0.toMetre(LengthUnit.metre),
+        UnitSystem.international,
+        toInternationalUnit: LengthUnit.metre,
+        withUnit: true,
+      ),
+    );
 
     // final litrePer100Kilometre = 4;
     // final litrePerKilometre = litrePer100Kilometre / 100;

@@ -1,8 +1,14 @@
 import 'package:international_system_of_units/src/i18n/messages_all.dart';
+import 'package:international_system_of_units/src/length/international_system.dart';
+import 'package:international_system_of_units/src/locale/length_by_volume.dart';
+import 'package:international_system_of_units/src/locale/mass.dart';
+import 'package:international_system_of_units/src/locale/time.dart';
+import 'package:international_system_of_units/src/locale/volume_by_length.dart';
+import 'package:international_system_of_units/src/volume/international_system.dart';
+import 'package:international_system_of_units/src/locale/length.dart';
+import 'package:international_system_of_units/src/locale/volume.dart';
 import 'package:international_system_of_units/src/unit_system.dart';
 import 'package:international_system_of_units/src/utils.dart';
-import 'package:international_system_of_units/src/volume/international_system.dart';
-import 'package:international_system_of_units/src/length/international_system.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/locale.dart';
 
@@ -13,15 +19,32 @@ class InternationalSystemLocalizations {
     return InternationalSystemLocalizations(locale);
   }
 
-  final Locale locale;
-  final String localeName;
-  final NumberFormat numberFormat;
+  final String _localeName;
+  final NumberFormat _numberFormat;
 
-  InternationalSystemLocalizations(this.locale)
-      : localeName = Intl.canonicalizedLocale(locale.toString()),
-        numberFormat =
-            NumberFormat(null, Intl.canonicalizedLocale(locale.toString()));
+  LocaleLength length;
+  LocaleVolume volume;
+  LocaleMass mass;
+  LocaleTime time;
 
+  LocaleVolumeByLength volumeByLength;
+  LocaleLengthByVolume lengthByVolume;
+
+  InternationalSystemLocalizations(Locale locale)
+      : _localeName = Intl.canonicalizedLocale(locale.toString()),
+        _numberFormat =
+            NumberFormat(null, Intl.canonicalizedLocale(locale.toString())) {
+    length = LocaleLength(_numberFormat, _localeName);
+    volume = LocaleVolume(_numberFormat, _localeName);
+    mass = LocaleMass(_numberFormat, _localeName);
+    time = LocaleTime(_numberFormat, _localeName);
+    volumeByLength =
+        LocaleVolumeByLength(_numberFormat, _localeName, volume, length);
+    lengthByVolume =
+        LocaleLengthByVolume(_numberFormat, _localeName, volume, length);
+  }
+
+  @Deprecated('Use volumeByLength.localeVolumeByLengthUnit instead')
   String localeVolumeByLengthUnit(
       final num volumeByLength, UnitSystem unitSystem) {
     switch (unitSystem) {
@@ -35,6 +58,7 @@ class InternationalSystemLocalizations {
     }
   }
 
+  @Deprecated('Use volumeByLength.localeVolumeByLength instead')
   String localeVolumeByLength(num litrePerMetre, UnitSystem unitSystem,
       {NumberFormat customNumberFormat, bool withUnit = true}) {
     num volumeByLength;
@@ -50,13 +74,14 @@ class InternationalSystemLocalizations {
         break;
     }
     final sb = StringBuffer(
-        (customNumberFormat ?? numberFormat).format(volumeByLength));
+        (customNumberFormat ?? _numberFormat).format(volumeByLength));
     if (withUnit) {
       sb.write('${localeVolumeByLengthUnit(volumeByLength, unitSystem)}');
     }
     return sb.toString();
   }
 
+  @Deprecated('Use lengthByVolume.localeLengthByVolumeUnit instead')
   String localeLengthByVolumeUnit(
       final num volumeByLength, UnitSystem unitSystem) {
     switch (unitSystem) {
@@ -70,6 +95,7 @@ class InternationalSystemLocalizations {
     }
   }
 
+  @Deprecated('Use lengthByVolume.localeLengthByVolume instead')
   String localeLengthByVolume(num metrePerLitre, UnitSystem unitSystem,
       {NumberFormat customNumberFormat, bool withUnit = true}) {
     num lengthByVolume;
@@ -85,13 +111,27 @@ class InternationalSystemLocalizations {
         break;
     }
     final sb = StringBuffer(
-        (customNumberFormat ?? numberFormat).format(lengthByVolume));
+        (customNumberFormat ?? _numberFormat).format(lengthByVolume));
     if (withUnit) {
-      sb.write('${localeVolumeByLengthUnit(lengthByVolume, unitSystem)}');
+      sb.write('${localeLengthByVolumeUnit(lengthByVolume, unitSystem)}');
     }
     return sb.toString();
   }
 
+  @Deprecated('Use length.lengthUnit instead')
+  LengthUnit lengthUnit(UnitSystem unitSystem,
+      {LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
+    switch (unitSystem) {
+      case UnitSystem.imperial:
+      case UnitSystem.us:
+        return toImperialOrUsUnit;
+      default:
+        return toInternationalUnit;
+    }
+  }
+
+  @Deprecated('Use length.localeLengthUnit instead')
   String localeLengthUnit(
       final num length, UnitSystem unitSystem, LengthUnit lengthUnit) {
     switch (unitSystem) {
@@ -114,6 +154,7 @@ class InternationalSystemLocalizations {
     throw UnsupportedError('We currently do not support this combinaison');
   }
 
+  @Deprecated('Use length.localeLengthNumber instead')
   num localeLengthNumber(num lengthInMetre, UnitSystem unitSystem,
       {LengthUnit toInternationalUnit = LengthUnit.kilometre,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
@@ -121,21 +162,27 @@ class InternationalSystemLocalizations {
     switch (unitSystem) {
       case UnitSystem.imperial:
       case UnitSystem.us:
-        distance = lengthInMetre;
         if (toImperialOrUsUnit == LengthUnit.mile) {
           distance = lengthInMetre.toMile;
+        } else if (toImperialOrUsUnit == LengthUnit.inch) {
+          distance = lengthInMetre.toInch;
+        } else {
+          distance = lengthInMetre;
         }
         break;
       default:
         distance = lengthInMetre;
         if (toInternationalUnit == LengthUnit.kilometre) {
           distance = lengthInMetre.toKilometre;
+        } else {
+          distance = lengthInMetre;
         }
         break;
     }
     return distance;
   }
 
+  @Deprecated('Use length.localeLength instead')
   String localeLength(num lengthInMetre, UnitSystem unitSystem,
       {bool withUnit = true,
       NumberFormat customNumberFormat,
@@ -144,24 +191,51 @@ class InternationalSystemLocalizations {
     final distance = localeLengthNumber(lengthInMetre, unitSystem,
         toInternationalUnit: toInternationalUnit,
         toImperialOrUsUnit: toImperialOrUsUnit);
-    LengthUnit lengthUnit;
-    switch (unitSystem) {
-      case UnitSystem.imperial:
-      case UnitSystem.us:
-        lengthUnit = toImperialOrUsUnit;
-        break;
-      default:
-        lengthUnit = toInternationalUnit;
-        break;
-    }
+    final _lengthUnit = lengthUnit(unitSystem,
+        toInternationalUnit: toInternationalUnit,
+        toImperialOrUsUnit: toImperialOrUsUnit);
     final sb =
-        StringBuffer((customNumberFormat ?? numberFormat).format(distance));
+        StringBuffer((customNumberFormat ?? _numberFormat).format(distance));
     if (withUnit) {
-      sb.write(' ${localeLengthUnit(distance, unitSystem, lengthUnit)}');
+      sb.write(' ${localeLengthUnit(distance, unitSystem, _lengthUnit)}');
     }
     return sb.toString();
   }
 
+  @Deprecated('Use length.localeMile instead')
+  String localeMile(num length) => Intl.plural(
+        length,
+        name: 'localeMile',
+        zero: 'miles',
+        one: 'mile',
+        other: 'miles',
+        args: [length],
+        locale: _localeName,
+      );
+
+  @Deprecated('Use length.localeInch instead')
+  String localeInch(num length) => Intl.plural(
+        length,
+        name: 'localeInch',
+        zero: 'inches',
+        one: 'inche',
+        other: 'inches',
+        args: [length],
+        locale: _localeName,
+      );
+
+  @Deprecated('Use length.localeMetre instead')
+  String localeMetre(num length) => Intl.plural(
+        length,
+        name: 'localeMetre',
+        zero: 'metre',
+        one: 'metre',
+        other: 'metres',
+        args: [length],
+        locale: _localeName,
+      );
+
+  @Deprecated('Use volume.localeVolumeUnit instead')
   String localeVolumeUnit(final num volume, UnitSystem unitSystem) {
     switch (unitSystem) {
       case UnitSystem.international:
@@ -174,64 +248,37 @@ class InternationalSystemLocalizations {
     }
   }
 
+  @Deprecated('Use volume.localeVolume instead')
   String localeVolume(num volumeInLitre, UnitSystem unitSystem) {
     switch (unitSystem) {
       case UnitSystem.international:
-        return '${numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
+        return '${_numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
       case UnitSystem.imperial:
-        return '${numberFormat.format(volumeInLitre.toImperialGallon)} ${localeGallon(volumeInLitre.toImperialGallon)}';
+        return '${_numberFormat.format(volumeInLitre.toImperialGallon)} ${localeGallon(volumeInLitre.toImperialGallon)}';
       case UnitSystem.us:
-        return '${numberFormat.format(volumeInLitre.toUSLiquidGallon)} ${localeGallon(volumeInLitre.toUSLiquidGallon)}';
+        return '${_numberFormat.format(volumeInLitre.toUSLiquidGallon)} ${localeGallon(volumeInLitre.toUSLiquidGallon)}';
       default:
-        return '${numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
+        return '${_numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
     }
   }
 
-  String localeMile(num length) => Intl.plural(
-        length,
-        name: 'localeMile',
-        zero: 'miles',
-        one: 'mile',
-        other: 'miles',
-        args: [length],
-        locale: localeName,
-      );
-
-  String localeInch(num length) => Intl.plural(
-        length,
-        name: 'localeInch',
-        zero: 'inches',
-        one: 'inche',
-        other: 'inches',
-        args: [length],
-        locale: localeName,
-      );
-
-  String localeMetre(num length) => Intl.plural(
-        length,
-        name: 'localeMetre',
-        zero: 'metre',
-        one: 'metre',
-        other: 'metres',
-        args: [length],
-        locale: localeName,
-      );
-
+  @Deprecated('Use volume.localeLitre instead')
   String localeLitre(num volume) => Intl.plural(
         volume,
         name: 'localeLitre',
         one: 'litre',
         other: 'litres',
         args: [volume],
-        locale: localeName,
+        locale: _localeName,
       );
 
+  @Deprecated('Use volume.localeGallon instead')
   String localeGallon(num volume) => Intl.plural(
         volume,
         name: 'localeGallon',
         one: 'gallon',
         other: 'gallons',
         args: [volume],
-        locale: localeName,
+        locale: _localeName,
       );
 }
