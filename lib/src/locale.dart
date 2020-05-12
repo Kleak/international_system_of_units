@@ -8,18 +8,19 @@ import 'package:intl/locale.dart';
 
 class InternationalSystemLocalizations {
   static Future<InternationalSystemLocalizations> load(Locale locale) async {
-    final name =
-        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name);
-c    await initializeMessages(localeName);
-    return InternationalSystemLocalizations(localeName);
+    final localeName = Intl.canonicalizedLocale(locale.toString());
+    await initializeMessages(localeName);
+    return InternationalSystemLocalizations(locale);
   }
 
+  final Locale locale;
   final String localeName;
   final NumberFormat numberFormat;
 
-  InternationalSystemLocalizations(this.localeName)
-      : numberFormat = NumberFormat(null, localeName);
+  InternationalSystemLocalizations(this.locale)
+      : localeName = Intl.canonicalizedLocale(locale.toString()),
+        numberFormat =
+            NumberFormat(null, Intl.canonicalizedLocale(locale.toString()));
 
   String localeVolumeByLength(num litrePerKilometre, UnitSystem unitSystem) {
     switch (unitSystem) {
