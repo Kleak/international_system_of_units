@@ -29,12 +29,32 @@ class LocaleTime extends LocaleBase<TimeUnit> {
 
   num _localeNumberBase(num value, TimeUnit unit) {
     switch (unit) {
+      case TimeUnit.calendarYear:
+        return value.toCalendarYear;
+      case TimeUnit.century:
+        return value.toCentury;
       case TimeUnit.day:
         return value.toDay;
+      case TimeUnit.decade:
+        return value.toDecade;
       case TimeUnit.hour:
         return value.toHour;
-      default:
+      case TimeUnit.microsecond:
+        return value.toMicrosecond;
+      case TimeUnit.millisecond:
+        return value.toMillisecond;
+      case TimeUnit.minute:
+        return value.toMinute;
+      case TimeUnit.month:
+        return value.toMonth;
+      case TimeUnit.nanosecond:
+        return value.toNanosecond;
+      case TimeUnit.second:
         return value;
+      case TimeUnit.week:
+        return value.toWeek;
+      default:
+        throw UnsupportedError('We currently do not support this combinaison');
     }
   }
 
@@ -49,6 +69,26 @@ class LocaleTime extends LocaleBase<TimeUnit> {
         throw UnsupportedError('We currently do not support this combinaison');
     }
   }
+
+  @override
+  String locale(
+    num value,
+    UnitSystem unitSystem, {
+    bool withUnit = true,
+    NumberFormat customNumberFormat,
+    TimeUnit toInternationalUnit = TimeUnit.hour,
+    TimeUnit toImperialUnit = TimeUnit.hour,
+    TimeUnit toUsUnit = TimeUnit.hour,
+  }) =>
+      super.locale(
+        value,
+        unitSystem,
+        withUnit: withUnit,
+        toUsUnit: toUsUnit,
+        customNumberFormat: customNumberFormat,
+        toImperialUnit: toImperialUnit,
+        toInternationalUnit: toInternationalUnit,
+      );
 
   String localeHour(num time) => Intl.plural(
         time,

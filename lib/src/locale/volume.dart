@@ -17,29 +17,59 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
     VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
     VolumeUnit toUsUnit = VolumeUnit.usLiquidGallon,
   }) {
-    num distance;
     switch (unitSystem) {
       case UnitSystem.imperial:
-        if (toUsUnit == VolumeUnit.imperialGallons) {
-          distance = value.toImperialGallon;
-        }
-        break;
+        return _localeNumberBase(value, toImperialUnit);
       case UnitSystem.us:
-        if (toUsUnit == VolumeUnit.usLiquidGallon) {
-          distance = value.toUSLiquidGallon;
-        } else {
-          distance = value;
-        }
-        break;
+        return _localeNumberBase(value, toUsUnit);
       default:
-        if (toInternationalUnit == VolumeUnit.millilitres) {
-          distance = value.toMillilitres;
-        } else {
-          distance = value;
-        }
-        break;
+        return _localeNumberBase(value, toInternationalUnit);
     }
-    return distance;
+  }
+
+  num _localeNumberBase(num value, VolumeUnit unit) {
+    switch (unit) {
+      case VolumeUnit.cubicFoot:
+        return value.toCubicFoot;
+      case VolumeUnit.cubicInch:
+        return value.toCubicInch;
+      case VolumeUnit.cubicMetres:
+        return value.toCubicMetres;
+      case VolumeUnit.imperialCup:
+        return value.toImperialCup;
+      case VolumeUnit.imperialFluidOunces:
+        return value.toImpetialFluidOunces;
+      case VolumeUnit.imperialGallons:
+        return value.toImperialGallon;
+      case VolumeUnit.imperialPint:
+        return value.toImperialPint;
+      case VolumeUnit.imperialQuart:
+        return value.toImperialQuart;
+      case VolumeUnit.imperialTablespoon:
+        return value.toImperialTablespoon;
+      case VolumeUnit.imperialTeaspoon:
+        return value.toImperialTeaspoon;
+      case VolumeUnit.litres:
+        return value;
+      case VolumeUnit.millilitres:
+        return value.toMillilitres;
+      case VolumeUnit.usFluidOunces:
+        return value.toUSFluidOunces;
+      case VolumeUnit.usLegalCup:
+        return value.toUSLegalCup;
+      case VolumeUnit.usLiquidGallon:
+        return value.toUSLiquidGallon;
+      case VolumeUnit.usLiquidPint:
+        return value.toUSLiquidPint;
+      case VolumeUnit.usLiquidQuart:
+        return value.toUSLiquidQuart;
+      case VolumeUnit.usTablespoon:
+        return value.toUSTablespoon;
+      case VolumeUnit.usTeaspoon:
+        return value.toUSTeaspoon;
+      default:
+        throw UnsupportedError('We currently do not support this combinaison');
+    }
   }
 
   @override

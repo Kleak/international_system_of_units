@@ -17,31 +17,41 @@ class LocaleMass extends LocaleBase<MassUnit> {
     MassUnit toImperialUnit,
     MassUnit toUsUnit,
   }) {
-    num distance;
     switch (unitSystem) {
       case UnitSystem.imperial:
-        if (toImperialUnit == MassUnit.imperialTon) {
-          distance = value.toImperialTon;
-        }
-        break;
+        return _localeNumberBase(value, toImperialUnit);
       case UnitSystem.us:
-        if (toUsUnit == MassUnit.usTon) {
-          distance = value.toUSTon;
-        } else {
-          distance = value;
-        }
-        break;
+        return _localeNumberBase(value, toUsUnit);
       default:
-        if (toInternationalUnit == MassUnit.kilogram) {
-          distance = value.toKilogram;
-        } else if (toInternationalUnit == MassUnit.tonnes) {
-          distance = value.toTonnes;
-        } else {
-          distance = value;
-        }
-        break;
+        return _localeNumberBase(value, toInternationalUnit);
     }
-    return distance;
+  }
+
+  num _localeNumberBase(num value, MassUnit unit) {
+    switch (unit) {
+      case MassUnit.gram:
+        return value;
+      case MassUnit.imperialTon:
+        return value.toImperialTon;
+      case MassUnit.kilogram:
+        return value.toKilogram;
+      case MassUnit.microgram:
+        return value.toMicrogram;
+      case MassUnit.milligram:
+        return value.toMilligram;
+      case MassUnit.ounce:
+        return value.toOunce;
+      case MassUnit.pound:
+        return value.toPound;
+      case MassUnit.stone:
+        return value.toStone;
+      case MassUnit.tonnes:
+        return value.toTonnes;
+      case MassUnit.usTon:
+        return value.toUSTon;
+      default:
+        throw UnsupportedError('We currently do not support this combinaison');
+    }
   }
 
   @override

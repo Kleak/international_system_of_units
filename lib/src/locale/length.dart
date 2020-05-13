@@ -33,28 +33,43 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     LengthUnit toImperialUnit,
     LengthUnit toUsUnit,
   }) {
-    num distance;
     switch (unitSystem) {
       case UnitSystem.imperial:
+        return _localeNumberBase(lengthInMetre, toImperialUnit);
       case UnitSystem.us:
-        if (toImperialUnit == LengthUnit.mile) {
-          distance = lengthInMetre.toMile;
-        } else if (toImperialUnit == LengthUnit.inch) {
-          distance = lengthInMetre.toInch;
-        } else {
-          distance = lengthInMetre;
-        }
-        break;
+        return _localeNumberBase(lengthInMetre, toUsUnit);
       default:
-        distance = lengthInMetre;
-        if (toInternationalUnit == LengthUnit.kilometre) {
-          distance = lengthInMetre.toKilometre;
-        } else {
-          distance = lengthInMetre;
-        }
-        break;
+        return _localeNumberBase(lengthInMetre, toInternationalUnit);
     }
-    return distance;
+  }
+
+  num _localeNumberBase(num value, LengthUnit unit) {
+    switch (unit) {
+      case LengthUnit.mile:
+        return value.toMile;
+      case LengthUnit.foot:
+        return value.toFoot;
+      case LengthUnit.inch:
+        return value.toInch;
+      case LengthUnit.micrometre:
+        return value.toMicrometre;
+      case LengthUnit.millimetre:
+        return value.toMillimetre;
+      case LengthUnit.nanometre:
+        return value.toNanometre;
+      case LengthUnit.nauticalMile:
+        return value.toNauticalMile;
+      case LengthUnit.yard:
+        return value.toYard;
+      case LengthUnit.kilometre:
+        return value.toKilometre;
+      case LengthUnit.centimetre:
+        return value.toCentimetre;
+      case LengthUnit.metre:
+        return value;
+      default:
+        throw UnsupportedError('We currently do not support this combinaison');
+    }
   }
 
   @override
