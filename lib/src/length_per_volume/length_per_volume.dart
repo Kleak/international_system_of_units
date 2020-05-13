@@ -6,7 +6,7 @@ extension ISLengthPerVolume on num {
   num get toMilePerUsGallon => toMile.toLiter(VolumeUnit.usLiquidGallon);
   num get toMilePerImperialGallon => toMile.toLiter(VolumeUnit.imperialGallons);
 
-  num toMeterPerLiter(LengtPerVolumehUnit unit) {
+  num toMeterPerLiter(LengthPerVolumehUnit unit) {
     switch (unit) {
       default:
         return this;
@@ -14,7 +14,7 @@ extension ISLengthPerVolume on num {
   }
 }
 
-enum LengtPerVolumehUnit {
+enum LengthPerVolumehUnit {
   meterPerLiter,
   kilometerPerLiter,
   milePerUsGallon,
