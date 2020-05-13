@@ -7,6 +7,4 @@ void main(List<String> arguments) async {
   final sIi18n =
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
-
-  print(10.toMeterPerSecond(LengthPerTimeUnit.milePerHour));
 }
