@@ -10,16 +10,21 @@ class LocaleLength extends LocaleBase<LengthUnit> {
       : super(_numberFormat);
 
   @override
-  String localeUnit(final num value, UnitSystem unitSystem, LengthUnit unit) {
+  String localeUnit(
+    final num value,
+    UnitSystem unitSystem,
+    LengthUnit unit, {
+    bool shortUnit = true,
+  }) {
     switch (unit) {
       case LengthUnit.kilometre:
-        return 'km';
+        return shortUnit ? 'km' : localeKilometer(value);
       case LengthUnit.metre:
-        return localeMeter(value);
+        return shortUnit ? 'm' : localeMeter(value);
       case LengthUnit.mile:
-        return localeMile(value);
+        return shortUnit ? 'mi' : localeMile(value);
       case LengthUnit.inch:
-        return localeInch(value);
+        return shortUnit ? 'in' : localeInch(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -77,6 +82,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
+    bool shortUnit = true,
     NumberFormat customNumberFormat,
     LengthUnit toInternationalUnit = LengthUnit.kilometre,
     LengthUnit toImperialUnit = LengthUnit.mile,
@@ -87,6 +93,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         unitSystem,
         withUnit: withUnit,
         toUsUnit: toUsUnit,
+        shortUnit: shortUnit,
         customNumberFormat: customNumberFormat,
         toImperialUnit: toImperialUnit,
         toInternationalUnit: toInternationalUnit,
@@ -118,6 +125,16 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         zero: 'meter',
         one: 'meter',
         other: 'meters',
+        args: [length],
+        locale: _localeName,
+      );
+
+  String localeKilometer(num length) => Intl.plural(
+        length,
+        name: 'localeKilometer',
+        zero: 'kilometer',
+        one: 'kilometer',
+        other: 'kilometers',
         args: [length],
         locale: _localeName,
       );

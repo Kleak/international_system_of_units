@@ -59,12 +59,13 @@ class LocaleTime extends LocaleBase<TimeUnit> {
   }
 
   @override
-  String localeUnit(num value, UnitSystem unitSystem, TimeUnit unit) {
+  String localeUnit(num value, UnitSystem unitSystem, TimeUnit unit,
+      {bool shortUnit = true}) {
     switch (unit) {
       case TimeUnit.hour:
-        return localeHour(value);
+        return shortUnit ? 'h' : localeHour(value);
       case TimeUnit.day:
-        return localeDay(value);
+        return shortUnit ? 'd' : localeDay(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -75,6 +76,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
+    bool shortUnit = true,
     NumberFormat customNumberFormat,
     TimeUnit toInternationalUnit = TimeUnit.hour,
     TimeUnit toImperialUnit = TimeUnit.hour,
@@ -84,6 +86,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
         value,
         unitSystem,
         withUnit: withUnit,
+        shortUnit: shortUnit,
         toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
         toImperialUnit: toImperialUnit,

@@ -73,13 +73,18 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
   }
 
   @override
-  String localeUnit(num value, UnitSystem unitSystem, VolumeUnit unit) {
+  String localeUnit(
+    num value,
+    UnitSystem unitSystem,
+    VolumeUnit unit, {
+    bool shortUnit = true,
+  }) {
     switch (unit) {
       case VolumeUnit.usLiquidGallon:
       case VolumeUnit.imperialGallons:
-        return localeGallon(value);
+        return shortUnit ? 'gal' : localeGallon(value);
       case VolumeUnit.litres:
-        return localeLiter(value);
+        return shortUnit ? 'l' : localeLiter(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -90,6 +95,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
+    bool shortUnit = true,
     NumberFormat customNumberFormat,
     VolumeUnit toInternationalUnit = VolumeUnit.litres,
     VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
@@ -99,6 +105,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
         value,
         unitSystem,
         withUnit: withUnit,
+        shortUnit: shortUnit,
         toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
         toImperialUnit: toImperialUnit,
@@ -117,6 +124,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
   String localeGallon(num volume) => Intl.plural(
         volume,
         name: 'localeGallon',
+        zero: 'gallons',
         one: 'gallon',
         other: 'gallons',
         args: [volume],

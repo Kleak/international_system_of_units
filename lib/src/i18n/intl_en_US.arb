@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-13T11:02:31.831595",
+  "@@last_modified": "2020-05-13T11:20:40.128593",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -21,6 +21,13 @@
       "length": {}
     }
   },
+  "localeKilometer": "{length,plural, =0{kilometer}=1{kilometer}other{kilometers}}",
+  "@localeKilometer": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
   "localeTon": "{value,plural, =1{ton}other{tons}}",
   "@localeTon": {
     "type": "text",
@@ -30,6 +37,13 @@
   },
   "localePound": "{value,plural, =1{pound}other{pounds}}",
   "@localePound": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeKilogram": "{value,plural, =1{kilogram}other{kilograms}}",
+  "@localeKilogram": {
     "type": "text",
     "placeholders": {
       "value": {}
@@ -56,7 +70,7 @@
       "volume": {}
     }
   },
-  "localeGallon": "{volume,plural, =1{gallon}other{gallons}}",
+  "localeGallon": "{volume,plural, =0{gallons}=1{gallon}other{gallons}}",
   "@localeGallon": {
     "type": "text",
     "placeholders": {

@@ -25,8 +25,9 @@ abstract class LocaleBase<Unit> {
   String localeUnit(
     final num value,
     UnitSystem unitSystem,
-    Unit unit,
-  );
+    Unit unit, {
+    bool shortUnit = true,
+  });
 
   num localeNumber(
     num value,
@@ -40,6 +41,7 @@ abstract class LocaleBase<Unit> {
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
+    bool shortUnit = true,
     NumberFormat customNumberFormat,
     Unit toInternationalUnit,
     Unit toImperialUnit,
@@ -61,7 +63,8 @@ abstract class LocaleBase<Unit> {
     final sb =
         StringBuffer((customNumberFormat ?? _numberFormat).format(_number));
     if (withUnit) {
-      sb.write(' ${localeUnit(_number, unitSystem, _unit)}');
+      sb.write(
+          ' ${localeUnit(_number, unitSystem, _unit, shortUnit: shortUnit)}');
     }
     return sb.toString();
   }

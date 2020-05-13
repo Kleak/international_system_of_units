@@ -55,16 +55,21 @@ class LocaleMass extends LocaleBase<MassUnit> {
   }
 
   @override
-  String localeUnit(num value, UnitSystem unitSystem, MassUnit unit) {
+  String localeUnit(
+    num value,
+    UnitSystem unitSystem,
+    MassUnit unit, {
+    bool shortUnit = true,
+  }) {
     switch (unit) {
       case MassUnit.kilogram:
-        return 'kg';
+        return shortUnit ? 'kg' : localeKilogram(value);
       case MassUnit.tonnes:
       case MassUnit.usTon:
       case MassUnit.imperialTon:
-        return localeTon(value);
+        return shortUnit ? 't' : localeTon(value);
       case MassUnit.pound:
-        return localePound(value);
+        return shortUnit ? 'lb' : localePound(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -75,6 +80,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
+    bool shortUnit = true,
     NumberFormat customNumberFormat,
     MassUnit toInternationalUnit = MassUnit.tonnes,
     MassUnit toImperialUnit = MassUnit.imperialTon,
@@ -84,6 +90,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
         value,
         unitSystem,
         withUnit: withUnit,
+        shortUnit: shortUnit,
         toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
         toImperialUnit: toImperialUnit,
@@ -104,6 +111,15 @@ class LocaleMass extends LocaleBase<MassUnit> {
         name: 'localePound',
         one: 'pound',
         other: 'pounds',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeKilogram(num value) => Intl.plural(
+        value,
+        name: 'localeKilogram',
+        one: 'kilogram',
+        other: 'kilograms',
         args: [value],
         locale: _localeName,
       );
