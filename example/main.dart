@@ -9,6 +9,7 @@ void main(List<String> arguments) async {
         await InternationalSystemLocalizations.load(Locale.parse(language));
     Intl.defaultLocale = language;
 
-    print(10.toGramPerMeter(MassPerLengthUnit.kilogramPerMeter));
+    print(sIi18n.lengthPerVolume
+        .locale(12.toMeter(LengthUnit.kilometer), UnitSystem.international));
   }
 }
