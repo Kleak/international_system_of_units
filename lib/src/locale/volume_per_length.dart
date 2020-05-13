@@ -2,7 +2,7 @@ import 'package:international_system_of_units/src/locale/length.dart';
 import 'package:international_system_of_units/src/locale/locale_base.dart';
 import 'package:international_system_of_units/src/locale/volume.dart';
 import 'package:international_system_of_units/src/unit_system.dart';
-import 'package:international_system_of_units/src/volume_per_length/volume_per_length.dart';
+import 'package:international_system_of_units/src/conversion/volume_per_length/volume_per_length.dart';
 import 'package:intl/intl.dart';
 
 class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {

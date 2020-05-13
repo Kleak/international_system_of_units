@@ -14,7 +14,7 @@ extension ISLength on num {
   num get toNauticalMile => this * 0.000539957;
 
   //  convert the num to metre base on its length unit
-  num toMetre(LengthUnit unit) {
+  num toMeter(LengthUnit unit) {
     switch (unit) {
       case LengthUnit.nanometre:
         return this / 1e+9;
