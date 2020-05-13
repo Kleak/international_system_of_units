@@ -38,22 +38,31 @@ class MessageLookup extends MessageLookupByLibrary {
         ifAbsent: ifAbsent ?? failedLookup);
   }
 
-  static m0(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
+  static m0(time) => "${Intl.plural(time, zero: 'day', one: 'day', other: 'days')}";
 
-  static m1(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m1(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
 
-  static m2(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
+  static m2(time) => "${Intl.plural(time, zero: 'hour', one: 'hour', other: 'hours')}";
 
-  static m3(length) => "${Intl.plural(length, zero: 'metre', one: 'metre', other: 'metres')}";
+  static m3(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m4(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m4(volume) => "${Intl.plural(volume, one: 'litre', other: 'litres')}";
+
+  static m5(length) => "${Intl.plural(length, zero: 'metre', one: 'metre', other: 'metres')}";
+
+  static m6(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+
+  static m7(value) => "${Intl.plural(value, one: 'Ton', other: 'Tons')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "localeGallon" : m0,
-    "localeInch" : m1,
-    "localeLitre" : m2,
-    "localeMetre" : m3,
-    "localeMile" : m4
+    "localeDay" : m0,
+    "localeGallon" : m1,
+    "localeHour" : m2,
+    "localeInch" : m3,
+    "localeLiter" : m4,
+    "localeMeter" : m5,
+    "localeMile" : m6,
+    "localeTon" : m7
   };
 }

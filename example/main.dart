@@ -10,10 +10,32 @@ void main(List<String> arguments) async {
     Intl.defaultLocale = language;
 
     print(
-      sIi18n.length.localeLength(
+      sIi18n.length.locale(
         0.toMetre(LengthUnit.metre),
         UnitSystem.international,
         toInternationalUnit: LengthUnit.metre,
+        withUnit: true,
+      ),
+    );
+
+    print(
+      sIi18n.mass.locale(
+        12000.toGram(MassUnit.kilogram),
+        UnitSystem.imperial,
+        toInternationalUnit: MassUnit.tonnes,
+        toImperialUnit: MassUnit.imperialTon,
+        toUsUnit: MassUnit.usTon,
+        withUnit: true,
+      ),
+    );
+
+    print(
+      sIi18n.time.locale(
+        24.toSecond(TimeUnit.hour),
+        UnitSystem.imperial,
+        toInternationalUnit: TimeUnit.hour,
+        toImperialUnit: TimeUnit.hour,
+        toUsUnit: TimeUnit.hour,
         withUnit: true,
       ),
     );

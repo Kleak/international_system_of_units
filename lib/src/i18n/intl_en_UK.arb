@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-12T17:55:38.098759",
+  "@@last_modified": "2020-05-13T10:07:02.613039",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -14,15 +14,36 @@
       "length": {}
     }
   },
-  "localeMetre": "{length,plural, =0{metre}=1{metre}other{metres}}",
-  "@localeMetre": {
+  "localeMeter": "{length,plural, =0{metre}=1{metre}other{metres}}",
+  "@localeMeter": {
     "type": "text",
     "placeholders": {
       "length": {}
     }
   },
-  "localeLitre": "{volume,plural, =1{litre}other{litres}}",
-  "@localeLitre": {
+  "localeTon": "{value,plural, =1{Ton}other{Tons}}",
+  "@localeTon": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeHour": "{time,plural, =0{hour}=1{hour}other{hours}}",
+  "@localeHour": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeDay": "{time,plural, =0{day}=1{day}other{days}}",
+  "@localeDay": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeLiter": "{volume,plural, =1{litre}other{litres}}",
+  "@localeLiter": {
     "type": "text",
     "placeholders": {
       "volume": {}

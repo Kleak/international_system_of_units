@@ -1,43 +1,85 @@
+import 'package:international_system_of_units/src/locale/locale_base.dart';
 import 'package:international_system_of_units/src/unit_system.dart';
 import 'package:international_system_of_units/src/volume/international_system.dart';
 import 'package:intl/intl.dart';
 
-class LocaleVolume {
-  final NumberFormat _numberFormat;
+class LocaleVolume extends LocaleBase<VolumeUnit> {
   final String _localeName;
 
-  LocaleVolume(this._numberFormat, this._localeName);
+  LocaleVolume(NumberFormat _numberFormat, this._localeName)
+      : super(_numberFormat);
 
-  String localeVolumeUnit(final num volume, UnitSystem unitSystem) {
+  @override
+  num localeNumber(
+    num value,
+    UnitSystem unitSystem, {
+    VolumeUnit toInternationalUnit = VolumeUnit.litres,
+    VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
+    VolumeUnit toUsUnit = VolumeUnit.usLiquidGallon,
+  }) {
+    num distance;
     switch (unitSystem) {
-      case UnitSystem.international:
-        return localeLitre(volume);
       case UnitSystem.imperial:
+        if (toUsUnit == VolumeUnit.imperialGallons) {
+          distance = value.toImperialGallon;
+        }
+        break;
       case UnitSystem.us:
-        return localeGallon(volume);
+        if (toUsUnit == VolumeUnit.usLiquidGallon) {
+          distance = value.toUSLiquidGallon;
+        } else {
+          distance = value;
+        }
+        break;
       default:
-        return localeLitre(volume);
+        if (toInternationalUnit == VolumeUnit.millilitres) {
+          distance = value.toMillilitres;
+        } else {
+          distance = value;
+        }
+        break;
+    }
+    return distance;
+  }
+
+  @override
+  String localeUnit(num value, UnitSystem unitSystem, VolumeUnit unit) {
+    switch (unit) {
+      case VolumeUnit.usLiquidGallon:
+      case VolumeUnit.imperialGallons:
+        return localeGallon(value);
+      case VolumeUnit.litres:
+        return localeLiter(value);
+      default:
+        throw UnsupportedError('We currently do not support this combinaison');
     }
   }
 
-  String localeVolume(num volumeInLitre, UnitSystem unitSystem) {
-    switch (unitSystem) {
-      case UnitSystem.international:
-        return '${_numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
-      case UnitSystem.imperial:
-        return '${_numberFormat.format(volumeInLitre.toImperialGallon)} ${localeGallon(volumeInLitre.toImperialGallon)}';
-      case UnitSystem.us:
-        return '${_numberFormat.format(volumeInLitre.toUSLiquidGallon)} ${localeGallon(volumeInLitre.toUSLiquidGallon)}';
-      default:
-        return '${_numberFormat.format(volumeInLitre)} ${localeLitre(volumeInLitre)}';
-    }
-  }
+  @override
+  String locale(
+    num value,
+    UnitSystem unitSystem, {
+    bool withUnit = true,
+    NumberFormat customNumberFormat,
+    VolumeUnit toInternationalUnit = VolumeUnit.litres,
+    VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
+    VolumeUnit toUsUnit = VolumeUnit.usLiquidGallon,
+  }) =>
+      super.locale(
+        value,
+        unitSystem,
+        withUnit: withUnit,
+        toUsUnit: toUsUnit,
+        customNumberFormat: customNumberFormat,
+        toImperialUnit: toImperialUnit,
+        toInternationalUnit: toInternationalUnit,
+      );
 
-  String localeLitre(num volume) => Intl.plural(
+  String localeLiter(num volume) => Intl.plural(
         volume,
-        name: 'localeLitre',
-        one: 'litre',
-        other: 'litres',
+        name: 'localeLiter',
+        one: 'liter',
+        other: 'liters',
         args: [volume],
         locale: _localeName,
       );

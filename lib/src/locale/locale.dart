@@ -118,7 +118,7 @@ class InternationalSystemLocalizations {
     return sb.toString();
   }
 
-  @Deprecated('Use length.lengthUnit instead')
+  @Deprecated('Use length.unit instead')
   LengthUnit lengthUnit(UnitSystem unitSystem,
       {LengthUnit toInternationalUnit = LengthUnit.kilometre,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
@@ -131,7 +131,7 @@ class InternationalSystemLocalizations {
     }
   }
 
-  @Deprecated('Use length.localeLengthUnit instead')
+  @Deprecated('Use length.localeUnit instead')
   String localeLengthUnit(
       final num length, UnitSystem unitSystem, LengthUnit lengthUnit) {
     switch (unitSystem) {
@@ -154,7 +154,7 @@ class InternationalSystemLocalizations {
     throw UnsupportedError('We currently do not support this combinaison');
   }
 
-  @Deprecated('Use length.localeLengthNumber instead')
+  @Deprecated('Use length.localeNumber instead')
   num localeLengthNumber(num lengthInMetre, UnitSystem unitSystem,
       {LengthUnit toInternationalUnit = LengthUnit.kilometre,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
@@ -182,7 +182,7 @@ class InternationalSystemLocalizations {
     return distance;
   }
 
-  @Deprecated('Use length.localeLength instead')
+  @Deprecated('Use length.locale instead')
   String localeLength(num lengthInMetre, UnitSystem unitSystem,
       {bool withUnit = true,
       NumberFormat customNumberFormat,
