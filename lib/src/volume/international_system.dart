@@ -23,7 +23,7 @@ extension ISVolume on num {
   num get toCubicInch => this * 61.0237;
 
   //  convert the num to litre base on its volume unit
-  num toLitre(VolumeUnit unit) {
+  num toLiter(VolumeUnit unit) {
     switch (unit) {
       case VolumeUnit.usLiquidGallon:
         return this * 3.78541;
