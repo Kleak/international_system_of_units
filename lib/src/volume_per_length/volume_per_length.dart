@@ -10,7 +10,7 @@ extension ISVolumePerLength on num {
     switch (unit) {
       case VolumePerLengthUnit.usGallonPerMile:
         return this * 2.352 / 1000;
-      case VolumePerLengthUnit.imperialgallonPerMile:
+      case VolumePerLengthUnit.imperialGallonPerMile:
         return this * 2.825 / 1000;
       case VolumePerLengthUnit.literPerKilometer:
         return this / 1000;
@@ -24,5 +24,5 @@ enum VolumePerLengthUnit {
   literPerMeter,
   literPerKilometer,
   usGallonPerMile,
-  imperialgallonPerMile,
+  imperialGallonPerMile,
 }

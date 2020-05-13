@@ -26,7 +26,7 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
         return value.toLiterPerKilometer;
       case VolumePerLengthUnit.usGallonPerMile:
         return value.toUsGallonPerMile;
-      case VolumePerLengthUnit.imperialgallonPerMile:
+      case VolumePerLengthUnit.imperialGallonPerMile:
         return value.toImperialGallonPerMile;
       default:
         throw UnsupportedError('We currently do not support this combinaison');
@@ -41,7 +41,7 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
     bool shortUnit = true,
   }) {
     switch (unit) {
-      case VolumePerLengthUnit.imperialgallonPerMile:
+      case VolumePerLengthUnit.imperialGallonPerMile:
         return shortUnit ? 'gpm' : localeImperialGallonsPerMiles(value);
       case VolumePerLengthUnit.usGallonPerMile:
         return shortUnit ? 'gpm' : localeUsGallonsPerMiles(value);
@@ -64,7 +64,7 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
     VolumePerLengthUnit toInternationalUnit =
         VolumePerLengthUnit.literPerKilometer,
     VolumePerLengthUnit toImperialUnit =
-        VolumePerLengthUnit.imperialgallonPerMile,
+        VolumePerLengthUnit.imperialGallonPerMile,
     VolumePerLengthUnit toUsUnit = VolumePerLengthUnit.usGallonPerMile,
   }) =>
       super.locale(
