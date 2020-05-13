@@ -6,6 +6,8 @@ extension ISLengthPerVolume on num {
   num get toMilePerUsGallon => toMile.toLiter(VolumeUnit.usLiquidGallon);
   num get toMilePerImperialGallon => toMile.toLiter(VolumeUnit.imperialGallons);
 
+  num get inverseLengthPerVolume => 1 / this;
+
   num toMeterPerLiter(LengthPerVolumeUnit unit) {
     switch (unit) {
       case LengthPerVolumeUnit.milePerUsGallon:
