@@ -1,13 +1,13 @@
 {
-  "@@last_modified": "2020-05-13T13:49:45.518510",
-  "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
+  "@@last_modified": "2020-05-13T15:09:49.086888",
+  "localeMile": "{length,plural, =0{mile}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
     "placeholders": {
       "length": {}
     }
   },
-  "localeInch": "{length,plural, =0{inches}=1{inche}other{inches}}",
+  "localeInch": "{length,plural, =0{inche}=1{inche}other{inches}}",
   "@localeInch": {
     "type": "text",
     "placeholders": {
@@ -35,14 +35,14 @@
       "value": {}
     }
   },
-  "localePound": "{value,plural, =0{pounds}=1{pound}other{pounds}}",
+  "localePound": "{value,plural, =0{pound}=1{pound}other{pounds}}",
   "@localePound": {
     "type": "text",
     "placeholders": {
       "value": {}
     }
   },
-  "localeKilogram": "{value,plural, =0{kilogramme}=1{kilogramme}other{kilogramme}}",
+  "localeKilogram": "{value,plural, =0{kilogramme}=1{kilogramme}other{kilogrammes}}",
   "@localeKilogram": {
     "type": "text",
     "placeholders": {
@@ -77,7 +77,7 @@
       "volume": {}
     }
   },
-  "localeGallon": "{volume,plural, =0{gallons}=1{gallon}other{gallons}}",
+  "localeGallon": "{volume,plural, =0{gallon}=1{gallon}other{gallons}}",
   "@localeGallon": {
     "type": "text",
     "placeholders": {
@@ -114,6 +114,38 @@
     "placeholders": {
       "liters": {},
       "kilometers": {}
+    }
+  },
+  "_intlKilometersPerLiters": "{kilometers} par {liters}",
+  "@_intlKilometersPerLiters": {
+    "type": "text",
+    "placeholders": {
+      "kilometers": {},
+      "liters": {}
+    }
+  },
+  "_intlMeterPerLiter": "{meters} par {liters}",
+  "@_intlMeterPerLiter": {
+    "type": "text",
+    "placeholders": {
+      "meters": {},
+      "liters": {}
+    }
+  },
+  "_intlMilePerImperialGallon": "{miles} par imp {gallons}",
+  "@_intlMilePerImperialGallon": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
+    }
+  },
+  "_intlMilePerUsGallon": "{miles} par US {gallons}",
+  "@_intlMilePerUsGallon": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
     }
   }
 }

@@ -40,53 +40,65 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(gallons, miles) => "imp ${gallons} per ${miles}";
 
-  static m1(liters, kilometers) => "${liters} per ${kilometers}";
+  static m1(kilometers, liters) => "${kilometers} per ${liters}";
 
-  static m2(liters, meters) => "${liters} per ${meters}";
+  static m2(liters, kilometers) => "${liters} per ${kilometers}";
 
-  static m3(gallons, miles) => "US ${gallons} per ${miles}";
+  static m3(liters, meters) => "${liters} per ${meters}";
 
-  static m4(time) => "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
+  static m4(meters, liters) => "${meters} per ${liters}";
 
-  static m5(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
+  static m5(miles, gallons) => "${miles} per imp ${gallons}";
 
-  static m6(time) => "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
+  static m6(miles, gallons) => "${miles} per US ${gallons}";
 
-  static m7(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m7(gallons, miles) => "US ${gallons} per ${miles}";
 
-  static m8(value) => "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
+  static m8(time) => "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
 
-  static m9(length) => "${Intl.plural(length, zero: 'kilometres', one: 'kilometre', other: 'kilometres')}";
+  static m9(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
 
-  static m10(volume) => "${Intl.plural(volume, zero: 'litres', one: 'litre', other: 'litres')}";
+  static m10(time) => "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
 
-  static m11(length) => "${Intl.plural(length, zero: 'metres', one: 'metre', other: 'metres')}";
+  static m11(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m12(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m12(value) => "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
 
-  static m13(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+  static m13(length) => "${Intl.plural(length, zero: 'kilometres', one: 'kilometre', other: 'kilometres')}";
 
-  static m14(time) => "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+  static m14(volume) => "${Intl.plural(volume, zero: 'litres', one: 'litre', other: 'litres')}";
 
-  static m15(value) => "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
+  static m15(length) => "${Intl.plural(length, zero: 'metres', one: 'metre', other: 'metres')}";
+
+  static m16(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+
+  static m17(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+
+  static m18(time) => "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+
+  static m19(value) => "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "_intlImperialGallonsPerMiles" : m0,
-    "_intlLitersPerKilometers" : m1,
-    "_intlLitersPerMeters" : m2,
-    "_intlUsGallonsPerMiles" : m3,
-    "localeDay" : m4,
-    "localeGallon" : m5,
-    "localeHour" : m6,
-    "localeInch" : m7,
-    "localeKilogram" : m8,
-    "localeKilometer" : m9,
-    "localeLiter" : m10,
-    "localeMeter" : m11,
-    "localeMile" : m12,
-    "localePound" : m13,
-    "localeSecond" : m14,
-    "localeTon" : m15
+    "_intlKilometersPerLiters" : m1,
+    "_intlLitersPerKilometers" : m2,
+    "_intlLitersPerMeters" : m3,
+    "_intlMeterPerLiter" : m4,
+    "_intlMilePerImperialGallon" : m5,
+    "_intlMilePerUsGallon" : m6,
+    "_intlUsGallonsPerMiles" : m7,
+    "localeDay" : m8,
+    "localeGallon" : m9,
+    "localeHour" : m10,
+    "localeInch" : m11,
+    "localeKilogram" : m12,
+    "localeKilometer" : m13,
+    "localeLiter" : m14,
+    "localeMeter" : m15,
+    "localeMile" : m16,
+    "localePound" : m17,
+    "localeSecond" : m18,
+    "localeTon" : m19
   };
 }

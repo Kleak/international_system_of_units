@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-13T13:49:45.518510",
+  "@@last_modified": "2020-05-13T15:09:49.086888",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -114,6 +114,38 @@
     "placeholders": {
       "liters": {},
       "kilometers": {}
+    }
+  },
+  "_intlKilometersPerLiters": "{kilometers} per {liters}",
+  "@_intlKilometersPerLiters": {
+    "type": "text",
+    "placeholders": {
+      "kilometers": {},
+      "liters": {}
+    }
+  },
+  "_intlMeterPerLiter": "{meters} per {liters}",
+  "@_intlMeterPerLiter": {
+    "type": "text",
+    "placeholders": {
+      "meters": {},
+      "liters": {}
+    }
+  },
+  "_intlMilePerImperialGallon": "{miles} per imp {gallons}",
+  "@_intlMilePerImperialGallon": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
+    }
+  },
+  "_intlMilePerUsGallon": "{miles} per US {gallons}",
+  "@_intlMilePerUsGallon": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
     }
   }
 }
