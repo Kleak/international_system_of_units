@@ -42,7 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
 
-  static m2(time) => "${Intl.plural(time, zero: 'heure', one: 'heure', other: 'heure')}";
+  static m2(time) => "${Intl.plural(time, zero: 'heure', one: 'heure', other: 'heures')}";
 
   static m3(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
@@ -52,7 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m6(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
 
-  static m7(value) => "${Intl.plural(value, one: 'Tonne', other: 'Tonnes')}";
+  static m7(value) => "${Intl.plural(value, one: 'pound', other: 'pounds')}";
+
+  static m8(value) => "${Intl.plural(value, one: 'tonne', other: 'tonnes')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -63,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "localeLiter" : m4,
     "localeMeter" : m5,
     "localeMile" : m6,
-    "localeTon" : m7
+    "localePound" : m7,
+    "localeTon" : m8
   };
 }

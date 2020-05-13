@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-13T10:07:02.613039",
+  "@@last_modified": "2020-05-13T11:02:31.831595",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -21,8 +21,15 @@
       "length": {}
     }
   },
-  "localeTon": "{value,plural, =1{Ton}other{Tons}}",
+  "localeTon": "{value,plural, =1{ton}other{tons}}",
   "@localeTon": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localePound": "{value,plural, =1{pound}other{pounds}}",
+  "@localePound": {
     "type": "text",
     "placeholders": {
       "value": {}

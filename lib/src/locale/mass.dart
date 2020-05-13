@@ -63,6 +63,8 @@ class LocaleMass extends LocaleBase<MassUnit> {
       case MassUnit.usTon:
       case MassUnit.imperialTon:
         return localeTon(value);
+      case MassUnit.pound:
+        return localePound(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -91,8 +93,17 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localeTon(num value) => Intl.plural(
         value,
         name: 'localeTon',
-        one: 'Ton',
-        other: 'Tons',
+        one: 'ton',
+        other: 'tons',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localePound(num value) => Intl.plural(
+        value,
+        name: 'localePound',
+        one: 'pound',
+        other: 'pounds',
         args: [value],
         locale: _localeName,
       );
