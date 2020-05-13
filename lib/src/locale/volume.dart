@@ -10,24 +10,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumber(
-    num value,
-    UnitSystem unitSystem, {
-    VolumeUnit toInternationalUnit = VolumeUnit.litres,
-    VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
-    VolumeUnit toUsUnit = VolumeUnit.usLiquidGallon,
-  }) {
-    switch (unitSystem) {
-      case UnitSystem.imperial:
-        return _localeNumberBase(value, toImperialUnit);
-      case UnitSystem.us:
-        return _localeNumberBase(value, toUsUnit);
-      default:
-        return _localeNumberBase(value, toInternationalUnit);
-    }
-  }
-
-  num _localeNumberBase(num value, VolumeUnit unit) {
+  num localeNumberBase(num value, VolumeUnit unit) {
     switch (unit) {
       case VolumeUnit.cubicFoot:
         return value.toCubicFoot;
@@ -115,6 +98,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
   String localeLiter(num volume) => Intl.plural(
         volume,
         name: 'localeLiter',
+        zero: 'liters',
         one: 'liter',
         other: 'liters',
         args: [volume],

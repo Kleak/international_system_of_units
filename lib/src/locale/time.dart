@@ -10,24 +10,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumber(
-    num value,
-    UnitSystem unitSystem, {
-    TimeUnit toInternationalUnit,
-    TimeUnit toImperialUnit,
-    TimeUnit toUsUnit,
-  }) {
-    switch (unitSystem) {
-      case UnitSystem.imperial:
-        return _localeNumberBase(value, toImperialUnit);
-      case UnitSystem.us:
-        return _localeNumberBase(value, toUsUnit);
-      default:
-        return _localeNumberBase(value, toInternationalUnit);
-    }
-  }
-
-  num _localeNumberBase(num value, TimeUnit unit) {
+  num localeNumberBase(num value, TimeUnit unit) {
     switch (unit) {
       case TimeUnit.calendarYear:
         return value.toCalendarYear;
@@ -66,6 +49,8 @@ class LocaleTime extends LocaleBase<TimeUnit> {
         return shortUnit ? 'h' : localeHour(value);
       case TimeUnit.day:
         return shortUnit ? 'd' : localeDay(value);
+      case TimeUnit.second:
+        return shortUnit ? 's' : localeSecond(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -93,10 +78,20 @@ class LocaleTime extends LocaleBase<TimeUnit> {
         toInternationalUnit: toInternationalUnit,
       );
 
+  String localeSecond(num time) => Intl.plural(
+        time,
+        name: 'localeSecond',
+        zero: 'seconds',
+        one: 'second',
+        other: 'seconds',
+        args: [time],
+        locale: _localeName,
+      );
+
   String localeHour(num time) => Intl.plural(
         time,
         name: 'localeHour',
-        zero: 'hour',
+        zero: 'hours',
         one: 'hour',
         other: 'hours',
         args: [time],
@@ -106,7 +101,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
   String localeDay(num time) => Intl.plural(
         time,
         name: 'localeDay',
-        zero: 'day',
+        zero: 'days',
         one: 'day',
         other: 'days',
         args: [time],

@@ -10,54 +10,17 @@ void main(List<String> arguments) async {
     Intl.defaultLocale = language;
 
     print(
-      sIi18n.length.locale(
-        0.toMetre(LengthUnit.metre),
+      sIi18n.volumePerLength.locale(
+        10.toLiterPerMeter(VolumePerLengthUnit.literPerKilometer),
         UnitSystem.international,
-        toInternationalUnit: LengthUnit.metre,
-        withUnit: true,
       ),
     );
-
     print(
-      sIi18n.mass.locale(
-        12000.toGram(MassUnit.kilogram),
-        UnitSystem.imperial,
-        toInternationalUnit: MassUnit.tonnes,
-        toImperialUnit: MassUnit.imperialTon,
-        toUsUnit: MassUnit.usTon,
-        withUnit: true,
+      sIi18n.volumePerLength.locale(
+        10.toLiterPerMeter(VolumePerLengthUnit.literPerKilometer),
+        UnitSystem.international,
+        shortUnit: false,
       ),
     );
-
-    print(
-      sIi18n.time.locale(
-        24.toSecond(TimeUnit.hour),
-        UnitSystem.imperial,
-        toInternationalUnit: TimeUnit.hour,
-        toImperialUnit: TimeUnit.hour,
-        toUsUnit: TimeUnit.hour,
-        withUnit: true,
-      ),
-    );
-
-    // final litrePer100Kilometre = 4;
-    // final litrePerKilometre = litrePer100Kilometre / 100;
-    // print(sIi18n.localeVolumeByLength(
-    //     litrePerKilometre, UnitSystem.international));
-    // print(sIi18n.localeVolumeByLength(litrePerKilometre, UnitSystem.us));
-    // print(sIi18n.localeVolumeByLength(litrePerKilometre, UnitSystem.imperial));
-    // final kilometrePerLitre = 1 / litrePerKilometre;
-    // print(sIi18n.localeLengthByVolume(
-    //     kilometrePerLitre, UnitSystem.international));
-    // print(sIi18n.localeLengthByVolume(kilometrePerLitre, UnitSystem.us));
-    // print(sIi18n.localeLengthByVolume(kilometrePerLitre, UnitSystem.imperial));
-    // print(sIi18n.localeLength(
-    //     3.toMetre(LengthUnit.kilometre), UnitSystem.international));
-    // print(sIi18n.localeLength(3.toMetre(LengthUnit.kilometre), UnitSystem.us));
-    // print(sIi18n.localeLength(
-    //     3.toMetre(LengthUnit.kilometre), UnitSystem.imperial));
-    // print(sIi18n.localeVolume(1, UnitSystem.international));
-    // print(sIi18n.localeVolume(3, UnitSystem.us));
-    // print(sIi18n.localeVolume(1, UnitSystem.imperial));
   }
 }

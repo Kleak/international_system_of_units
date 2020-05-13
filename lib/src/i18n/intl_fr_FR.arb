@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-13T11:20:40.128593",
+  "@@last_modified": "2020-05-13T13:49:45.518510",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -28,25 +28,32 @@
       "length": {}
     }
   },
-  "localeTon": "{value,plural, =1{tonne}other{tonnes}}",
+  "localeTon": "{value,plural, =0{tonne}=1{tonne}other{tonnes}}",
   "@localeTon": {
     "type": "text",
     "placeholders": {
       "value": {}
     }
   },
-  "localePound": "{value,plural, =1{pound}other{pounds}}",
+  "localePound": "{value,plural, =0{pounds}=1{pound}other{pounds}}",
   "@localePound": {
     "type": "text",
     "placeholders": {
       "value": {}
     }
   },
-  "localeKilogram": "{value,plural, =1{kilogramme}other{kilogrammes}}",
+  "localeKilogram": "{value,plural, =0{kilogramme}=1{kilogramme}other{kilogramme}}",
   "@localeKilogram": {
     "type": "text",
     "placeholders": {
       "value": {}
+    }
+  },
+  "localeSecond": "{time,plural, =0{seconde}=1{seconde}other{secondes}}",
+  "@localeSecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
     }
   },
   "localeHour": "{time,plural, =0{heure}=1{heure}other{heures}}",
@@ -63,7 +70,7 @@
       "time": {}
     }
   },
-  "localeLiter": "{volume,plural, =1{litre}other{litres}}",
+  "localeLiter": "{volume,plural, =0{litre}=1{litre}other{litres}}",
   "@localeLiter": {
     "type": "text",
     "placeholders": {
@@ -75,6 +82,38 @@
     "type": "text",
     "placeholders": {
       "volume": {}
+    }
+  },
+  "_intlImperialGallonsPerMiles": "imp {gallons} par {miles}",
+  "@_intlImperialGallonsPerMiles": {
+    "type": "text",
+    "placeholders": {
+      "gallons": {},
+      "miles": {}
+    }
+  },
+  "_intlUsGallonsPerMiles": "US {gallons} par {miles}",
+  "@_intlUsGallonsPerMiles": {
+    "type": "text",
+    "placeholders": {
+      "gallons": {},
+      "miles": {}
+    }
+  },
+  "_intlLitersPerMeters": "{liters} par {meters}",
+  "@_intlLitersPerMeters": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "meters": {}
+    }
+  },
+  "_intlLitersPerKilometers": "{liters} par {kilometers}",
+  "@_intlLitersPerKilometers": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "kilometers": {}
     }
   }
 }

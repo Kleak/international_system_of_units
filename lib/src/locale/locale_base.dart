@@ -35,7 +35,18 @@ abstract class LocaleBase<Unit> {
     Unit toInternationalUnit,
     Unit toImperialUnit,
     Unit toUsUnit,
-  });
+  }) {
+    switch (unitSystem) {
+      case UnitSystem.imperial:
+        return localeNumberBase(value, toImperialUnit);
+      case UnitSystem.us:
+        return localeNumberBase(value, toUsUnit);
+      default:
+        return localeNumberBase(value, toInternationalUnit);
+    }
+  }
+
+  num localeNumberBase(num value, Unit unit);
 
   String locale(
     num value,

@@ -31,24 +31,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
   }
 
   @override
-  num localeNumber(
-    num lengthInMetre,
-    UnitSystem unitSystem, {
-    LengthUnit toInternationalUnit,
-    LengthUnit toImperialUnit,
-    LengthUnit toUsUnit,
-  }) {
-    switch (unitSystem) {
-      case UnitSystem.imperial:
-        return _localeNumberBase(lengthInMetre, toImperialUnit);
-      case UnitSystem.us:
-        return _localeNumberBase(lengthInMetre, toUsUnit);
-      default:
-        return _localeNumberBase(lengthInMetre, toInternationalUnit);
-    }
-  }
-
-  num _localeNumberBase(num value, LengthUnit unit) {
+  num localeNumberBase(num value, LengthUnit unit) {
     switch (unit) {
       case LengthUnit.mile:
         return value.toMile;
@@ -122,7 +105,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
   String localeMeter(num length) => Intl.plural(
         length,
         name: 'localeMeter',
-        zero: 'meter',
+        zero: 'meters',
         one: 'meter',
         other: 'meters',
         args: [length],
@@ -132,7 +115,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
   String localeKilometer(num length) => Intl.plural(
         length,
         name: 'localeKilometer',
-        zero: 'kilometer',
+        zero: 'kilometers',
         one: 'kilometer',
         other: 'kilometers',
         args: [length],

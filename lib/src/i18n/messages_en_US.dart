@@ -38,34 +38,55 @@ class MessageLookup extends MessageLookupByLibrary {
         ifAbsent: ifAbsent ?? failedLookup);
   }
 
-  static m0(time) => "${Intl.plural(time, zero: 'day', one: 'day', other: 'days')}";
+  static m0(gallons, miles) => "imp ${gallons} per ${miles}";
 
-  static m1(volume) => "${Intl.plural(volume, one: 'gallon', other: 'gallons')}";
+  static m1(liters, kilometers) => "${liters} per ${kilometers}";
 
-  static m2(time) => "${Intl.plural(time, zero: 'hour', one: 'hour', other: 'hours')}";
+  static m2(liters, meters) => "${liters} per ${meters}";
 
-  static m3(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m3(gallons, miles) => "US ${gallons} per ${miles}";
 
-  static m4(volume) => "${Intl.plural(volume, one: 'liter', other: 'liters')}";
+  static m4(time) => "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
 
-  static m5(length) => "${Intl.plural(length, zero: 'meter', one: 'meter', other: 'meters')}";
+  static m5(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
 
-  static m6(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m6(time) => "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
 
-  static m7(value) => "${Intl.plural(value, one: 'pound', other: 'pounds')}";
+  static m7(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m8(value) => "${Intl.plural(value, one: 'ton', other: 'tons')}";
+  static m8(value) => "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
+
+  static m9(length) => "${Intl.plural(length, zero: 'kilometers', one: 'kilometer', other: 'kilometers')}";
+
+  static m10(volume) => "${Intl.plural(volume, zero: 'liters', one: 'liter', other: 'liters')}";
+
+  static m11(length) => "${Intl.plural(length, zero: 'meters', one: 'meter', other: 'meters')}";
+
+  static m12(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+
+  static m13(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+
+  static m14(time) => "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+
+  static m15(value) => "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "localeDay" : m0,
-    "localeGallon" : m1,
-    "localeHour" : m2,
-    "localeInch" : m3,
-    "localeLiter" : m4,
-    "localeMeter" : m5,
-    "localeMile" : m6,
-    "localePound" : m7,
-    "localeTon" : m8
+    "_intlImperialGallonsPerMiles" : m0,
+    "_intlLitersPerKilometers" : m1,
+    "_intlLitersPerMeters" : m2,
+    "_intlUsGallonsPerMiles" : m3,
+    "localeDay" : m4,
+    "localeGallon" : m5,
+    "localeHour" : m6,
+    "localeInch" : m7,
+    "localeKilogram" : m8,
+    "localeKilometer" : m9,
+    "localeLiter" : m10,
+    "localeMeter" : m11,
+    "localeMile" : m12,
+    "localePound" : m13,
+    "localeSecond" : m14,
+    "localeTon" : m15
   };
 }

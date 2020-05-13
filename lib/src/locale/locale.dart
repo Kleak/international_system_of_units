@@ -3,7 +3,7 @@ import 'package:international_system_of_units/src/length/international_system.da
 import 'package:international_system_of_units/src/locale/length_by_volume.dart';
 import 'package:international_system_of_units/src/locale/mass.dart';
 import 'package:international_system_of_units/src/locale/time.dart';
-import 'package:international_system_of_units/src/locale/volume_by_length.dart';
+import 'package:international_system_of_units/src/locale/volume_per_length.dart';
 import 'package:international_system_of_units/src/volume/international_system.dart';
 import 'package:international_system_of_units/src/locale/length.dart';
 import 'package:international_system_of_units/src/locale/volume.dart';
@@ -27,7 +27,7 @@ class InternationalSystemLocalizations {
   LocaleMass mass;
   LocaleTime time;
 
-  LocaleVolumeByLength volumeByLength;
+  LocaleVolumePerLength volumePerLength;
   LocaleLengthByVolume lengthByVolume;
 
   InternationalSystemLocalizations(Locale locale)
@@ -38,8 +38,8 @@ class InternationalSystemLocalizations {
     volume = LocaleVolume(_numberFormat, _localeName);
     mass = LocaleMass(_numberFormat, _localeName);
     time = LocaleTime(_numberFormat, _localeName);
-    volumeByLength =
-        LocaleVolumeByLength(_numberFormat, _localeName, volume, length);
+    volumePerLength =
+        LocaleVolumePerLength(_numberFormat, _localeName, volume, length);
     lengthByVolume =
         LocaleLengthByVolume(_numberFormat, _localeName, volume, length);
   }

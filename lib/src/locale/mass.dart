@@ -10,24 +10,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumber(
-    num value,
-    UnitSystem unitSystem, {
-    MassUnit toInternationalUnit,
-    MassUnit toImperialUnit,
-    MassUnit toUsUnit,
-  }) {
-    switch (unitSystem) {
-      case UnitSystem.imperial:
-        return _localeNumberBase(value, toImperialUnit);
-      case UnitSystem.us:
-        return _localeNumberBase(value, toUsUnit);
-      default:
-        return _localeNumberBase(value, toInternationalUnit);
-    }
-  }
-
-  num _localeNumberBase(num value, MassUnit unit) {
+  num localeNumberBase(num value, MassUnit unit) {
     switch (unit) {
       case MassUnit.gram:
         return value;
@@ -100,6 +83,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localeTon(num value) => Intl.plural(
         value,
         name: 'localeTon',
+        zero: 'tons',
         one: 'ton',
         other: 'tons',
         args: [value],
@@ -109,6 +93,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localePound(num value) => Intl.plural(
         value,
         name: 'localePound',
+        zero: 'pounds',
         one: 'pound',
         other: 'pounds',
         args: [value],
@@ -118,6 +103,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localeKilogram(num value) => Intl.plural(
         value,
         name: 'localeKilogram',
+        zero: 'kilograms',
         one: 'kilogram',
         other: 'kilograms',
         args: [value],
