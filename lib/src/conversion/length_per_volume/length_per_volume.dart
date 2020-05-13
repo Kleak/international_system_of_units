@@ -2,13 +2,18 @@ import 'package:international_system_of_units/src/conversion/volume/internationa
 import 'package:international_system_of_units/src/conversion/length/international_system.dart';
 
 extension ISLengthPerVolume on num {
-  num get toKilometerPerLiter => toKilometre;
+  num get toKilometerPerLiter => toKilometer;
   num get toMilePerUsGallon => toMile.toLiter(VolumeUnit.usLiquidGallon);
   num get toMilePerImperialGallon => toMile.toLiter(VolumeUnit.imperialGallons);
 
   num toMeterPerLiter(LengthPerVolumeUnit unit) {
-    //  TODO add conversion
     switch (unit) {
+      case LengthPerVolumeUnit.milePerUsGallon:
+        return toMeter(LengthUnit.mile).toUSLiquidGallon;
+      case LengthPerVolumeUnit.milePerImperialGallon:
+        return toMeter(LengthUnit.mile).toImperialGallon;
+      case LengthPerVolumeUnit.kilometerPerLiter:
+        return toKilometer;
       default:
         return this;
     }

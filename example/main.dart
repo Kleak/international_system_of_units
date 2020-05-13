@@ -9,18 +9,6 @@ void main(List<String> arguments) async {
         await InternationalSystemLocalizations.load(Locale.parse(language));
     Intl.defaultLocale = language;
 
-    print(
-      sIi18n.volumePerLength.locale(
-        10.toLiterPerMeter(VolumePerLengthUnit.literPerKilometer),
-        UnitSystem.international,
-      ),
-    );
-    print(
-      sIi18n.volumePerLength.locale(
-        10.toLiterPerMeter(VolumePerLengthUnit.literPerKilometer),
-        UnitSystem.international,
-        shortUnit: false,
-      ),
-    );
+    print(10.toGramPerMeter(MassPerLengthUnit.kilogramPerMeter));
   }
 }

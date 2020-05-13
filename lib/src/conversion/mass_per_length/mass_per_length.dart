@@ -5,9 +5,14 @@ extension ISMassPerLength on num {
   num get toKilogramPerMeter => toKilogram;
   num get toGramPerMile => toMeter(LengthUnit.mile);
 
-  num toMeterPerLiter(MassPerLengthUnit unit) {
-    //  TODO add conversion
+  num toGramPerMeter(MassPerLengthUnit unit) {
     switch (unit) {
+      case MassPerLengthUnit.gramPerMile:
+        return toMile;
+      case MassPerLengthUnit.kilogramPerMeter:
+        return toGram(MassUnit.kilogram);
+      case MassPerLengthUnit.kilogramPerKilometer:
+        return toGram(MassUnit.kilogram).toKilometer;
       default:
         return this;
     }
@@ -18,4 +23,5 @@ enum MassPerLengthUnit {
   gramPerMeter,
   kilogramPerMeter,
   gramPerMile,
+  kilogramPerKilometer,
 }

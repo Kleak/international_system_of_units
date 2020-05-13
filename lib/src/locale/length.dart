@@ -17,9 +17,9 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     bool shortUnit = true,
   }) {
     switch (unit) {
-      case LengthUnit.kilometre:
+      case LengthUnit.kilometer:
         return shortUnit ? 'km' : localeKilometer(value);
-      case LengthUnit.metre:
+      case LengthUnit.meter:
         return shortUnit ? 'm' : localeMeter(value);
       case LengthUnit.mile:
         return shortUnit ? 'mi' : localeMile(value);
@@ -39,21 +39,21 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         return value.toFoot;
       case LengthUnit.inch:
         return value.toInch;
-      case LengthUnit.micrometre:
-        return value.toMicrometre;
-      case LengthUnit.millimetre:
-        return value.toMillimetre;
-      case LengthUnit.nanometre:
-        return value.toNanometre;
+      case LengthUnit.micrometer:
+        return value.toMicrometer;
+      case LengthUnit.millimeter:
+        return value.toMillimeter;
+      case LengthUnit.nanometer:
+        return value.toNanometer;
       case LengthUnit.nauticalMile:
         return value.toNauticalMile;
       case LengthUnit.yard:
         return value.toYard;
-      case LengthUnit.kilometre:
-        return value.toKilometre;
-      case LengthUnit.centimetre:
-        return value.toCentimetre;
-      case LengthUnit.metre:
+      case LengthUnit.kilometer:
+        return value.toKilometer;
+      case LengthUnit.centimeter:
+        return value.toCentimeter;
+      case LengthUnit.meter:
         return value;
       default:
         throw UnsupportedError('We currently do not support this combinaison');
@@ -67,7 +67,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     bool withUnit = true,
     bool shortUnit = true,
     NumberFormat customNumberFormat,
-    LengthUnit toInternationalUnit = LengthUnit.kilometre,
+    LengthUnit toInternationalUnit = LengthUnit.kilometer,
     LengthUnit toImperialUnit = LengthUnit.mile,
     LengthUnit toUsUnit = LengthUnit.mile,
   }) =>

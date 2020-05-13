@@ -120,7 +120,7 @@ class InternationalSystemLocalizations {
 
   @Deprecated('Use length.unit instead')
   LengthUnit lengthUnit(UnitSystem unitSystem,
-      {LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      {LengthUnit toInternationalUnit = LengthUnit.kilometer,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
     switch (unitSystem) {
       case UnitSystem.imperial:
@@ -144,9 +144,9 @@ class InternationalSystemLocalizations {
         }
         break;
       default:
-        if (lengthUnit == LengthUnit.kilometre) {
+        if (lengthUnit == LengthUnit.kilometer) {
           return 'km';
-        } else if (lengthUnit == LengthUnit.metre) {
+        } else if (lengthUnit == LengthUnit.meter) {
           return localeMetre(length);
         }
         break;
@@ -156,7 +156,7 @@ class InternationalSystemLocalizations {
 
   @Deprecated('Use length.localeNumber instead')
   num localeLengthNumber(num lengthInMetre, UnitSystem unitSystem,
-      {LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      {LengthUnit toInternationalUnit = LengthUnit.kilometer,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
     num distance;
     switch (unitSystem) {
@@ -172,8 +172,8 @@ class InternationalSystemLocalizations {
         break;
       default:
         distance = lengthInMetre;
-        if (toInternationalUnit == LengthUnit.kilometre) {
-          distance = lengthInMetre.toKilometre;
+        if (toInternationalUnit == LengthUnit.kilometer) {
+          distance = lengthInMetre.toKilometer;
         } else {
           distance = lengthInMetre;
         }
@@ -186,7 +186,7 @@ class InternationalSystemLocalizations {
   String localeLength(num lengthInMetre, UnitSystem unitSystem,
       {bool withUnit = true,
       NumberFormat customNumberFormat,
-      LengthUnit toInternationalUnit = LengthUnit.kilometre,
+      LengthUnit toInternationalUnit = LengthUnit.kilometer,
       LengthUnit toImperialOrUsUnit = LengthUnit.mile}) {
     final distance = localeLengthNumber(lengthInMetre, unitSystem,
         toInternationalUnit: toInternationalUnit,

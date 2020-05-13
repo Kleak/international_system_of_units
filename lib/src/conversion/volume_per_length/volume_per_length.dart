@@ -2,7 +2,7 @@ import 'package:international_system_of_units/src/conversion/length/internationa
 import 'package:international_system_of_units/src/conversion/volume/international_system.dart';
 
 extension ISVolumePerLength on num {
-  num get toLiterPerKilometer => toMeter(LengthUnit.kilometre);
+  num get toLiterPerKilometer => toMeter(LengthUnit.kilometer);
   num get toUsGallonPerMile => toUSLiquidGallon.toMeter(LengthUnit.mile);
   num get toImperialGallonPerMile => toImperialGallon.toMeter(LengthUnit.mile);
 
