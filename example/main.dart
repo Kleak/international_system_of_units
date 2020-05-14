@@ -8,5 +8,8 @@ void main(List<String> arguments) async {
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
 
-  print(1.toGram.toKilogram(MassUnit.gram));
+  final kilogramPerMeter = 5;
+
+  print(kilogramPerMeter.toGramPerMile);
+  print(8.047e6);
 }

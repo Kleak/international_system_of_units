@@ -2,15 +2,16 @@ import 'package:international_system_of_units/src/conversion/length/internationa
 import 'package:international_system_of_units/src/conversion/mass/international_system.dart';
 
 extension ISMassPerLength on num {
+  num get toGramPerMeter => toGram;
   num get toGramPerMile => toMeter(LengthUnit.mile).toGram;
   num get toGramPerKilometer => toMeter(LengthUnit.kilometer).toGram;
 
-  num toGramPerMeter(MassPerLengthUnit unit) {
+  num toKilogramPerMeter(MassPerLengthUnit unit) {
     switch (unit) {
       case MassPerLengthUnit.gramPerMeter:
-        return toKilogram(MassUnit.gram);
+        return toGram;
       case MassPerLengthUnit.gramPerMile:
-        return toKilogram(MassUnit.gram).toMile;
+        return toGram.toMeter(LengthUnit.mile);
       case MassPerLengthUnit.kilogramPerKilometer:
         return toKilometer;
       default:
