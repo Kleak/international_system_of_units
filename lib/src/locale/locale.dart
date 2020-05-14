@@ -1,6 +1,7 @@
 import 'package:international_system_of_units/src/conversion/length/international_system.dart';
 import 'package:international_system_of_units/src/conversion/volume/international_system.dart';
 import 'package:international_system_of_units/src/i18n/messages_all.dart';
+import 'package:international_system_of_units/src/locale/length_per_time.dart';
 import 'package:international_system_of_units/src/locale/length_per_volume.dart';
 import 'package:international_system_of_units/src/locale/mass.dart';
 import 'package:international_system_of_units/src/locale/time.dart';
@@ -27,7 +28,8 @@ class InternationalSystemLocalizations {
   LocaleMass mass;
   LocaleTime time;
   LocaleVolumePerLength volumePerLength;
-  LocaleLengthPerVolume lengthPerVolume;
+  // LocaleLengthPerVolume lengthPerVolume;
+  // LocaleLengthPerTime lengthPerTime;
 
   InternationalSystemLocalizations(Locale locale)
       : _localeName = Intl.canonicalizedLocale(locale.toString()),
@@ -39,8 +41,10 @@ class InternationalSystemLocalizations {
     time = LocaleTime(_numberFormat, _localeName);
     volumePerLength =
         LocaleVolumePerLength(_numberFormat, _localeName, volume, length);
-    lengthPerVolume =
-        LocaleLengthPerVolume(_numberFormat, _localeName, volume, length);
+    // lengthPerVolume =
+    // LocaleLengthPerVolume(_numberFormat, _localeName, volume, length);
+    // lengthPerTime =
+    // LocaleLengthPerTime(_numberFormat, _localeName, length, time);
   }
 
   @Deprecated('Use volumeByLength.localeVolumeByLengthUnit instead')
