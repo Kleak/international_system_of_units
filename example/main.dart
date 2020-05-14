@@ -8,8 +8,8 @@ void main(List<String> arguments) async {
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
 
-  final kilogramPerMeter = 5;
-
-  print(kilogramPerMeter.toGramPerMile);
-  print(8.047e6);
+  print(0.toCelsius);
+  print(0.toFahrenheit);
+  print(0.toRankine);
+  print(0.toRomer);
 }
