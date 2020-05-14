@@ -136,7 +136,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
 
   String localeMonthAbbreviation(num time) => Intl.plural(
         time,
-        name: 'localeMonth',
+        name: 'localeMonthAbbreviation',
         zero: 'mo',
         one: 'mo',
         other: 'mos',
@@ -206,7 +206,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
 
   String localeMicrosecond(num time) => Intl.plural(
         time,
-        name: 'localeSecond',
+        name: 'localeMicrosecond',
         zero: 'microsecond',
         one: 'microsecond',
         other: 'microseconds',

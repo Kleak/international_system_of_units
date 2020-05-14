@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-14T18:43:20.869833",
+  "@@last_modified": "2020-05-14T22:47:43.529507",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -49,8 +49,50 @@
       "value": {}
     }
   },
-  "localeSecond": "{time,plural, =0{seconds}=1{second}other{seconds}}",
-  "@localeSecond": {
+  "localeCentury": "{time,plural, =0{centuries}=1{century}other{centuries}}",
+  "@localeCentury": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeDecade": "{time,plural, =0{decades}=1{decade}other{decades}}",
+  "@localeDecade": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeYear": "{time,plural, =0{year}=1{year}other{years}}",
+  "@localeYear": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMonth": "{time,plural, =0{month}=1{month}other{months}}",
+  "@localeMonth": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMonthAbbreviation": "{time,plural, =0{mo}=1{mo}other{mos}}",
+  "@localeMonthAbbreviation": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeWeek": "{time,plural, =0{week}=1{week}other{weeks}}",
+  "@localeWeek": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeDay": "{time,plural, =0{days}=1{day}other{days}}",
+  "@localeDay": {
     "type": "text",
     "placeholders": {
       "time": {}
@@ -63,8 +105,29 @@
       "time": {}
     }
   },
-  "localeDay": "{time,plural, =0{days}=1{day}other{days}}",
-  "@localeDay": {
+  "localeMinute": "{time,plural, =0{minute}=1{minute}other{minutes}}",
+  "@localeMinute": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeSecond": "{time,plural, =0{seconds}=1{second}other{seconds}}",
+  "@localeSecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMillisecond": "{time,plural, =0{millisecond}=1{millisecond}other{milliseconds}}",
+  "@localeMillisecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMicrosecond": "{time,plural, =0{microsecond}=1{microsecond}other{microseconds}}",
+  "@localeMicrosecond": {
     "type": "text",
     "placeholders": {
       "time": {}
