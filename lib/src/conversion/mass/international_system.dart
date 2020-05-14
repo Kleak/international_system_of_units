@@ -18,10 +18,8 @@ extension ISMass on num {
     switch (from) {
       case MassUnit.tonnes:
         return this * 1e+6;
-      case MassUnit.kilogram:
-        return this * 1000;
       case MassUnit.gram:
-        return this;
+        return this / 1000;
       case MassUnit.milligram:
         return this * 0.001;
       case MassUnit.microgram:

@@ -7,4 +7,6 @@ void main(List<String> arguments) async {
   final sIi18n =
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
+
+  print(1.toGram.toKilogram(MassUnit.gram));
 }
