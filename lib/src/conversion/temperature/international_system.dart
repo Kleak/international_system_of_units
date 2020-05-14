@@ -7,6 +7,14 @@ extension ISTemperature on num {
 
   num toKelvin(TemperatureUnit unit) {
     switch (unit) {
+      case TemperatureUnit.celsius:
+        return this + 273.15;
+      case TemperatureUnit.fahrenheit:
+        return (this - 32) * 5 / 9 + 273.15;
+      case TemperatureUnit.rankine:
+        return this * 5 / 9;
+      case TemperatureUnit.romer:
+        return (this - 7.5) * 40 / 21 + 273.15;
       default:
         return this;
     }
@@ -18,4 +26,5 @@ enum TemperatureUnit {
   fahrenheit,
   rankine,
   romer,
+  kelvin,
 }

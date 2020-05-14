@@ -3,13 +3,15 @@ import 'package:intl/intl.dart';
 import 'package:intl/locale.dart';
 
 void main(List<String> arguments) async {
-  final language = 'fr_FR';
+  final language = 'en_US';
   final sIi18n =
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
 
+  //  Temperature
   print(0.toCelsius);
   print(0.toFahrenheit);
+  print(0.toKelvin(TemperatureUnit.celsius));
   print(0.toRankine);
-  print(0.toRomer);
+  print(1.toKelvin(TemperatureUnit.romer));
 }
