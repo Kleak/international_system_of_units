@@ -24,6 +24,8 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
         return value;
       case VolumePerLengthUnit.literPerKilometer:
         return value.toLiterPerKilometer;
+      case VolumePerLengthUnit.literPer100Kilometer:
+        return value.toLiterPer100Kilometer;
       case VolumePerLengthUnit.usGallonPerMile:
         return value.toUsGallonPerMile;
       case VolumePerLengthUnit.imperialGallonPerMile:
@@ -49,6 +51,8 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
         return shortUnit ? 'l/m' : localeLitersPerMeters(value);
       case VolumePerLengthUnit.literPerKilometer:
         return shortUnit ? 'l/km' : localeLitersPerKilometers(value);
+      case VolumePerLengthUnit.literPer100Kilometer:
+        return shortUnit ? 'l/100km' : localeLitersPer100Kilometers(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -102,6 +106,12 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
     return _intlLitersPerKilometers(liters, kilometers);
   }
 
+  String localeLitersPer100Kilometers(num value) {
+    final liters = _volume.localeLiter(value);
+    final kilometers = _length.localeKilometer(100);
+    return _intlLitersPer100Kilometers(liters, kilometers);
+  }
+
   String _intlImperialGallonsPerMiles(String gallons, String miles) =>
       Intl.message(
         'imp $gallons per $miles',
@@ -128,6 +138,14 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
       Intl.message(
         '$liters per $kilometers',
         name: '_intlLitersPerKilometers',
+        args: [liters, kilometers],
+        locale: _localeName,
+      );
+
+  String _intlLitersPer100Kilometers(String liters, String kilometers) =>
+      Intl.message(
+        '$liters per 100 $kilometers',
+        name: '_intlLitersPer100Kilometers',
         args: [liters, kilometers],
         locale: _localeName,
       );

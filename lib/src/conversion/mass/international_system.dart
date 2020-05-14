@@ -1,9 +1,9 @@
-/// num is in gram
+/// num is in kilogram
 extension ISMass on num {
   num get toTonnes => this * 0.000001;
-  num get toKilogram => this * 0.001;
   num get toMilligram => this * 1000;
   num get toMicrogram => this * 1e+6;
+  num get toGram => this * 1000;
 
   num get toImperialTon => this * 9.8421e-7;
   num get toUSTon => this * 1.1023e-6;
@@ -13,8 +13,8 @@ extension ISMass on num {
 
   num get usTon => this * 1e-6;
 
-  //  convert the num to gram base on its mass unit
-  num toGram(MassUnit from) {
+  //  convert the num to kilogram base on its mass unit
+  num toKilogram(MassUnit from) {
     switch (from) {
       case MassUnit.tonnes:
         return this * 1e+6;

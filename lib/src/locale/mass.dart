@@ -13,11 +13,11 @@ class LocaleMass extends LocaleBase<MassUnit> {
   num localeNumberBase(num value, MassUnit unit) {
     switch (unit) {
       case MassUnit.gram:
-        return value;
+        return value.toGram;
       case MassUnit.imperialTon:
         return value.toImperialTon;
       case MassUnit.kilogram:
-        return value.toKilogram;
+        return value;
       case MassUnit.microgram:
         return value.toMicrogram;
       case MassUnit.milligram:

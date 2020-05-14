@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-13T15:09:49.086888",
+  "@@last_modified": "2020-05-14T18:43:20.869833",
   "localeMile": "{length,plural, =0{miles}=1{mile}other{miles}}",
   "@localeMile": {
     "type": "text",
@@ -110,6 +110,14 @@
   },
   "_intlLitersPerKilometers": "{liters} per {kilometers}",
   "@_intlLitersPerKilometers": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "kilometers": {}
+    }
+  },
+  "_intlLitersPer100Kilometers": "{liters} per 100 {kilometers}",
+  "@_intlLitersPer100Kilometers": {
     "type": "text",
     "placeholders": {
       "liters": {},
