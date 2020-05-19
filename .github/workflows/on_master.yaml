@@ -1,7 +1,7 @@
 name: Ci on pull request
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
