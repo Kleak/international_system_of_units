@@ -19,5 +19,5 @@ jobs:
         run: dartfmt -n --set-exit-if-changed .
       - name: Dart analyze
         run: dartanalyzer --options=analysis_options.yaml --fatal-hints --fatal-warnings .
-      - name: Run tests
-        run: pub run test
+      - name: Run test with coverage
+       runt pub run test --coverage coverage
