@@ -39,7 +39,7 @@ extension ISVolume on num {
         return this * 0.0147868;
       case VolumeUnit.usTeaspoon:
         return this * 0.00492892;
-      case VolumeUnit.millilitres:
+      case VolumeUnit.milliliters:
         return this * 0.001;
       case VolumeUnit.litres:
         return this;
@@ -77,7 +77,7 @@ enum VolumeUnit {
   usFluidOunces,
   usTablespoon,
   usTeaspoon,
-  millilitres,
+  milliliters,
   litres,
   imperialGallons,
   imperialQuart,

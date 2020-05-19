@@ -45,12 +45,22 @@ class LocaleMass extends LocaleBase<MassUnit> {
     bool shortUnit = true,
   }) {
     switch (unit) {
+      case MassUnit.microgram:
+        return shortUnit ? 'μg' : localeMicrograms(value);
+      case MassUnit.milligram:
+        return shortUnit ? 'mg' : localeMilligrams(value);
+      case MassUnit.gram:
+        return shortUnit ? 'g' : localeGrams(value);
       case MassUnit.kilogram:
         return shortUnit ? 'kg' : localeKilograms(value);
       case MassUnit.tonnes:
       case MassUnit.usTon:
       case MassUnit.imperialTon:
         return shortUnit ? 't' : localeTons(value);
+      case MassUnit.ounce:
+        return shortUnit ? 'oz' : localeOunce(value);
+      case MassUnit.stone:
+        return shortUnit ? 'st.' : localeStone(value);
       case MassUnit.pound:
         return shortUnit ? 'lb' : localePounds(value);
       default:
@@ -82,12 +92,62 @@ class LocaleMass extends LocaleBase<MassUnit> {
         toInternationalUnit: toInternationalUnit,
       );
 
+  String localeMicrograms(num value) => Intl.plural(
+        value,
+        name: 'localeMicrograms',
+        zero: 'micrograms',
+        one: 'microgram',
+        other: 'micrograms',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeMilligrams(num value) => Intl.plural(
+        value,
+        name: 'localeMilligrams',
+        zero: 'milligrams',
+        one: 'milligram',
+        other: 'milligrams',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeGrams(num value) => Intl.plural(
+        value,
+        name: 'localeGrams',
+        zero: 'grams',
+        one: 'gram',
+        other: 'grams',
+        args: [value],
+        locale: _localeName,
+      );
+
   String localeTons(num value) => Intl.plural(
         value,
         name: 'localeTons',
         zero: 'tons',
         one: 'ton',
         other: 'tons',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeOunce(num value) => Intl.plural(
+        value,
+        name: 'localeOunce',
+        zero: 'ounces',
+        one: 'ounce',
+        other: 'ounces',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeStone(num value) => Intl.plural(
+        value,
+        name: 'localeStone',
+        zero: 'stones',
+        one: 'stone',
+        other: 'stones',
         args: [value],
         locale: _localeName,
       );
@@ -108,16 +168,6 @@ class LocaleMass extends LocaleBase<MassUnit> {
         zero: 'kilograms',
         one: 'kilogram',
         other: 'kilograms',
-        args: [value],
-        locale: _localeName,
-      );
-
-  String localeGrams(num value) => Intl.plural(
-        value,
-        name: 'localeGrams',
-        zero: 'grams',
-        one: 'gram',
-        other: 'grams',
         args: [value],
         locale: _localeName,
       );

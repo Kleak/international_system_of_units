@@ -1,7 +1,7 @@
-name: Ci on pull request
+name: Ci on master
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
@@ -15,9 +15,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: pub get
-      - name: Check format
-        run: dartfmt -n --set-exit-if-changed .
-      - name: Dart analyze
-        run: dartanalyzer --options=analysis_options.yaml --fatal-hints --fatal-warnings .
       - name: Run test with coverage
         run: pub run test --coverage coverage
