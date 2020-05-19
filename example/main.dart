@@ -14,4 +14,13 @@ void main(List<String> arguments) async {
   print(0.toKelvin(TemperatureUnit.celsius));
   print(0.toRankine);
   print(1.toKelvin(TemperatureUnit.romer));
+
+  sIi18n.fuelEconomy.locale(
+    4.toLiterPerMeter(VolumePerLengthUnit.literPer100Kilometer),
+    UnitSystem.eu,
+    shortUnit: true,
+    toEuUnit: FuelEconomyUnit.litersPer100Kilometers,
+    toUsUnit: FuelEconomyUnit.milesPerUsGallons,
+    toImperialUnit: FuelEconomyUnit.milesPerImperialGallons,
+  );
 }
