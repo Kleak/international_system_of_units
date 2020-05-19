@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: pub get
       - name: Check format
-        run: dartfmt -n --set-exit-if-changed -l 160 .
+        run: dartfmt -n --set-exit-if-changed .
       - name: Dart analyze
         run: dartanalyzer --options=analysis_options.yaml --fatal-hints --fatal-warnings .
       - name: Run tests
