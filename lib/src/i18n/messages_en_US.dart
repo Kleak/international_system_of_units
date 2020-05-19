@@ -80,85 +80,127 @@ class MessageLookup extends MessageLookupByLibrary {
   static m20(time) =>
       "${Intl.plural(time, zero: 'centuries', one: 'century', other: 'centuries')}";
 
-  static m21(time) =>
-      "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
+  static m21(volume) =>
+      "${Intl.plural(volume, zero: 'cubic foot', one: 'cubic foot', other: 'cubic foot')}";
 
-  static m22(time) =>
-      "${Intl.plural(time, zero: 'decades', one: 'decade', other: 'decades')}";
+  static m22(volume) =>
+      "${Intl.plural(volume, zero: 'cubic inch', one: 'cubic inch', other: 'cubic inch')}";
 
-  static m23(value) =>
-      "${Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit')}";
+  static m23(volume) =>
+      "${Intl.plural(volume, zero: 'cubic meter', one: 'cubic meter', other: 'cubic meter')}";
 
   static m24(volume) =>
-      "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
+      "${Intl.plural(volume, zero: 'cups', one: 'cup', other: 'cups')}";
 
-  static m25(value) =>
-      "${Intl.plural(value, zero: 'grams', one: 'gram', other: 'grams')}";
+  static m25(time) =>
+      "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
 
   static m26(time) =>
+      "${Intl.plural(time, zero: 'decades', one: 'decade', other: 'decades')}";
+
+  static m27(value) =>
+      "${Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit')}";
+
+  static m28(volume) =>
+      "${Intl.plural(volume, zero: 'fluid ounces', one: 'fluid ounce', other: 'fluid ounces')}";
+
+  static m29(volume) =>
+      "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
+
+  static m30(value) =>
+      "${Intl.plural(value, zero: 'grams', one: 'gram', other: 'grams')}";
+
+  static m31(time) =>
       "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
 
-  static m27(length) =>
+  static m32(length) =>
       "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m28(value) =>
+  static m33(value) =>
       "${Intl.plural(value, zero: 'kelvin', one: 'kelvin', other: 'kelvins')}";
 
-  static m29(value) =>
+  static m34(value) =>
       "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
 
-  static m30(length) =>
+  static m35(length) =>
       "${Intl.plural(length, zero: 'kilometers', one: 'kilometer', other: 'kilometers')}";
 
-  static m31(value) =>
+  static m36(value) =>
       "${Intl.plural(value, zero: 'knots', one: 'knot', other: 'knots')}";
 
-  static m32(volume) =>
+  static m37(volume) =>
       "${Intl.plural(volume, zero: 'liters', one: 'liter', other: 'liters')}";
 
-  static m33(length) =>
+  static m38(length) =>
       "${Intl.plural(length, zero: 'meters', one: 'meter', other: 'meters')}";
 
-  static m34(time) =>
+  static m39(value) =>
+      "${Intl.plural(value, zero: 'micrograms', one: 'microgram', other: 'micrograms')}";
+
+  static m40(time) =>
       "${Intl.plural(time, zero: 'microsecond', one: 'microsecond', other: 'microseconds')}";
 
-  static m35(length) =>
+  static m41(length) =>
       "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
 
-  static m36(time) =>
-      "${Intl.plural(time, zero: 'millisecond', one: 'millisecond', other: 'milliseconds')}";
-
-  static m37(time) =>
-      "${Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes')}";
-
-  static m38(time) =>
-      "${Intl.plural(time, zero: 'month', one: 'month', other: 'months')}";
-
-  static m39(time) =>
-      "${Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos')}";
-
-  static m40(value) =>
-      "${Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals')}";
-
-  static m41(value) =>
-      "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
-
   static m42(value) =>
-      "${Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines')}";
+      "${Intl.plural(value, zero: 'milligrams', one: 'milligram', other: 'milligrams')}";
 
-  static m43(value) =>
-      "${Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer')}";
+  static m43(volume) =>
+      "${Intl.plural(volume, zero: 'milliliters', one: 'milliliter', other: 'milliliters')}";
 
   static m44(time) =>
-      "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+      "${Intl.plural(time, zero: 'millisecond', one: 'millisecond', other: 'milliseconds')}";
 
-  static m45(value) =>
-      "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
+  static m45(time) =>
+      "${Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes')}";
 
   static m46(time) =>
-      "${Intl.plural(time, zero: 'week', one: 'week', other: 'weeks')}";
+      "${Intl.plural(time, zero: 'month', one: 'month', other: 'months')}";
 
   static m47(time) =>
+      "${Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos')}";
+
+  static m48(value) =>
+      "${Intl.plural(value, zero: 'ounces', one: 'ounce', other: 'ounces')}";
+
+  static m49(value) =>
+      "${Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals')}";
+
+  static m50(volume) =>
+      "${Intl.plural(volume, zero: 'pint', one: 'pint', other: 'pints')}";
+
+  static m51(value) =>
+      "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+
+  static m52(volume) =>
+      "${Intl.plural(volume, zero: 'quarts', one: 'quart', other: 'quarts')}";
+
+  static m53(value) =>
+      "${Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines')}";
+
+  static m54(value) =>
+      "${Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer')}";
+
+  static m55(time) =>
+      "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+
+  static m56(value) =>
+      "${Intl.plural(value, zero: 'stones', one: 'stone', other: 'stones')}";
+
+  static m57(volume) =>
+      "${Intl.plural(volume, zero: 'tablespoon', one: 'tablespoon', other: 'tablespoons')}";
+
+  static m58(volume) =>
+      "${Intl.plural(volume, zero: 'teaspoon', one: 'teaspoon', other: 'teaspoons')}";
+
+  static m59(value) =>
+      "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
+
+  static m60(time) =>
+      "${Intl.plural(time, zero: 'week', one: 'week', other: 'weeks')}";
+
+  static m61(time) =>
       "${Intl.plural(time, zero: 'year', one: 'year', other: 'years')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -184,32 +226,46 @@ class MessageLookup extends MessageLookupByLibrary {
         "localeBars": m18,
         "localeCelsius": m19,
         "localeCentury": m20,
-        "localeDay": m21,
-        "localeDecade": m22,
-        "localeFahrenheit": m23,
-        "localeGallons": m24,
-        "localeGrams": m25,
-        "localeHour": m26,
-        "localeInches": m27,
-        "localeKelvin": m28,
-        "localeKilograms": m29,
-        "localeKilometers": m30,
-        "localeKnots": m31,
-        "localeLiters": m32,
-        "localeMeters": m33,
-        "localeMicrosecond": m34,
-        "localeMiles": m35,
-        "localeMillisecond": m36,
-        "localeMinute": m37,
-        "localeMonth": m38,
-        "localeMonthAbbreviation": m39,
-        "localePascals": m40,
-        "localePounds": m41,
-        "localeRankine": m42,
-        "localeRomer": m43,
-        "localeSecond": m44,
-        "localeTons": m45,
-        "localeWeek": m46,
-        "localeYear": m47
+        "localeCubicFoot": m21,
+        "localeCubicInch": m22,
+        "localeCubicMeter": m23,
+        "localeCup": m24,
+        "localeDay": m25,
+        "localeDecade": m26,
+        "localeFahrenheit": m27,
+        "localeFluidOunces": m28,
+        "localeGallons": m29,
+        "localeGrams": m30,
+        "localeHour": m31,
+        "localeInches": m32,
+        "localeKelvin": m33,
+        "localeKilograms": m34,
+        "localeKilometers": m35,
+        "localeKnots": m36,
+        "localeLiters": m37,
+        "localeMeters": m38,
+        "localeMicrograms": m39,
+        "localeMicrosecond": m40,
+        "localeMiles": m41,
+        "localeMilligrams": m42,
+        "localeMilliliters": m43,
+        "localeMillisecond": m44,
+        "localeMinute": m45,
+        "localeMonth": m46,
+        "localeMonthAbbreviation": m47,
+        "localeOunce": m48,
+        "localePascals": m49,
+        "localePint": m50,
+        "localePounds": m51,
+        "localeQuart": m52,
+        "localeRankine": m53,
+        "localeRomer": m54,
+        "localeSecond": m55,
+        "localeStone": m56,
+        "localeTablespoon": m57,
+        "localeTeaspoon": m58,
+        "localeTons": m59,
+        "localeWeek": m60,
+        "localeYear": m61
       };
 }
