@@ -145,9 +145,9 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localeStone(num value) => Intl.plural(
         value,
         name: 'localeStone',
-        zero: 'stone',
+        zero: 'stones',
         one: 'stone',
-        other: 'stone',
+        other: 'stones',
         args: [value],
         locale: _localeName,
       );
