@@ -43,6 +43,30 @@ class LocalePressure extends LocaleBase<PressureUnit> {
     }
   }
 
+  @override
+  String locale(
+    num value,
+    UnitSystem unitSystem, {
+    bool withUnit = true,
+    bool shortUnit = true,
+    NumberFormat customNumberFormat,
+    PressureUnit toInternationalUnit = PressureUnit.pascal,
+    PressureUnit toEuUnit = PressureUnit.pascal,
+    PressureUnit toImperialUnit = PressureUnit.poundForcePerSquareInch,
+    PressureUnit toUsUnit = PressureUnit.poundForcePerSquareInch,
+  }) =>
+      super.locale(
+        value,
+        unitSystem,
+        withUnit: withUnit,
+        shortUnit: shortUnit,
+        customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
+        toImperialUnit: toImperialUnit,
+        toInternationalUnit: toInternationalUnit,
+      );
+
   String localePascals(num value) => Intl.plural(
         value,
         name: 'localePascals',

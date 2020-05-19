@@ -50,6 +50,30 @@ class LocaleTemperature extends LocaleBase<TemperatureUnit> {
     }
   }
 
+  @override
+  String locale(
+    num value,
+    UnitSystem unitSystem, {
+    bool withUnit = true,
+    bool shortUnit = true,
+    NumberFormat customNumberFormat,
+    TemperatureUnit toInternationalUnit = TemperatureUnit.kelvin,
+    TemperatureUnit toEuUnit = TemperatureUnit.celsius,
+    TemperatureUnit toImperialUnit = TemperatureUnit.fahrenheit,
+    TemperatureUnit toUsUnit = TemperatureUnit.fahrenheit,
+  }) =>
+      super.locale(
+        value,
+        unitSystem,
+        withUnit: withUnit,
+        shortUnit: shortUnit,
+        customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
+        toImperialUnit: toImperialUnit,
+        toInternationalUnit: toInternationalUnit,
+      );
+
   String localeCelsius(num value) => Intl.plural(
         value,
         name: 'localeCelsius',
