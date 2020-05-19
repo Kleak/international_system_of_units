@@ -34,7 +34,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
         return value.toImperialTeaspoon;
       case VolumeUnit.litres:
         return value;
-      case VolumeUnit.millilitres:
+      case VolumeUnit.milliliters:
         return value.toMilliliters;
       case VolumeUnit.usFluidOunces:
         return value.toUSFluidOunces;
