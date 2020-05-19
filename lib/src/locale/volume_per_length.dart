@@ -67,6 +67,7 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
     NumberFormat customNumberFormat,
     VolumePerLengthUnit toInternationalUnit =
         VolumePerLengthUnit.literPerKilometer,
+    VolumePerLengthUnit toEuUnit = VolumePerLengthUnit.literPerKilometer,
     VolumePerLengthUnit toImperialUnit =
         VolumePerLengthUnit.imperialGallonPerMile,
     VolumePerLengthUnit toUsUnit = VolumePerLengthUnit.usGallonPerMile,
@@ -76,39 +77,40 @@ class LocaleVolumePerLength extends LocaleBase<VolumePerLengthUnit> {
         unitSystem,
         withUnit: withUnit,
         shortUnit: shortUnit,
-        toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
         toImperialUnit: toImperialUnit,
         toInternationalUnit: toInternationalUnit,
       );
 
   String localeImperialGallonsPerMiles(num value) {
-    final gallons = _volume.localeGallon(value);
-    final miles = _length.localeMile(0);
+    final gallons = _volume.localeGallons(value);
+    final miles = _length.localeMiles(0);
     return _intlImperialGallonsPerMiles(gallons, miles);
   }
 
   String localeUsGallonsPerMiles(num value) {
-    final gallons = _volume.localeGallon(value);
-    final miles = _length.localeMile(0);
+    final gallons = _volume.localeGallons(value);
+    final miles = _length.localeMiles(0);
     return _intlUsGallonsPerMiles(gallons, miles);
   }
 
   String localeLitersPerMeters(num value) {
-    final liters = _volume.localeLiter(value);
-    final meters = _length.localeMeter(2);
+    final liters = _volume.localeLiters(value);
+    final meters = _length.localeMeters(2);
     return _intlLitersPerMeters(liters, meters);
   }
 
   String localeLitersPerKilometers(num value) {
-    final liters = _volume.localeLiter(value);
-    final kilometers = _length.localeKilometer(2);
+    final liters = _volume.localeLiters(value);
+    final kilometers = _length.localeKilometers(2);
     return _intlLitersPerKilometers(liters, kilometers);
   }
 
   String localeLitersPer100Kilometers(num value) {
-    final liters = _volume.localeLiter(value);
-    final kilometers = _length.localeKilometer(100);
+    final liters = _volume.localeLiters(value);
+    final kilometers = _length.localeKilometers(100);
     return _intlLitersPer100Kilometers(liters, kilometers);
   }
 

@@ -18,13 +18,13 @@ class LocaleLength extends LocaleBase<LengthUnit> {
   }) {
     switch (unit) {
       case LengthUnit.kilometer:
-        return shortUnit ? 'km' : localeKilometer(value);
+        return shortUnit ? 'km' : localeKilometers(value);
       case LengthUnit.meter:
-        return shortUnit ? 'm' : localeMeter(value);
+        return shortUnit ? 'm' : localeMeters(value);
       case LengthUnit.mile:
-        return shortUnit ? 'mi' : localeMile(value);
+        return shortUnit ? 'mi' : localeMiles(value);
       case LengthUnit.inch:
-        return shortUnit ? 'in' : localeInch(value);
+        return shortUnit ? 'in' : localeInches(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -70,21 +70,23 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     LengthUnit toInternationalUnit = LengthUnit.kilometer,
     LengthUnit toImperialUnit = LengthUnit.mile,
     LengthUnit toUsUnit = LengthUnit.mile,
+    LengthUnit toEuUnit = LengthUnit.kilometer,
   }) =>
       super.locale(
         value,
         unitSystem,
         withUnit: withUnit,
-        toUsUnit: toUsUnit,
         shortUnit: shortUnit,
         customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
         toImperialUnit: toImperialUnit,
         toInternationalUnit: toInternationalUnit,
       );
 
-  String localeMile(num length) => Intl.plural(
+  String localeMiles(num length) => Intl.plural(
         length,
-        name: 'localeMile',
+        name: 'localeMiles',
         zero: 'miles',
         one: 'mile',
         other: 'miles',
@@ -92,9 +94,9 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         locale: _localeName,
       );
 
-  String localeInch(num length) => Intl.plural(
+  String localeInches(num length) => Intl.plural(
         length,
-        name: 'localeInch',
+        name: 'localeInches',
         zero: 'inches',
         one: 'inche',
         other: 'inches',
@@ -102,9 +104,9 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         locale: _localeName,
       );
 
-  String localeMeter(num length) => Intl.plural(
+  String localeMeters(num length) => Intl.plural(
         length,
-        name: 'localeMeter',
+        name: 'localeMeters',
         zero: 'meters',
         one: 'meter',
         other: 'meters',
@@ -112,9 +114,9 @@ class LocaleLength extends LocaleBase<LengthUnit> {
         locale: _localeName,
       );
 
-  String localeKilometer(num length) => Intl.plural(
+  String localeKilometers(num length) => Intl.plural(
         length,
-        name: 'localeKilometer',
+        name: 'localeKilometers',
         zero: 'kilometers',
         one: 'kilometer',
         other: 'kilometers',

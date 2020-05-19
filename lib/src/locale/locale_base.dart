@@ -9,6 +9,7 @@ abstract class LocaleBase<Unit> {
   Unit unit(
     UnitSystem unitSystem, {
     Unit toInternationalUnit,
+    Unit toEuUnit,
     Unit toImperialUnit,
     Unit toUsUnit,
   }) {
@@ -17,6 +18,8 @@ abstract class LocaleBase<Unit> {
         return toImperialUnit;
       case UnitSystem.us:
         return toUsUnit;
+      case UnitSystem.eu:
+        return toEuUnit;
       default:
         return toInternationalUnit;
     }
@@ -35,12 +38,15 @@ abstract class LocaleBase<Unit> {
     Unit toInternationalUnit,
     Unit toImperialUnit,
     Unit toUsUnit,
+    Unit toEuUnit,
   }) {
     switch (unitSystem) {
       case UnitSystem.imperial:
         return localeNumberBase(value, toImperialUnit);
       case UnitSystem.us:
         return localeNumberBase(value, toUsUnit);
+      case UnitSystem.eu:
+        return localeNumberBase(value, toEuUnit);
       default:
         return localeNumberBase(value, toInternationalUnit);
     }
@@ -57,6 +63,7 @@ abstract class LocaleBase<Unit> {
     Unit toInternationalUnit,
     Unit toImperialUnit,
     Unit toUsUnit,
+    Unit toEuUnit,
   }) {
     final _number = localeNumber(
       value,
@@ -64,12 +71,14 @@ abstract class LocaleBase<Unit> {
       toInternationalUnit: toInternationalUnit,
       toImperialUnit: toImperialUnit,
       toUsUnit: toUsUnit,
+      toEuUnit: toEuUnit,
     );
     final _unit = unit(
       unitSystem,
       toInternationalUnit: toInternationalUnit,
       toImperialUnit: toImperialUnit,
       toUsUnit: toUsUnit,
+      toEuUnit: toEuUnit,
     );
     final sb =
         StringBuffer((customNumberFormat ?? _numberFormat).format(_number));

@@ -39,13 +39,13 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
   }) {
     switch (unit) {
       case LengthPerVolumeUnit.kilometerPerLiter:
-        return shortUnit ? 'km/l' : localeKilometerPerLiter(value);
+        return shortUnit ? 'km/l' : localeKilometersPerLiters(value);
       case LengthPerVolumeUnit.meterPerLiter:
-        return shortUnit ? 'm/l' : localeMeterPerLiter(value);
+        return shortUnit ? 'm/l' : localeMetersPerLiters(value);
       case LengthPerVolumeUnit.milePerImperialGallon:
-        return shortUnit ? 'mpg' : localeMilePerImperialGallon(value);
+        return shortUnit ? 'mpg' : localeMilesPerImperialGallons(value);
       case LengthPerVolumeUnit.milePerUsGallon:
-        return shortUnit ? 'mpg' : localeMilePerUsGallon(value);
+        return shortUnit ? 'mpg' : localeMilesPerUsGallons(value);
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -60,6 +60,7 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
     NumberFormat customNumberFormat,
     LengthPerVolumeUnit toInternationalUnit =
         LengthPerVolumeUnit.kilometerPerLiter,
+    LengthPerVolumeUnit toEuUnit = LengthPerVolumeUnit.kilometerPerLiter,
     LengthPerVolumeUnit toImperialUnit =
         LengthPerVolumeUnit.milePerImperialGallon,
     LengthPerVolumeUnit toUsUnit = LengthPerVolumeUnit.milePerUsGallon,
@@ -69,34 +70,35 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
         unitSystem,
         withUnit: withUnit,
         shortUnit: shortUnit,
-        toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
         toImperialUnit: toImperialUnit,
         toInternationalUnit: toInternationalUnit,
       );
 
-  String localeKilometerPerLiter(num value) {
-    final kilometers = _length.localeKilometer(value);
-    final liters = _volume.localeLiter(2);
+  String localeKilometersPerLiters(num value) {
+    final kilometers = _length.localeKilometers(value);
+    final liters = _volume.localeLiters(2);
     return _intlKilometersPerLiters(kilometers, liters);
   }
 
-  String localeMeterPerLiter(num value) {
-    final meters = _length.localeMeter(value);
-    final liters = _volume.localeLiter(2);
-    return _intlMeterPerLiter(meters, liters);
+  String localeMetersPerLiters(num value) {
+    final meters = _length.localeMeters(value);
+    final liters = _volume.localeLiters(2);
+    return _intlMetersPerLiters(meters, liters);
   }
 
-  String localeMilePerImperialGallon(num value) {
-    final miles = _length.localeMile(value);
-    final gallons = _volume.localeGallon(2);
-    return _intlMilePerImperialGallon(miles, gallons);
+  String localeMilesPerImperialGallons(num value) {
+    final miles = _length.localeMiles(value);
+    final gallons = _volume.localeGallons(2);
+    return _intlMilesPerImperialGallons(miles, gallons);
   }
 
-  String localeMilePerUsGallon(num value) {
-    final miles = _length.localeMile(value);
-    final gallons = _volume.localeGallon(2);
-    return _intlMilePerUsGallon(miles, gallons);
+  String localeMilesPerUsGallons(num value) {
+    final miles = _length.localeMiles(value);
+    final gallons = _volume.localeGallons(2);
+    return _intlMilesPerUsGallons(miles, gallons);
   }
 
   String _intlKilometersPerLiters(String kilometers, String liters) =>
@@ -107,24 +109,24 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
         locale: _localeName,
       );
 
-  String _intlMeterPerLiter(String meters, String liters) => Intl.message(
+  String _intlMetersPerLiters(String meters, String liters) => Intl.message(
         '$meters per $liters',
-        name: '_intlMeterPerLiter',
+        name: '_intlMetersPerLiters',
         args: [meters, liters],
         locale: _localeName,
       );
 
-  String _intlMilePerImperialGallon(String miles, String gallons) =>
+  String _intlMilesPerImperialGallons(String miles, String gallons) =>
       Intl.message(
         '$miles per imp $gallons',
-        name: '_intlMilePerImperialGallon',
+        name: '_intlMilesPerImperialGallons',
         args: [miles, gallons],
         locale: _localeName,
       );
 
-  String _intlMilePerUsGallon(String miles, String gallons) => Intl.message(
+  String _intlMilesPerUsGallons(String miles, String gallons) => Intl.message(
         '$miles per US $gallons',
-        name: '_intlMilePerUsGallon',
+        name: '_intlMilesPerUsGallons',
         args: [miles, gallons],
         locale: _localeName,
       );

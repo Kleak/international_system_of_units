@@ -82,14 +82,16 @@ class LocaleTime extends LocaleBase<TimeUnit> {
     TimeUnit toInternationalUnit = TimeUnit.hour,
     TimeUnit toImperialUnit = TimeUnit.hour,
     TimeUnit toUsUnit = TimeUnit.hour,
+    TimeUnit toEuUnit = TimeUnit.hour,
   }) =>
       super.locale(
         value,
         unitSystem,
         withUnit: withUnit,
         shortUnit: shortUnit,
-        toUsUnit: toUsUnit,
         customNumberFormat: customNumberFormat,
+        toUsUnit: toUsUnit,
+        toEuUnit: toEuUnit,
         toImperialUnit: toImperialUnit,
         toInternationalUnit: toInternationalUnit,
       );
