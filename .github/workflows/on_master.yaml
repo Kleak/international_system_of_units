@@ -17,5 +17,3 @@ jobs:
         run: pub get
       - name: Run test with coverage
         run: pub run test --coverage coverage
-      - name: Save coverage
-        run: bash <(curl -s https://codecov.io/bash)

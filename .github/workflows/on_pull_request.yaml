@@ -21,5 +21,3 @@ jobs:
         run: dartanalyzer --options=analysis_options.yaml --fatal-hints --fatal-warnings .
       - name: Run test with coverage
         run: pub run test --coverage coverage
-      - name: Save coverage
-        run: bash <(curl -s https://codecov.io/bash)
