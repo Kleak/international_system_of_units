@@ -1,3 +1,4 @@
+import 'package:international_system_of_units/international_system_of_units.dart';
 import 'package:international_system_of_units/src/conversion/volume_per_length/volume_per_length.dart';
 import 'package:international_system_of_units/src/locale/length_per_volume.dart';
 import 'package:international_system_of_units/src/locale/locale_base.dart';
@@ -26,6 +27,8 @@ class LocaleFuelEconomy extends LocaleBase<FuelEconomyUnit> {
         return value.toLiterPer100Kilometer;
       case FuelEconomyUnit.milesPerUsGallons:
         return value.inverseVolumePerLength.toUsGallonPerMile;
+      case FuelEconomyUnit.milesPerImperialGallons:
+        return value.inverseVolumePerLength.toImperialGallonPerMile;
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }

@@ -135,7 +135,103 @@ The base unit for volume per length is liters per meters.
 - [x] to/from liters per 100 kilometers
 
 ### Localizations
-TBD
+#### Fuel economy
+This is a localization helper it use different conversion under the hood for convinience.
+
+The base unit is liters per meters
+- [x] liters per 100 kilometers
+- [x] miles per us gallons
+- [x] miles per imperial gallons
+
+#### Length Per Time
+The base unit is meters per seconds.
+
+- [x] kilometers per hours
+- [x] miles per hours
+- [x] knot
+- [x] meters per seconds
+
+#### Length Per Volume
+The base unit is meters per liters.
+
+- [x] meters per liters
+- [x] kilometers per liters
+- [x] miles per imperial gallons
+- [x] miles per us gallons
+
+
+#### Length
+The base unit is meters.
+
+- [x] kilometers
+- [x] meters
+- [x] miles
+- [x] inch
+
+#### Mass Per Length
+The base unit is kilograms per meters.
+
+- [x] grams per meters
+- [x] grams per miles 
+- [x] kilograms per kilometers
+- [x] grams per kilometers
+
+#### Mass
+The base unit is kilograms.
+
+- [x] kilograms
+- [x] tonnes
+- [x] imperial tons
+- [x] us tons
+- [x] pounds
+
+
+#### Pressure
+The base unit is pascals.
+
+- [x] pascals
+- [x] bar
+- [x] pound force per square inch
+
+#### Temperature
+The base unit is kelvin.
+
+- [x] celsius
+- [x] fahrenheit
+- [x] kelvin
+- [x] rankine
+- [x] romer
+
+#### Time
+The base unit is seconds.
+
+- [x] microseconds
+- [x] milliseconds
+- [x] seconds
+- [x] minutes
+- [x] hours
+- [x] days
+- [x] weeks
+- [x] months
+- [x] years
+- [x] decades
+- [x] centuries
+
+#### Volume Per Length
+The base unit is liters per meters
+
+- [x] imperial gallons per miles
+- [x] us gallons per miles
+- [x] liters per meters
+- [x] liters per kilometers
+- [x] liters per 100 kilometers
+
+#### Volume
+The base unit is liters
+
+- [x] us liquid gallons
+- [x] imperial liquid gallons
+- [x] liters
 
 # Features and bugs
 
