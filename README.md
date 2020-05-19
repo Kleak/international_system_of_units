@@ -18,10 +18,10 @@ We take care of the localization of the unit for you as an example on length thi
 isLocalizations.length.locale(12, UnitSystem.international); // 0.012 km
 ```
 
-This is due to the fact that international system base unit for length is the kilometers.
+This is due to the fact that international system base unit for length is the meters.
 
 
-# What we support
+# What we support currently
 ### Converstions
 #### Area
 The base unit for area is square meter.
