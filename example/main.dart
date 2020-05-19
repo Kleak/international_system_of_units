@@ -8,19 +8,6 @@ void main(List<String> arguments) async {
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
 
-  //  Temperature
-  print(0.toCelsius);
-  print(0.toFahrenheit);
-  print(0.toKelvin(TemperatureUnit.celsius));
-  print(0.toRankine);
-  print(1.toKelvin(TemperatureUnit.romer));
-
-  sIi18n.fuelEconomy.locale(
-    4.toLiterPerMeter(VolumePerLengthUnit.literPer100Kilometer),
-    UnitSystem.eu,
-    shortUnit: true,
-    toEuUnit: FuelEconomyUnit.litersPer100Kilometers,
-    toUsUnit: FuelEconomyUnit.milesPerUsGallons,
-    toImperialUnit: FuelEconomyUnit.milesPerImperialGallons,
-  );
+  final x = 1;
+  print(x.toKilogram(MassUnit.ounce));
 }
