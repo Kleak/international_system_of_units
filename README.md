@@ -235,8 +235,11 @@ The base unit is liters
 
 # Features and bugs
 
-Please file [feature requests](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=enhancement&template=new-conversion.md&title=) 
-and [bugs](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
+For new conversion please fill [new conversion](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=enhancement&template=new-conversion.md&title=).
+
+If you find a bug [bugs](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
+
+Or something else [here](https://github.com/Kleak/international_system_of_units/issues/new).
 
 # Support
 
