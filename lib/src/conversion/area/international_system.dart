@@ -3,11 +3,11 @@ extension ISArea on num {
   num get toSquareCentimeters => this * 10000;
   num get toSquareKilometers => this / 1e+6;
   num get toSquareMiles => this / 2.59e+6;
-  num get toSquareYard => this * 1.196;
-  num get toSquareFoot => this * 10.764;
+  num get toSquareYard => this * 1.19599;
+  num get toSquareFoot => this * 10.7639;
   num get toSquareInches => this * 1550;
   num get toHectare => this / 10000;
-  num get toAcre => this / 4047;
+  num get toAcre => this * 0.000247105;
 
   num toSquareMeters(AreaUnit unit) {
     switch (unit) {

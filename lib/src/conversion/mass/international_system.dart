@@ -5,9 +5,9 @@ extension ISMass on num {
   num get toMicrogram => this * 1e+9;
   num get toGram => this * 1000;
 
-  num get toImperialTon => this / 1016;
-  num get toUSTon => this / 907;
-  num get toStone => this / 6.35;
+  num get toImperialTon => this * 0.000984207;
+  num get toUSTon => this * 0.00110231;
+  num get toStone => this * 0.157473;
   num get toPound => this * 2.20462;
   num get toOunce => this * 35.274;
 

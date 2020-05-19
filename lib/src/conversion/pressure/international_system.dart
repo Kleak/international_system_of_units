@@ -1,6 +1,6 @@
 /// num is in pascal
 extension ISPressure on num {
-  num get toPoundForcePerSquareInch => this / 6895;
+  num get toPoundForcePerSquareInch => this * 0.000145038;
   num get toBar => this / 100000;
 
   num toPascal(PressureUnit unit) {

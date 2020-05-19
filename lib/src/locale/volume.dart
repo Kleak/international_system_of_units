@@ -17,11 +17,11 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       case VolumeUnit.cubicInch:
         return value.toCubicInch;
       case VolumeUnit.cubicMetres:
-        return value.toCubicMetres;
+        return value.toCubicMeters;
       case VolumeUnit.imperialCup:
         return value.toImperialCup;
       case VolumeUnit.imperialFluidOunces:
-        return value.toImpetialFluidOunces;
+        return value.toImperialFluidOunces;
       case VolumeUnit.imperialGallons:
         return value.toImperialGallon;
       case VolumeUnit.imperialPint:
@@ -35,7 +35,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       case VolumeUnit.litres:
         return value;
       case VolumeUnit.millilitres:
-        return value.toMillilitres;
+        return value.toMilliliters;
       case VolumeUnit.usFluidOunces:
         return value.toUSFluidOunces;
       case VolumeUnit.usLegalCup:

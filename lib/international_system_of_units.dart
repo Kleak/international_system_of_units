@@ -4,6 +4,7 @@ export 'src/conversion/volume/international_system.dart';
 export 'src/conversion/time/international_system.dart';
 export 'src/conversion/temperature/international_system.dart';
 export 'src/conversion/pressure/international_system.dart';
+export 'src/conversion/area/international_system.dart';
 
 export 'src/conversion/volume_per_length/volume_per_length.dart';
 export 'src/conversion/length_per_volume/length_per_volume.dart';

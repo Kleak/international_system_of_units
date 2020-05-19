@@ -7,7 +7,4 @@ void main(List<String> arguments) async {
   final sIi18n =
       await InternationalSystemLocalizations.load(Locale.parse(language));
   Intl.defaultLocale = language;
-
-  final x = 1;
-  print(x.toKilogram(MassUnit.ounce));
 }

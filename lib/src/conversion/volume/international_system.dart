@@ -8,17 +8,17 @@ extension ISVolume on num {
   num get toUSTablespoon => this * 67.628;
   num get toUSTeaspoon => this * 202.884;
 
-  num get toMillilitres => this * 1000;
+  num get toMilliliters => this * 1000;
 
   num get toImperialGallon => this * 0.219969;
   num get toImperialQuart => this * 0.879877;
   num get toImperialPint => this * 1.75975;
   num get toImperialCup => this * 3.51951;
-  num get toImpetialFluidOunces => this * 35.1951;
+  num get toImperialFluidOunces => this * 35.1951;
   num get toImperialTablespoon => this * 56.3121;
   num get toImperialTeaspoon => this * 168.936;
 
-  num get toCubicMetres => this * 0.001;
+  num get toCubicMeters => this * 0.001;
   num get toCubicFoot => this * 0.0353147;
   num get toCubicInch => this * 61.0237;
 
