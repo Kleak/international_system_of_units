@@ -1,6 +1,7 @@
 name: international_system_of_units
 description: The most complete unit converter for Dart/Flutter which also do localizations.
 version: 1.0.0-dev
+repository: https://github.com/Kleak/international_system_of_units
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
