@@ -241,6 +241,10 @@ If you find a [bug](https://github.com/Kleak/international_system_of_units/issue
 
 Or something else [here](https://github.com/Kleak/international_system_of_units/issues/new).
 
+# Contributing
+
+Please read our [contibuting guides](https://github.com/Kleak/international_system_of_units/blob/master/CONTRIBUTING.md)
+
 # Support
 
 If you like or use this package please consider sponsoring me [here](https://github.com/sponsors/Kleak)
