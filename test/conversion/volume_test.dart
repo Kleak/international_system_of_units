@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:test/test.dart';
 import 'package:international_system_of_units/international_system_of_units.dart';
 

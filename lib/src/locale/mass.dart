@@ -171,14 +171,4 @@ class LocaleMass extends LocaleBase<MassUnit> {
         args: [value],
         locale: _localeName,
       );
-
-  String localeGrams(num value) => Intl.plural(
-        value,
-        name: 'localeGrams',
-        zero: 'grams',
-        one: 'gram',
-        other: 'grams',
-        args: [value],
-        locale: _localeName,
-      );
 }
