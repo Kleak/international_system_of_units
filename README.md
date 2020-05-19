@@ -243,8 +243,8 @@ Or something else [here](https://github.com/Kleak/international_system_of_units/
 
 # Contributing
 
-Please read our [contibuting guides](https://github.com/Kleak/international_system_of_units/blob/master/CONTRIBUTING.md)
+Please read our [contibuting guides](https://github.com/Kleak/international_system_of_units/blob/master/CONTRIBUTING.md).
 
 # Support
 
-If you like or use this package please consider sponsoring me [here](https://github.com/sponsors/Kleak)
+If you like or use this package please consider sponsoring me [here](https://github.com/sponsors/Kleak).
