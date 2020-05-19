@@ -19,6 +19,8 @@ class LocalePressure extends LocaleBase<PressureUnit> {
     switch (unit) {
       case PressureUnit.poundForcePerSquareInch:
         return value.toPoundForcePerSquareInch;
+      case PressureUnit.bar:
+        return value.toBar;
       case PressureUnit.pascal:
         return value;
       default:
@@ -36,6 +38,8 @@ class LocalePressure extends LocaleBase<PressureUnit> {
     switch (unit) {
       case PressureUnit.pascal:
         return shortUnit ? 'Pa' : localePascals(value);
+      case PressureUnit.bar:
+        return shortUnit ? 'b' : localeBars(value);
       case PressureUnit.poundForcePerSquareInch:
         return shortUnit ? 'psi' : localePoundForcePerSquareInch(value);
       default:
@@ -73,6 +77,16 @@ class LocalePressure extends LocaleBase<PressureUnit> {
         zero: 'pascal',
         one: 'pascal',
         other: 'pascals',
+        args: [value],
+        locale: _localeName,
+      );
+
+  String localeBars(num value) => Intl.plural(
+        value,
+        name: 'localeBars',
+        zero: 'bar',
+        one: 'bar',
+        other: 'bars',
         args: [value],
         locale: _localeName,
       );

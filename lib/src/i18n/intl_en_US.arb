@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-19T11:04:58.015944",
+  "@@last_modified": "2020-05-19T11:24:47.057103",
   "localeKnots": "{value,plural, =0{knots}=1{knot}other{knots}}",
   "@localeKnots": {
     "type": "text",
@@ -161,6 +161,13 @@
   },
   "localePascals": "{value,plural, =0{pascal}=1{pascal}other{pascals}}",
   "@localePascals": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeBars": "{value,plural, =0{bar}=1{bar}other{bars}}",
+  "@localeBars": {
     "type": "text",
     "placeholders": {
       "value": {}

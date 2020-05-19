@@ -74,63 +74,65 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m17(gallons, miles) => "US ${gallons} per ${miles}";
 
-  static m18(value) => "${Intl.plural(value, zero: 'celsius', one: 'celsius', other: 'celsius')}";
+  static m18(value) => "${Intl.plural(value, zero: 'bar', one: 'bar', other: 'bars')}";
 
-  static m19(time) => "${Intl.plural(time, zero: 'centuries', one: 'century', other: 'centuries')}";
+  static m19(value) => "${Intl.plural(value, zero: 'celsius', one: 'celsius', other: 'celsius')}";
 
-  static m20(time) => "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
+  static m20(time) => "${Intl.plural(time, zero: 'centuries', one: 'century', other: 'centuries')}";
 
-  static m21(time) => "${Intl.plural(time, zero: 'decades', one: 'decade', other: 'decades')}";
+  static m21(time) => "${Intl.plural(time, zero: 'days', one: 'day', other: 'days')}";
 
-  static m22(value) => "${Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit')}";
+  static m22(time) => "${Intl.plural(time, zero: 'decades', one: 'decade', other: 'decades')}";
 
-  static m23(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
+  static m23(value) => "${Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit')}";
 
-  static m24(value) => "${Intl.plural(value, zero: 'grams', one: 'gram', other: 'grams')}";
+  static m24(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
 
-  static m25(time) => "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
+  static m25(value) => "${Intl.plural(value, zero: 'grams', one: 'gram', other: 'grams')}";
 
-  static m26(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m26(time) => "${Intl.plural(time, zero: 'hours', one: 'hour', other: 'hours')}";
 
-  static m27(value) => "${Intl.plural(value, zero: 'kelvin', one: 'kelvin', other: 'kelvins')}";
+  static m27(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
 
-  static m28(value) => "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
+  static m28(value) => "${Intl.plural(value, zero: 'kelvin', one: 'kelvin', other: 'kelvins')}";
 
-  static m29(length) => "${Intl.plural(length, zero: 'kilometers', one: 'kilometer', other: 'kilometers')}";
+  static m29(value) => "${Intl.plural(value, zero: 'kilograms', one: 'kilogram', other: 'kilograms')}";
 
-  static m30(value) => "${Intl.plural(value, zero: 'knots', one: 'knot', other: 'knots')}";
+  static m30(length) => "${Intl.plural(length, zero: 'kilometers', one: 'kilometer', other: 'kilometers')}";
 
-  static m31(volume) => "${Intl.plural(volume, zero: 'liters', one: 'liter', other: 'liters')}";
+  static m31(value) => "${Intl.plural(value, zero: 'knots', one: 'knot', other: 'knots')}";
 
-  static m32(length) => "${Intl.plural(length, zero: 'meters', one: 'meter', other: 'meters')}";
+  static m32(volume) => "${Intl.plural(volume, zero: 'liters', one: 'liter', other: 'liters')}";
 
-  static m33(time) => "${Intl.plural(time, zero: 'microsecond', one: 'microsecond', other: 'microseconds')}";
+  static m33(length) => "${Intl.plural(length, zero: 'meters', one: 'meter', other: 'meters')}";
 
-  static m34(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m34(time) => "${Intl.plural(time, zero: 'microsecond', one: 'microsecond', other: 'microseconds')}";
 
-  static m35(time) => "${Intl.plural(time, zero: 'millisecond', one: 'millisecond', other: 'milliseconds')}";
+  static m35(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
 
-  static m36(time) => "${Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes')}";
+  static m36(time) => "${Intl.plural(time, zero: 'millisecond', one: 'millisecond', other: 'milliseconds')}";
 
-  static m37(time) => "${Intl.plural(time, zero: 'month', one: 'month', other: 'months')}";
+  static m37(time) => "${Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes')}";
 
-  static m38(time) => "${Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos')}";
+  static m38(time) => "${Intl.plural(time, zero: 'month', one: 'month', other: 'months')}";
 
-  static m39(value) => "${Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals')}";
+  static m39(time) => "${Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos')}";
 
-  static m40(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+  static m40(value) => "${Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals')}";
 
-  static m41(value) => "${Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines')}";
+  static m41(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
 
-  static m42(value) => "${Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer')}";
+  static m42(value) => "${Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines')}";
 
-  static m43(time) => "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
+  static m43(value) => "${Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer')}";
 
-  static m44(value) => "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
+  static m44(time) => "${Intl.plural(time, zero: 'seconds', one: 'second', other: 'seconds')}";
 
-  static m45(time) => "${Intl.plural(time, zero: 'week', one: 'week', other: 'weeks')}";
+  static m45(value) => "${Intl.plural(value, zero: 'tons', one: 'ton', other: 'tons')}";
 
-  static m46(time) => "${Intl.plural(time, zero: 'year', one: 'year', other: 'years')}";
+  static m46(time) => "${Intl.plural(time, zero: 'week', one: 'week', other: 'weeks')}";
+
+  static m47(time) => "${Intl.plural(time, zero: 'year', one: 'year', other: 'years')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -152,34 +154,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "_intlMilesPerImperialGallons" : m15,
     "_intlMilesPerUsGallons" : m16,
     "_intlUsGallonsPerMiles" : m17,
-    "localeCelsius" : m18,
-    "localeCentury" : m19,
-    "localeDay" : m20,
-    "localeDecade" : m21,
-    "localeFahrenheit" : m22,
-    "localeGallons" : m23,
-    "localeGrams" : m24,
-    "localeHour" : m25,
-    "localeInches" : m26,
-    "localeKelvin" : m27,
-    "localeKilograms" : m28,
-    "localeKilometers" : m29,
-    "localeKnots" : m30,
-    "localeLiters" : m31,
-    "localeMeters" : m32,
-    "localeMicrosecond" : m33,
-    "localeMiles" : m34,
-    "localeMillisecond" : m35,
-    "localeMinute" : m36,
-    "localeMonth" : m37,
-    "localeMonthAbbreviation" : m38,
-    "localePascals" : m39,
-    "localePounds" : m40,
-    "localeRankine" : m41,
-    "localeRomer" : m42,
-    "localeSecond" : m43,
-    "localeTons" : m44,
-    "localeWeek" : m45,
-    "localeYear" : m46
+    "localeBars" : m18,
+    "localeCelsius" : m19,
+    "localeCentury" : m20,
+    "localeDay" : m21,
+    "localeDecade" : m22,
+    "localeFahrenheit" : m23,
+    "localeGallons" : m24,
+    "localeGrams" : m25,
+    "localeHour" : m26,
+    "localeInches" : m27,
+    "localeKelvin" : m28,
+    "localeKilograms" : m29,
+    "localeKilometers" : m30,
+    "localeKnots" : m31,
+    "localeLiters" : m32,
+    "localeMeters" : m33,
+    "localeMicrosecond" : m34,
+    "localeMiles" : m35,
+    "localeMillisecond" : m36,
+    "localeMinute" : m37,
+    "localeMonth" : m38,
+    "localeMonthAbbreviation" : m39,
+    "localePascals" : m40,
+    "localePounds" : m41,
+    "localeRankine" : m42,
+    "localeRomer" : m43,
+    "localeSecond" : m44,
+    "localeTons" : m45,
+    "localeWeek" : m46,
+    "localeYear" : m47
   };
 }
