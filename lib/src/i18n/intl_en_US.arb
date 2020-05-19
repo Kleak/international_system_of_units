@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-19T11:24:47.057103",
+  "@@last_modified": "2020-05-19T22:05:17.602129",
   "localeKnots": "{value,plural, =0{knots}=1{knot}other{knots}}",
   "@localeKnots": {
     "type": "text",
@@ -131,8 +131,43 @@
       "kilometers": {}
     }
   },
+  "localeMicrograms": "{value,plural, =0{micrograms}=1{microgram}other{micrograms}}",
+  "@localeMicrograms": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeMilligrams": "{value,plural, =0{milligrams}=1{milligram}other{milligrams}}",
+  "@localeMilligrams": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeGrams": "{value,plural, =0{grams}=1{gram}other{grams}}",
+  "@localeGrams": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
   "localeTons": "{value,plural, =0{tons}=1{ton}other{tons}}",
   "@localeTons": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeOunce": "{value,plural, =0{ounces}=1{ounce}other{ounces}}",
+  "@localeOunce": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeStone": "{value,plural, =0{stones}=1{stone}other{stones}}",
+  "@localeStone": {
     "type": "text",
     "placeholders": {
       "value": {}
@@ -147,13 +182,6 @@
   },
   "localeKilograms": "{value,plural, =0{kilograms}=1{kilogram}other{kilograms}}",
   "@localeKilograms": {
-    "type": "text",
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "localeGrams": "{value,plural, =0{grams}=1{gram}other{grams}}",
-  "@localeGrams": {
     "type": "text",
     "placeholders": {
       "value": {}
@@ -340,8 +368,64 @@
       "kilometers": {}
     }
   },
-  "localeLiters": "{volume,plural, =0{liters}=1{liter}other{liters}}",
-  "@localeLiters": {
+  "localeCubicFoot": "{volume,plural, =0{cubic foot}=1{cubic foot}other{cubic foot}}",
+  "@localeCubicFoot": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCubicInch": "{volume,plural, =0{cubic inch}=1{cubic inch}other{cubic inch}}",
+  "@localeCubicInch": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCubicMeter": "{volume,plural, =0{cubic meter}=1{cubic meter}other{cubic meter}}",
+  "@localeCubicMeter": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCup": "{volume,plural, =0{cups}=1{cup}other{cups}}",
+  "@localeCup": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeFluidOunces": "{volume,plural, =0{fluid ounces}=1{fluid ounce}other{fluid ounces}}",
+  "@localeFluidOunces": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeQuart": "{volume,plural, =0{quarts}=1{quart}other{quarts}}",
+  "@localeQuart": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localePint": "{volume,plural, =0{pint}=1{pint}other{pints}}",
+  "@localePint": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeTablespoon": "{volume,plural, =0{tablespoon}=1{tablespoon}other{tablespoons}}",
+  "@localeTablespoon": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeTeaspoon": "{volume,plural, =0{teaspoon}=1{teaspoon}other{teaspoons}}",
+  "@localeTeaspoon": {
     "type": "text",
     "placeholders": {
       "volume": {}
@@ -349,6 +433,20 @@
   },
   "localeGallons": "{volume,plural, =0{gallons}=1{gallon}other{gallons}}",
   "@localeGallons": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeMilliliters": "{volume,plural, =0{milliliters}=1{milliliter}other{milliliters}}",
+  "@localeMilliliters": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeLiters": "{volume,plural, =0{liters}=1{liter}other{liters}}",
+  "@localeLiters": {
     "type": "text",
     "placeholders": {
       "volume": {}
