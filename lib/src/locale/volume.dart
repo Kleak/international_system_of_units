@@ -63,9 +63,41 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
     bool shortUnit = true,
   }) {
     switch (unit) {
+      case VolumeUnit.cubicFoot:
+        return shortUnit ? 'ft3' : localeCubicFoot(value);
+      case VolumeUnit.cubicInch:
+        return shortUnit ? 'in3' : localeCubicInch(value);
+      case VolumeUnit.cubicMetres:
+        return shortUnit ? 'm3' : localeCubicMeter(value);
+      case VolumeUnit.imperialCup:
+      case VolumeUnit.usLegalCup:
+        return shortUnit ? 'c.' : localeCup(value);
+      case VolumeUnit.imperialFluidOunces:
+        return shortUnit ? 'fl oz imp' : '${localeFluidOunces(value)} imperial';
+      case VolumeUnit.usFluidOunces:
+        return shortUnit ? 'us fl oz' : 'us ${localeFluidOunces(value)}';
+      case VolumeUnit.imperialQuart:
+        return shortUnit ? 'imp qt.' : 'imperial ${localeQuart(value)}';
+      case VolumeUnit.usLiquidQuart:
+        return shortUnit ? 'us qt.' : 'US ${localeQuart(value)}';
+      case VolumeUnit.imperialPint:
+        return shortUnit ? 'imp pt.' : 'imperial ${localePint(value)}';
+      case VolumeUnit.usLiquidPint:
+        return shortUnit ? 'us pt.' : 'US ${localePint(value)}';
+      case VolumeUnit.imperialTablespoon:
+        return shortUnit ? 'imp tbsp.' : 'imperial ${localeTablespoon(value)}';
+      case VolumeUnit.usTablespoon:
+        return shortUnit ? 'us tbsp.' : 'US ${localeTablespoon(value)}';
+      case VolumeUnit.imperialTeaspoon:
+        return shortUnit ? 'imp tsp.' : 'imperial ${localeTeaspoon(value)}';
+      case VolumeUnit.usTeaspoon:
+        return shortUnit ? 'us tsp.' : 'US ${localeTeaspoon(value)}';
       case VolumeUnit.usLiquidGallon:
+        return shortUnit ? 'us gal' : 'imperial ${localeGallons(value)}';
       case VolumeUnit.imperialGallons:
-        return shortUnit ? 'gal' : localeGallons(value);
+        return shortUnit ? 'imp gal' : 'US ${localeGallons(value)}';
+      case VolumeUnit.milliliters:
+        return shortUnit ? 'ml' : localeMilliliters(value);
       case VolumeUnit.litres:
         return shortUnit ? 'l' : localeLiters(value);
       default:
@@ -97,12 +129,92 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
         toInternationalUnit: toInternationalUnit,
       );
 
-  String localeLiters(num volume) => Intl.plural(
+  String localeCubicFoot(num volume) => Intl.plural(
         volume,
-        name: 'localeLiters',
-        zero: 'liters',
-        one: 'liter',
-        other: 'liters',
+        name: 'localeCubicFoot',
+        zero: 'cubic foot',
+        one: 'cubic foot',
+        other: 'cubic foot',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeCubicInch(num volume) => Intl.plural(
+        volume,
+        name: 'localeCubicInch',
+        zero: 'cubic inch',
+        one: 'cubic inch',
+        other: 'cubic inch',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeCubicMeter(num volume) => Intl.plural(
+        volume,
+        name: 'localeCubicMeter',
+        zero: 'cubic meter',
+        one: 'cubic meter',
+        other: 'cubic meter',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeCup(num volume) => Intl.plural(
+        volume,
+        name: 'localeCup',
+        zero: 'cups',
+        one: 'cup',
+        other: 'cups',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeFluidOunces(num volume) => Intl.plural(
+        volume,
+        name: 'localeFluidOunces',
+        zero: 'fluid ounces',
+        one: 'fluid ounce',
+        other: 'fluid ounces',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeQuart(num volume) => Intl.plural(
+        volume,
+        name: 'localeQuart',
+        zero: 'quarts',
+        one: 'quart',
+        other: 'quarts',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localePint(num volume) => Intl.plural(
+        volume,
+        name: 'localePint',
+        zero: 'pint',
+        one: 'pint',
+        other: 'pints',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeTablespoon(num volume) => Intl.plural(
+        volume,
+        name: 'localeTablespoon',
+        zero: 'tablespoon',
+        one: 'tablespoon',
+        other: 'tablespoons',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeTeaspoon(num volume) => Intl.plural(
+        volume,
+        name: 'localeTeaspoon',
+        zero: 'teaspoon',
+        one: 'teaspoon',
+        other: 'teaspoons',
         args: [volume],
         locale: _localeName,
       );
@@ -113,6 +225,26 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
         zero: 'gallons',
         one: 'gallon',
         other: 'gallons',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeMilliliters(num volume) => Intl.plural(
+        volume,
+        name: 'localeMilliliters',
+        zero: 'milliliters',
+        one: 'milliliter',
+        other: 'milliliters',
+        args: [volume],
+        locale: _localeName,
+      );
+
+  String localeLiters(num volume) => Intl.plural(
+        volume,
+        name: 'localeLiters',
+        zero: 'liters',
+        one: 'liter',
+        other: 'liters',
         args: [volume],
         locale: _localeName,
       );
