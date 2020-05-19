@@ -2,6 +2,7 @@ Easily convert unit from and to the international system of units and automatica
 
 # How it work
 
+### Conversions
 This package use extension on `num` to allow you to convert easily from one unit to another.
 
 For example if you want to transform celsius to fahrenheit here is the code:
@@ -9,7 +10,7 @@ For example if you want to transform celsius to fahrenheit here is the code:
 0.toKelvin(TemperatureUnit.celsius).toFahrenheit;
 ```
 
-# Localization
+### Localization
 
 We take care of the localization of the unit for you as an example on length this code will be localized:
 
