@@ -65,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m14(meters, liters) => "${meters} per ${liters}";
 
-  static m15(miles, gallons) => "${miles} per imp ${gallons}";
+  static m15(miles, gallons) => "${miles} per imperial ${gallons}";
 
   static m16(miles, gallons) => "${miles} per US ${gallons}";
 

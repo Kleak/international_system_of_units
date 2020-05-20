@@ -76,7 +76,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       case VolumeUnit.imperialFluidOunces:
         return shortUnit ? 'fl oz imp' : 'imperial ${localeFluidOunces(value)}';
       case VolumeUnit.usFluidOunces:
-        return shortUnit ? 'us fl oz' : 'us ${localeFluidOunces(value)}';
+        return shortUnit ? 'us fl oz' : 'US ${localeFluidOunces(value)}';
       case VolumeUnit.imperialQuart:
         return shortUnit ? 'imp qt.' : 'imperial ${localeQuart(value)}';
       case VolumeUnit.usLiquidQuart:
@@ -94,9 +94,9 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       case VolumeUnit.usTeaspoon:
         return shortUnit ? 'us tsp.' : 'US ${localeTeaspoon(value)}';
       case VolumeUnit.usLiquidGallon:
-        return shortUnit ? 'us gal' : 'imperial ${localeGallons(value)}';
+        return shortUnit ? 'us gal' : 'US ${localeGallons(value)}';
       case VolumeUnit.imperialGallons:
-        return shortUnit ? 'imp gal' : 'US ${localeGallons(value)}';
+        return shortUnit ? 'imp gal' : 'imperial ${localeGallons(value)}';
       case VolumeUnit.milliliters:
         return shortUnit ? 'ml' : localeMilliliters(value);
       case VolumeUnit.litres:
