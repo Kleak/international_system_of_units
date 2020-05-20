@@ -70,10 +70,11 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       case VolumeUnit.cubicMetres:
         return shortUnit ? 'm3' : localeCubicMeter(value);
       case VolumeUnit.imperialCup:
+        return shortUnit ? 'imp c.' : 'imperial ${localeCup(value)}';
       case VolumeUnit.usLegalCup:
-        return shortUnit ? 'c.' : localeCup(value);
+        return shortUnit ? 'us c.' : 'us ${localeCup(value)}';
       case VolumeUnit.imperialFluidOunces:
-        return shortUnit ? 'fl oz imp' : '${localeFluidOunces(value)} imperial';
+        return shortUnit ? 'fl oz imp' : 'imperial ${localeFluidOunces(value)}';
       case VolumeUnit.usFluidOunces:
         return shortUnit ? 'us fl oz' : 'us ${localeFluidOunces(value)}';
       case VolumeUnit.imperialQuart:
