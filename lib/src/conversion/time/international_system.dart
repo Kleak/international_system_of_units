@@ -1,18 +1,39 @@
-/// num is in second
+/// num is in seconds
 extension ISTime on num {
+  /// convert seconds to nanoseconds
   num get toNanosecond => this * 1e+9;
+
+  /// convert seconds to microseconds
   num get toMicrosecond => this * 1e+6;
+
+  /// convert seconds to milliseconds
   num get toMillisecond => this * 1000;
+
+  /// convert seconds to minutes
   num get toMinute => this * 0.0166667;
+
+  /// convert seconds to hours
   num get toHour => this * 0.000277778;
+
+  /// convert seconds to days
   num get toDay => this * 1.1574e-5;
+
+  /// convert seconds to weeks
   num get toWeek => this * 1.6534e-6;
+
+  /// convert secodns to months
   num get toMonth => this * 3.8052e-7;
+
+  /// convert seconds to years
   num get toCalendarYear => this * 3.171e-8;
+
+  /// convert seconds to decades
   num get toDecade => this * 3.171e-9;
+
+  /// convert seconds to centuries
   num get toCentury => this * 3.171e-10;
 
-  //  convert the num to second base on its time unit
+  /// convert num from [unit] to seconds
   num toSecond(TimeUnit unit) {
     switch (unit) {
       case TimeUnit.nanosecond:
@@ -43,6 +64,7 @@ extension ISTime on num {
   }
 }
 
+/// represent all the supported unit for [ISTime]
 enum TimeUnit {
   nanosecond,
   microsecond,
