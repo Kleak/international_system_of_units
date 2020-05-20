@@ -179,10 +179,15 @@ The base unit is kilograms per meters.
 #### Mass
 The base unit is kilograms.
 
+- [x] micrograms
+- [x] milligrams
+- [x] grams
 - [x] kilograms
 - [x] tonnes
 - [x] imperial tons
 - [x] us tons
+- [x] ounces
+- [x] stone
 - [x] pounds
 
 
@@ -229,8 +234,17 @@ The base unit is liters per meters
 #### Volume
 The base unit is liters
 
-- [x] us liquid gallons
-- [x] imperial liquid gallons
+- [x] cubic foot
+- [x] cubic feet
+- [x] cubic inch
+- [x] us/imperial cup
+- [x] us/imperial fluid ounce
+- [x] us/imperial quart
+- [x] us/imperial pint
+- [x] us/imperial tablespoon
+- [x] us/imperial teaspoon
+- [x] us/imperial liquid gallons
+- [x] milliliters
 - [x] liters
 
 # Features and bugs
