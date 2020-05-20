@@ -6,6 +6,7 @@ import 'package:international_system_of_units/src/locale/volume_per_length.dart'
 import 'package:international_system_of_units/src/unit_system.dart';
 import 'package:intl/intl.dart';
 
+/// represent all the supported unit for [LocaleFuelEconomy]
 enum FuelEconomyUnit {
   litersPer100Kilometers,
   milesPerUsGallons,
@@ -26,9 +27,9 @@ class LocaleFuelEconomy extends LocaleBase<FuelEconomyUnit> {
       case FuelEconomyUnit.litersPer100Kilometers:
         return value.toLiterPer100Kilometer;
       case FuelEconomyUnit.milesPerUsGallons:
-        return value.inverseVolumePerLength.toUsGallonPerMile;
+        return value.inverseVolumePerLength.toMilePerUsGallon;
       case FuelEconomyUnit.milesPerImperialGallons:
-        return value.inverseVolumePerLength.toImperialGallonPerMile;
+        return value.inverseVolumePerLength.toMilePerImperialGallon;
       default:
         throw UnsupportedError('We currently do not support this combinaison');
     }
@@ -64,7 +65,7 @@ class LocaleFuelEconomy extends LocaleBase<FuelEconomyUnit> {
     NumberFormat customNumberFormat,
     FuelEconomyUnit toInternationalUnit =
         FuelEconomyUnit.litersPer100Kilometers,
-    FuelEconomyUnit toImperialUnit = FuelEconomyUnit.milesPerUsGallons,
+    FuelEconomyUnit toImperialUnit = FuelEconomyUnit.milesPerImperialGallons,
     FuelEconomyUnit toUsUnit = FuelEconomyUnit.milesPerUsGallons,
     FuelEconomyUnit toEuUnit = FuelEconomyUnit.litersPer100Kilometers,
   }) =>

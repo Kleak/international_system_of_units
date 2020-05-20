@@ -1,19 +1,36 @@
-/// num is in metre
+/// num is in meters
 extension ISLength on num {
+  /// convert meters to nanometers
   num get toNanometer => this * 1000000000;
+
+  /// convert meters to micrometers
   num get toMicrometer => this * 1000000;
+
+  /// convert meters to millimeters
   num get toMillimeter => this * 1000;
+
+  /// convert meters to centimeters
   num get toCentimeter => this * 100;
+
+  /// convert meters to kilometers
   num get toKilometer => this * 0.001;
 
+  /// convert meters to inches
   num get toInch => this * 39.3701;
+
+  /// convert meters to foot
   num get toFoot => this * 3.28084;
+
+  /// converts meters to yard
   num get toYard => this * 1.09361;
+
+  /// convert meters to miles
   num get toMile => this * 0.000621371;
 
+  /// convert meters to nutical miles
   num get toNauticalMile => this * 0.000539957;
 
-  //  convert the num to metre base on its length unit
+  /// convert num from [unit] to meters
   num toMeter(LengthUnit unit) {
     switch (unit) {
       case LengthUnit.nanometer:
@@ -42,6 +59,7 @@ extension ISLength on num {
   }
 }
 
+/// represent all the supported unit for [ISLength]
 enum LengthUnit {
   nanometer,
   micrometer,
