@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void testBase(
   void Function(String locale, UnitSystem) tests,
-  Map<String, Map<UnitSystem, List<String>>> resultsByLocale,
+  Map<String, Map<UnitSystem, Map<String, List<String>>>> resultsByLocale,
 ) {
   for (final locale in resultsByLocale.keys) {
     group('localization $locale', () {

@@ -54,9 +54,11 @@ class LocaleMass extends LocaleBase<MassUnit> {
       case MassUnit.kilogram:
         return shortUnit ? 'kg' : localeKilograms(value);
       case MassUnit.tonnes:
-      case MassUnit.usTon:
-      case MassUnit.imperialTon:
         return shortUnit ? 't' : localeTons(value);
+      case MassUnit.usTon:
+        return shortUnit ? 'us t' : 'US ${localeTons(value)}';
+      case MassUnit.imperialTon:
+        return shortUnit ? 'imp t' : 'imperial ${localeTons(value)}';
       case MassUnit.ounce:
         return shortUnit ? 'oz' : localeOunce(value);
       case MassUnit.stone:

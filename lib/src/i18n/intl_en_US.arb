@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-05-19T22:05:17.602129",
+  "@@last_modified": "2020-05-20T19:39:46.379301",
   "localeKnots": "{value,plural, =0{knots}=1{knot}other{knots}}",
   "@localeKnots": {
     "type": "text",
@@ -47,7 +47,7 @@
       "liters": {}
     }
   },
-  "_intlMilesPerImperialGallons": "{miles} per imp {gallons}",
+  "_intlMilesPerImperialGallons": "{miles} per imperial {gallons}",
   "@_intlMilesPerImperialGallons": {
     "type": "text",
     "placeholders": {

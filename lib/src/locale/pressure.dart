@@ -55,7 +55,7 @@ class LocalePressure extends LocaleBase<PressureUnit> {
     bool shortUnit = true,
     NumberFormat customNumberFormat,
     PressureUnit toInternationalUnit = PressureUnit.pascal,
-    PressureUnit toEuUnit = PressureUnit.pascal,
+    PressureUnit toEuUnit = PressureUnit.bar,
     PressureUnit toImperialUnit = PressureUnit.poundForcePerSquareInch,
     PressureUnit toUsUnit = PressureUnit.poundForcePerSquareInch,
   }) =>

@@ -118,7 +118,7 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
 
   String _intlMilesPerImperialGallons(String miles, String gallons) =>
       Intl.message(
-        '$miles per imp $gallons',
+        '$miles per imperial $gallons',
         name: '_intlMilesPerImperialGallons',
         args: [miles, gallons],
         locale: _localeName,
