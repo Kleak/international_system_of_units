@@ -1,3 +1,8 @@
+## 1.0.0-dev.2
+
+- add US/imperial for tons
+- fix default pressure unit for EU
+
 ## 1.0.0-dev.1
 
 - fix us/imperial legal cup localization
