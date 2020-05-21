@@ -1,4 +1,4 @@
-![Pub Version](https://img.shields.io/pub/v/international_system_of_units?color=%23215896)
+[![Pub Version](https://img.shields.io/pub/v/international_system_of_units?color=%23215896)](https://pub.dev/packages/international_system_of_units)
 
 Easily convert unit from and to the international system of units and automatically get the localization for it.
 
