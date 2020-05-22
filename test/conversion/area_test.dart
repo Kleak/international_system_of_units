@@ -43,4 +43,44 @@ void main() {
       expect(value, 0.000247105);
     });
   });
+
+  test('square centimeters to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareCentimeters);
+    expect(value, 0.0001);
+  });
+
+  test('square kilometers to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareKilometers);
+    expect(value, 1000000);
+  });
+
+  test('square miles to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareMiles);
+    expect(value, 2.59e+6);
+  });
+
+  test('square yard to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareYard);
+    expect(value, 0.8361204013377926);
+  });
+
+  test('square foot to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareFoot);
+    expect(value, 0.0929022668153103);
+  });
+
+  test('square inch to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.squareInches);
+    expect(value, 0.0006451612903225806);
+  });
+
+  test('hectare to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.hectare);
+    expect(value, 10000);
+  });
+
+  test('acre to square meters', () {
+    final value = 1.toSquareMeters(AreaUnit.acre);
+    expect(value, 4046.86);
+  });
 }
