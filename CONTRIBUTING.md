@@ -14,4 +14,5 @@ If you can add localization at the time it would be great else we will add them 
 
 # Adding language
 
-Please submit new arb file with you new language following the pattern for en_US or other language already there.
+Please submit new arb file with your new language following the pattern for en_US or other language already there.
+To help you getting starter you can follow all the step [here](https://github.com/Kleak/international_system_of_units/wiki/Add-new-language).
