@@ -249,11 +249,17 @@ The base unit is liters
 - [x] milliliters
 - [x] liters
 
+# Supported language for localizations
+
+- [x] en_US
+
 # Features and bugs
 
 For new conversion please fill [new conversion](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=enhancement&template=new-conversion.md&title=).
 
 If you find a [bug](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
+
+Suggest new [language](https://github.com/Kleak/international_system_of_units/issues/new?assignees=&labels=enhancement%2C+help+wanted&template=new_language.md&title=).
 
 Or something else [here](https://github.com/Kleak/international_system_of_units/issues/new).
 
