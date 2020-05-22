@@ -42,7 +42,7 @@ extension ISArea on num {
       case AreaUnit.hectare:
         return this * 10000;
       case AreaUnit.acre:
-        return this * 4047;
+        return this * 4046.86;
       default:
         return this;
     }
