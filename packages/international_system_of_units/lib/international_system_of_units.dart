@@ -15,5 +15,3 @@ export 'src/utils.dart';
 export 'src/unit_system.dart';
 export 'src/locale/locale.dart';
 export 'src/locale/fuel_economy.dart' show FuelEconomyUnit;
-
-export 'src/i18n/messages_all.dart';
