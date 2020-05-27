@@ -15,9 +15,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: pub get
+        working-directory: packages/international_system_of_units
       - name: Check format
         run: dartfmt -n --set-exit-if-changed .
+        working-directory: packages/international_system_of_units
       - name: Dart analyze
         run: dartanalyzer --options=analysis_options.yaml --fatal-hints --fatal-warnings .
+        working-directory: packages/international_system_of_units
       - name: Run test with coverage
         run: pub run test --coverage coverage
+        working-directory: packages/international_system_of_units

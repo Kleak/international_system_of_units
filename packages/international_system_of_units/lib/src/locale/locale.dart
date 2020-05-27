@@ -1,4 +1,3 @@
-import 'package:international_system_of_units/src/i18n/messages_all.dart';
 import 'package:international_system_of_units/src/locale/fuel_economy.dart';
 import 'package:international_system_of_units/src/locale/length_per_time.dart';
 import 'package:international_system_of_units/src/locale/length_per_volume.dart';
@@ -10,6 +9,7 @@ import 'package:international_system_of_units/src/locale/time.dart';
 import 'package:international_system_of_units/src/locale/volume_per_length.dart';
 import 'package:international_system_of_units/src/locale/length.dart';
 import 'package:international_system_of_units/src/locale/volume.dart';
+import 'package:international_system_of_units_locale/international_system_of_units_locale.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/locale.dart';
 
