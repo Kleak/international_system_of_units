@@ -1,7 +1,6 @@
 ## 1.0.0-dev.4
 
-- fix convertion: centimeters to meters
-
+- fix convertion length centimeters to meters
 
 ## 1.0.0-dev.3
 
