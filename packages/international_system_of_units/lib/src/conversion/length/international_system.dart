@@ -40,7 +40,7 @@ extension ISLength on num {
       case LengthUnit.millimeter:
         return this / 1000;
       case LengthUnit.centimeter:
-        return this * 100;
+        return this / 100;
       case LengthUnit.kilometer:
         return this * 1000;
       case LengthUnit.inch:
