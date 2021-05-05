@@ -1,0 +1,455 @@
+{
+  "@@last_modified": "2020-05-27T21:04:45.410254",
+  "localeKnots": "{value,plural, =0{узлы}=1{узлы}other{узлы}}",
+  "@localeKnots": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "_intlLocaleKilometersPerHours": "{километров} per {час}",
+  "@_intlLocaleKilometersPerHours": {
+    "type": "text",
+    "placeholders": {
+      "kilometers": {},
+      "hours": {}
+    }
+  },
+  "_intlLocaleMilesPerHours": "{миль} per {час}",
+  "@_intlLocaleMilesPerHours": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "hours": {}
+    }
+  },
+  "_intLocaleMetersPerSeconds": "{метров} per {сек}",
+  "@_intLocaleMetersPerSeconds": {
+    "type": "text",
+    "placeholders": {
+      "meters": {},
+      "seconds": {}
+    }
+  },
+  "_intlKilometersPerLiters": "{километров} per {литр}",
+  "@_intlKilometersPerLiters": {
+    "type": "text",
+    "placeholders": {
+      "kilometers": {},
+      "liters": {}
+    }
+  },
+  "_intlMetersPerLiters": "{метров} per {литр}",
+  "@_intlMetersPerLiters": {
+    "type": "text",
+    "placeholders": {
+      "meters": {},
+      "liters": {}
+    }
+  },
+  "_intlMilesPerImperialGallons": "{миль} per imperial {галлон}",
+  "@_intlMilesPerImperialGallons": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
+    }
+  },
+  "_intlMilesPerUsGallons": "{миль} per US {галлон}",
+  "@_intlMilesPerUsGallons": {
+    "type": "text",
+    "placeholders": {
+      "miles": {},
+      "gallons": {}
+    }
+  },
+  "localeMiles": "{length,plural, =0{миль}=1{миля}other{миль}}",
+  "@localeMiles": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeInches": "{length,plural, =0{дюймов}=1{дюйм}other{дюймов}}",
+  "@localeInches": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeMeters": "{length,plural, =0{метров}=1{метр}other{метров}}",
+  "@localeMeters": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "localeKilometers": "{length,plural, =0{километров}=1{километр}other{километров}}",
+  "@localeKilometers": {
+    "type": "text",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "_intlLocaleGramsPerMeters": "{граммов} per {метр}",
+  "@_intlLocaleGramsPerMeters": {
+    "type": "text",
+    "placeholders": {
+      "grams": {},
+      "meters": {}
+    }
+  },
+  "_intlLocaleGramsPerMiles": "{граммов} per {милю}",
+  "@_intlLocaleGramsPerMiles": {
+    "type": "text",
+    "placeholders": {
+      "grams": {},
+      "miles": {}
+    }
+  },
+  "_intlLocaleKilogramsPerKilometers": "{килограммов} per {киллометр}",
+  "@_intlLocaleKilogramsPerKilometers": {
+    "type": "text",
+    "placeholders": {
+      "kilograms": {},
+      "kilometers": {}
+    }
+  },
+  "_intlLocaleKilogramsPerMeters": "{килограм} per {метр}",
+  "@_intlLocaleKilogramsPerMeters": {
+    "type": "text",
+    "placeholders": {
+      "kilograms": {},
+      "meters": {}
+    }
+  },
+  "_intlLocaleGramsPerKilometers": "{грамм} per {киллометр}",
+  "@_intlLocaleGramsPerKilometers": {
+    "type": "text",
+    "placeholders": {
+      "grams": {},
+      "kilometers": {}
+    }
+  },
+  "localeMicrograms": "{value,plural, =0{микрограммы}=1{микрограмм}other{микрограммы}}",
+  "@localeMicrograms": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeMilligrams": "{value,plural, =0{миллиграммы}=1{миллиграмм}other{миллиграммы}}",
+  "@localeMilligrams": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeGrams": "{value,plural, =0{граммы}=1{грамм}other{граммы}}",
+  "@localeGrams": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeTons": "{value,plural, =0{тонн}=1{тонна}other{тонн}}",
+  "@localeTons": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeOunce": "{value,plural, =0{унции}=1{унция}other{унции}}",
+  "@localeOunce": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeStone": "{value,plural, =0{камни}=1{камень}other{камни}}",
+  "@localeStone": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localePounds": "{value,plural, =0{фунты}=1{фунт}other{фунты}}",
+  "@localePounds": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeKilograms": "{value,plural, =0{килограммы}=1{килограмм}other{килограммы}}",
+  "@localeKilograms": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localePascals": "{value,plural, =0{паскаль}=1{паскаль}other{паскали}}",
+  "@localePascals": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeBars": "{value,plural, =0{бар}=1{бар}other{бары}}",
+  "@localeBars": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "_intlLocalePoundForcePerSquareInch": "{фунтов} force per square {дюйм}",
+  "@_intlLocalePoundForcePerSquareInch": {
+    "type": "text",
+    "placeholders": {
+      "pounds": {},
+      "inches": {}
+    }
+  },
+  "localeCelsius": "{value,plural, =0{цельсий}=1{цельсий}other{цельсий}}",
+  "@localeCelsius": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeFahrenheit": "{value,plural, =0{фаренгейт}=1{фаренгейт}other{фаренгейт}}",
+  "@localeFahrenheit": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeKelvin": "{value,plural, =0{кельвин}=1{кельвин}other{кильвины}}",
+  "@localeKelvin": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeRankine": "{value,plural, =0{ранкин}=1{ранкин}other{ранкины}}",
+  "@localeRankine": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeRomer": "{value,plural, =0{размер}=1{размер}other{ромер}}",
+  "@localeRomer": {
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "localeCentury": "{time,plural, =0{века}=1{век}other{века}}",
+  "@localeCentury": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeDecade": "{time,plural, =0{десятилетия}=1{десятилетие}other{десятилетия}}",
+  "@localeDecade": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeYear": "{time,plural, =0{год}=1{год}other{года}}",
+  "@localeYear": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMonth": "{time,plural, =0{месяц}=1{месяц}other{месяца}}",
+  "@localeMonth": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMonthAbbreviation": "{time,plural, =0{мес}=1{мес}other{мес}}",
+  "@localeMonthAbbreviation": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeWeek": "{time,plural, =0{недели}=1{неделя}other{недели}}",
+  "@localeWeek": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeDay": "{time,plural, =0{дни}=1{день}other{дни}}",
+  "@localeDay": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeHour": "{time,plural, =0{часы}=1{час}other{часы}}",
+  "@localeHour": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMinute": "{time,plural, =0{минута}=1{минута}other{минуты}}",
+  "@localeMinute": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeSecond": "{time,plural, =0{секунд}=1{секунда}other{секунды}}",
+  "@localeSecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMillisecond": "{time,plural, =0{миллисекунда}=1{миллисекунда}other{миллисекунд}}",
+  "@localeMillisecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "localeMicrosecond": "{time,plural, =0{микросекунда}=1{микросекунда}other{микросекунд}}",
+  "@localeMicrosecond": {
+    "type": "text",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "_intlImperialGallonsPerMiles": "imp {галлонов} per {милю}",
+  "@_intlImperialGallonsPerMiles": {
+    "type": "text",
+    "placeholders": {
+      "gallons": {},
+      "miles": {}
+    }
+  },
+  "_intlUsGallonsPerMiles": "US {галлонов} per {милю}",
+  "@_intlUsGallonsPerMiles": {
+    "type": "text",
+    "placeholders": {
+      "gallons": {},
+      "miles": {}
+    }
+  },
+  "_intlLitersPerMeters": "{литров} per {метр}",
+  "@_intlLitersPerMeters": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "meters": {}
+    }
+  },
+  "_intlLitersPerKilometers": "{литров} per {километр}",
+  "@_intlLitersPerKilometers": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "kilometers": {}
+    }
+  },
+  "_intlLitersPer100Kilometers": "{литров} per 100 {километров}",
+  "@_intlLitersPer100Kilometers": {
+    "type": "text",
+    "placeholders": {
+      "liters": {},
+      "kilometers": {}
+    }
+  },
+  "localeCubicFoot": "{volume,plural, =0{кубический фут}=1{кубический фут}other{кубический фут}}",
+  "@localeCubicFoot": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCubicInch": "{volume,plural, =0{кубический дюйм}=1{кубический дюйм}other{кубический дюйм}}",
+  "@localeCubicInch": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCubicMeter": "{volume,plural, =0{кубический метр}=1{кубический метр}other{кубический метр}}",
+  "@localeCubicMeter": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeCup": "{volume,plural, =0{чашки}=1{чашка}other{чашки}}",
+  "@localeCup": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeFluidOunces": "{volume,plural, =0{жидкие унции}=1{жидкая унция}other{жидкие унции}}",
+  "@localeFluidOunces": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeQuart": "{volume,plural, =0{кварты}=1{кварта}other{кварты}}",
+  "@localeQuart": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localePint": "{volume,plural, =0{пинта}=1{пинта}other{пинты}}",
+  "@localePint": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeTablespoon": "{volume,plural, =0{столовая ложка}=1{столовая ложка}other{столовые ложки}}",
+  "@localeTablespoon": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeTeaspoon": "{volume,plural, =0{чайная ложка}=1{чайная ложка}other{чайные ложки}}",
+  "@localeTeaspoon": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeGallons": "{volume,plural, =0{галлоны}=1{галлон}other{галлоны}}",
+  "@localeGallons": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeMilliliters": "{volume,plural, =0{миллиметры}=1{миллиметр}other{миллиметров}}",
+  "@localeMilliliters": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  },
+  "localeLiters": "{volume,plural, =0{литров}=1{литр}other{литров}}",
+  "@localeLiters": {
+    "type": "text",
+    "placeholders": {
+      "volume": {}
+    }
+  }
+}
