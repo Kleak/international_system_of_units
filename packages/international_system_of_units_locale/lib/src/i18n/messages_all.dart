@@ -17,11 +17,13 @@ import 'package:intl/src/intl_helpers.dart';
 
 import 'messages_en_US.dart' deferred as messages_en_us;
 import 'messages_fr_FR.dart' deferred as messages_fr_fr;
+import 'messages_ru_RU.dart' deferred as messages_ru_ru;
 
 typedef Future<dynamic> LibraryLoader();
 Map<String, LibraryLoader> _deferredLibraries = {
   'en_US': messages_en_us.loadLibrary,
   'fr_FR': messages_fr_fr.loadLibrary,
+  'ru_RU': messages_ru_ru.loadLibrary,
 };
 
 MessageLookupByLibrary _findExact(String localeName) {
@@ -30,6 +32,8 @@ MessageLookupByLibrary _findExact(String localeName) {
       return messages_en_us.messages;
     case 'fr_FR':
       return messages_fr_fr.messages;
+    case 'ru_RU':
+      return messages_ru_ru.messages;
     default:
       return null;
   }
