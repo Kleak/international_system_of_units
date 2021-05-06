@@ -1,3 +1,7 @@
+## 1.0.0-dev.5
+
+- add ru_RU language
+
 ## 1.0.0-dev.4
 
 - fix convertion length centimeters to meters
