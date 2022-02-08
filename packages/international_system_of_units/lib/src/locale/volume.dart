@@ -10,7 +10,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumberBase(num value, VolumeUnit unit) {
+  num localeNumberBase(num value, VolumeUnit? unit) {
     switch (unit) {
       case VolumeUnit.cubicFoot:
         return value.toCubicFoot;
@@ -59,7 +59,7 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    VolumeUnit unit, {
+    VolumeUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -112,11 +112,11 @@ class LocaleVolume extends LocaleBase<VolumeUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    VolumeUnit toInternationalUnit = VolumeUnit.litres,
-    VolumeUnit toEuUnit = VolumeUnit.litres,
-    VolumeUnit toImperialUnit = VolumeUnit.imperialGallons,
-    VolumeUnit toUsUnit = VolumeUnit.usLiquidGallon,
+    NumberFormat? customNumberFormat,
+    VolumeUnit? toInternationalUnit = VolumeUnit.litres,
+    VolumeUnit? toEuUnit = VolumeUnit.litres,
+    VolumeUnit? toImperialUnit = VolumeUnit.imperialGallons,
+    VolumeUnit? toUsUnit = VolumeUnit.usLiquidGallon,
   }) =>
       super.locale(
         value,

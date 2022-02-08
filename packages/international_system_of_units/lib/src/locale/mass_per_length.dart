@@ -7,15 +7,15 @@ import 'package:intl/intl.dart';
 
 class LocaleMassPerLength extends LocaleBase<MassPerLengthUnit> {
   final String _localeName;
-  final LocaleLength _length;
-  final LocaleMass _mass;
+  final LocaleLength? _length;
+  final LocaleMass? _mass;
 
   LocaleMassPerLength(
       NumberFormat numberFormat, this._localeName, this._length, this._mass)
       : super(numberFormat);
 
   @override
-  num localeNumberBase(num value, MassPerLengthUnit unit) {
+  num localeNumberBase(num value, MassPerLengthUnit? unit) {
     switch (unit) {
       case MassPerLengthUnit.gramPerMeter:
         return value.toGramPerMeter;
@@ -36,7 +36,7 @@ class LocaleMassPerLength extends LocaleBase<MassPerLengthUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    MassPerLengthUnit unit, {
+    MassPerLengthUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -61,11 +61,11 @@ class LocaleMassPerLength extends LocaleBase<MassPerLengthUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    MassPerLengthUnit toInternationalUnit = MassPerLengthUnit.kilogramPerMeter,
-    MassPerLengthUnit toImperialUnit = MassPerLengthUnit.gramPerMile,
-    MassPerLengthUnit toUsUnit = MassPerLengthUnit.gramPerMile,
-    MassPerLengthUnit toEuUnit = MassPerLengthUnit.gramPerKilometer,
+    NumberFormat? customNumberFormat,
+    MassPerLengthUnit? toInternationalUnit = MassPerLengthUnit.kilogramPerMeter,
+    MassPerLengthUnit? toImperialUnit = MassPerLengthUnit.gramPerMile,
+    MassPerLengthUnit? toUsUnit = MassPerLengthUnit.gramPerMile,
+    MassPerLengthUnit? toEuUnit = MassPerLengthUnit.gramPerKilometer,
   }) =>
       super.locale(
         value,
@@ -80,32 +80,32 @@ class LocaleMassPerLength extends LocaleBase<MassPerLengthUnit> {
       );
 
   String localeGramsPerMeters(num value) {
-    final grams = _mass.localeGrams(value);
-    final meters = _length.localeMeters(2);
+    final grams = _mass!.localeGrams(value);
+    final meters = _length!.localeMeters(2);
     return _intlLocaleGramsPerMeters(grams, meters);
   }
 
   String localeGramsPerMiles(num value) {
-    final grams = _mass.localeGrams(value);
-    final miles = _length.localeMiles(2);
+    final grams = _mass!.localeGrams(value);
+    final miles = _length!.localeMiles(2);
     return _intlLocaleGramsPerMiles(grams, miles);
   }
 
   String localeKilogramsPerKilometers(num value) {
-    final kilograms = _mass.localeKilograms(value);
-    final kilometers = _length.localeKilometers(2);
+    final kilograms = _mass!.localeKilograms(value);
+    final kilometers = _length!.localeKilometers(2);
     return _intlLocaleKilogramsPerKilometers(kilograms, kilometers);
   }
 
   String localeKilogramsPerMeters(num value) {
-    final kilograms = _mass.localeKilograms(value);
-    final meters = _length.localeMeters(2);
+    final kilograms = _mass!.localeKilograms(value);
+    final meters = _length!.localeMeters(2);
     return _intlLocaleKilogramsPerMeters(kilograms, meters);
   }
 
   String localeGramsPerKilometers(num value) {
-    final grams = _mass.localeGrams(value);
-    final kilometers = _length.localeKilometers(2);
+    final grams = _mass!.localeGrams(value);
+    final kilometers = _length!.localeKilometers(2);
     return _intlLocaleGramsPerKilometers(grams, kilometers);
   }
 

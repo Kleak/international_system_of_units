@@ -10,7 +10,7 @@ class LocaleTemperature extends LocaleBase<TemperatureUnit> {
       : super(numberFormat);
 
   @override
-  num localeNumberBase(num value, TemperatureUnit unit) {
+  num localeNumberBase(num value, TemperatureUnit? unit) {
     switch (unit) {
       case TemperatureUnit.celsius:
         return value.toCelsius;
@@ -31,7 +31,7 @@ class LocaleTemperature extends LocaleBase<TemperatureUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    TemperatureUnit unit, {
+    TemperatureUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -56,11 +56,11 @@ class LocaleTemperature extends LocaleBase<TemperatureUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    TemperatureUnit toInternationalUnit = TemperatureUnit.kelvin,
-    TemperatureUnit toEuUnit = TemperatureUnit.celsius,
-    TemperatureUnit toImperialUnit = TemperatureUnit.fahrenheit,
-    TemperatureUnit toUsUnit = TemperatureUnit.fahrenheit,
+    NumberFormat? customNumberFormat,
+    TemperatureUnit? toInternationalUnit = TemperatureUnit.kelvin,
+    TemperatureUnit? toEuUnit = TemperatureUnit.celsius,
+    TemperatureUnit? toImperialUnit = TemperatureUnit.fahrenheit,
+    TemperatureUnit? toUsUnit = TemperatureUnit.fahrenheit,
   }) =>
       super.locale(
         value,

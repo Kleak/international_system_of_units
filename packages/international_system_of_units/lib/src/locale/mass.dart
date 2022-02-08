@@ -10,7 +10,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumberBase(num value, MassUnit unit) {
+  num localeNumberBase(num value, MassUnit? unit) {
     switch (unit) {
       case MassUnit.gram:
         return value.toGram;
@@ -41,7 +41,7 @@ class LocaleMass extends LocaleBase<MassUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    MassUnit unit, {
+    MassUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -76,11 +76,11 @@ class LocaleMass extends LocaleBase<MassUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    MassUnit toInternationalUnit = MassUnit.tonnes,
-    MassUnit toEuUnit = MassUnit.tonnes,
-    MassUnit toImperialUnit = MassUnit.imperialTon,
-    MassUnit toUsUnit = MassUnit.usTon,
+    NumberFormat? customNumberFormat,
+    MassUnit? toInternationalUnit = MassUnit.tonnes,
+    MassUnit? toEuUnit = MassUnit.tonnes,
+    MassUnit? toImperialUnit = MassUnit.imperialTon,
+    MassUnit? toUsUnit = MassUnit.usTon,
   }) =>
       super.locale(
         value,

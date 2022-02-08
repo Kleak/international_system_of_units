@@ -31,7 +31,7 @@ class LocaleLength extends LocaleBase<LengthUnit> {
   }
 
   @override
-  num localeNumberBase(num value, LengthUnit unit) {
+  num localeNumberBase(num value, LengthUnit? unit) {
     switch (unit) {
       case LengthUnit.mile:
         return value.toMile;
@@ -66,11 +66,11 @@ class LocaleLength extends LocaleBase<LengthUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    LengthUnit toInternationalUnit = LengthUnit.kilometer,
-    LengthUnit toImperialUnit = LengthUnit.mile,
-    LengthUnit toUsUnit = LengthUnit.mile,
-    LengthUnit toEuUnit = LengthUnit.kilometer,
+    NumberFormat? customNumberFormat,
+    LengthUnit? toInternationalUnit = LengthUnit.kilometer,
+    LengthUnit? toImperialUnit = LengthUnit.mile,
+    LengthUnit? toUsUnit = LengthUnit.mile,
+    LengthUnit? toEuUnit = LengthUnit.kilometer,
   }) =>
       super.locale(
         value,

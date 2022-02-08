@@ -5,7 +5,7 @@ repository: https://github.com/Kleak/international_system_of_units
 homepage: https://github.com/Kleak/international_system_of_units/blob/master/packages/international_system_of_units_locale/README.md
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   intl: ^0.17.0
@@ -14,8 +14,9 @@ dependencies:
       url: https://github.com/Letalus/international_system_of_units.git
       ref: null_safety
       path: packages/international_system_of_units_locale/
+      publish_to: None
 
 dev_dependencies:
-  pedantic: ^1.8.0
   intl_generator: ^0.2.1
+  lints: ^1.0.1
   test: ^1.14.3
