@@ -9,4 +9,3 @@ include: package:lints/recommended.yaml
 
 analyzer:
   exclude:
-    - "**/**/messages_*.dart"
