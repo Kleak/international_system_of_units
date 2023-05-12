@@ -10,7 +10,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
       : super(_numberFormat);
 
   @override
-  num localeNumberBase(num value, TimeUnit unit) {
+  num localeNumberBase(num value, TimeUnit? unit) {
     switch (unit) {
       case TimeUnit.century:
         return value.toCentury;
@@ -42,7 +42,7 @@ class LocaleTime extends LocaleBase<TimeUnit> {
   }
 
   @override
-  String localeUnit(num value, UnitSystem unitSystem, TimeUnit unit,
+  String localeUnit(num value, UnitSystem unitSystem, TimeUnit? unit,
       {bool shortUnit = true}) {
     switch (unit) {
       case TimeUnit.century:
@@ -78,11 +78,11 @@ class LocaleTime extends LocaleBase<TimeUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    TimeUnit toInternationalUnit = TimeUnit.hour,
-    TimeUnit toImperialUnit = TimeUnit.hour,
-    TimeUnit toUsUnit = TimeUnit.hour,
-    TimeUnit toEuUnit = TimeUnit.hour,
+    NumberFormat? customNumberFormat,
+    TimeUnit? toInternationalUnit = TimeUnit.hour,
+    TimeUnit? toImperialUnit = TimeUnit.hour,
+    TimeUnit? toUsUnit = TimeUnit.hour,
+    TimeUnit? toEuUnit = TimeUnit.hour,
   }) =>
       super.locale(
         value,

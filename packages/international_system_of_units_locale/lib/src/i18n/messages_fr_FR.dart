@@ -1,167 +1,159 @@
+
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
 // This is a library that provides messages for a fr_FR locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
-// Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
-// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
-// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
-// ignore_for_file:unused_import, file_names
 
 import 'package:intl/intl.dart';
+import 'package:intl/src/intl_helpers.dart' show MessageIfAbsent;
 import 'package:intl/message_lookup_by_library.dart';
 
-final messages = new MessageLookup();
-
-typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+final messages = MessageLookup();
 
 class MessageLookup extends MessageLookupByLibrary {
+  @override
   String get localeName => 'fr_FR';
-
-  String lookupMessage(
-      String message_str,
-      String locale,
-      String name,
-      List<dynamic> args,
-      String meaning,
-      {MessageIfAbsent ifAbsent}) {
-    String failedLookup(String message_str, List<dynamic> args) {
+  @override
+  String? lookupMessage(String? messageText, String? locale, String? name,
+      List<Object>? args, String? meaning,
+      {MessageIfAbsent? ifAbsent}) {
+    String failedLookup(String? messageStr, List<Object>? args) {
       // If there's no message_str, then we are an internal lookup, e.g. an
       // embedded plural, and shouldn't fail.
-      if (message_str == null) return null;
-      throw new UnsupportedError(
+      throw UnsupportedError(
           "No translation found for message '$name',\n"
-          "  original text '$message_str'");
+              "  original text '$messageStr'");
     }
-    return super.lookupMessage(message_str, locale, name, args, meaning,
+    return super.lookupMessage(messageText, locale, name, args, meaning,
         ifAbsent: ifAbsent ?? failedLookup);
   }
 
-  static m0(meters, seconds) => "${meters} par ${seconds}";
+  static m0(meters, seconds) => "$meters par $seconds";
 
-  static m1(gallons, miles) => "imp ${gallons} par ${miles}";
+  static m1(gallons, miles) => "imp $gallons par $miles";
 
-  static m2(kilometers, liters) => "${kilometers} par ${liters}";
+  static m2(kilometers, liters) => "$kilometers par $liters";
 
-  static m3(liters, kilometers) => "${liters} par 100 ${kilometers}";
+  static m3(liters, kilometers) => "$liters par 100 $kilometers";
 
-  static m4(liters, kilometers) => "${liters} par ${kilometers}";
+  static m4(liters, kilometers) => "$liters par $kilometers";
 
-  static m5(liters, meters) => "${liters} par ${meters}";
+  static m5(liters, meters) => "$liters par $meters";
 
-  static m6(grams, kilometers) => "${grams} par ${kilometers}";
+  static m6(grams, kilometers) => "$grams par $kilometers";
 
-  static m7(grams, meters) => "${grams} par ${meters}";
+  static m7(grams, meters) => "$grams par $meters";
 
-  static m8(grams, miles) => "${grams} par ${miles}";
+  static m8(grams, miles) => "$grams par $miles";
 
-  static m9(kilograms, kilometers) => "${kilograms} par ${kilometers}";
+  static m9(kilograms, kilometers) => "$kilograms par $kilometers";
 
-  static m10(kilograms, meters) => "${kilograms} par ${meters}";
+  static m10(kilograms, meters) => "$kilograms par $meters";
 
-  static m11(kilometers, hours) => "${kilometers} par ${hours}";
+  static m11(kilometers, hours) => "$kilometers par $hours";
 
-  static m12(miles, hours) => "${miles} par ${hours}";
+  static m12(miles, hours) => "$miles par $hours";
 
-  static m13(pounds, inches) => "${pounds} par ${inches}2";
+  static m13(pounds, inches) => "$pounds par ${inches}2";
 
-  static m14(meters, liters) => "${meters} par ${liters}";
+  static m14(meters, liters) => "$meters par $liters";
 
-  static m15(miles, gallons) => "${miles} par imperial ${gallons}";
+  static m15(miles, gallons) => "$miles par imperial $gallons";
 
-  static m16(miles, gallons) => "${miles} par US ${gallons}";
+  static m16(miles, gallons) => "$miles par US $gallons";
 
-  static m17(gallons, miles) => "US ${gallons} par ${miles}";
+  static m17(gallons, miles) => "US $gallons par $miles";
 
-  static m18(value) => "${Intl.plural(value, zero: 'bar', one: 'bar', other: 'bars')}";
+  static m18(value) => Intl.plural(value, zero: 'bar', one: 'bar', other: 'bars');
 
-  static m19(value) => "${Intl.plural(value, zero: 'celsius', one: 'celsius', other: 'celsius')}";
+  static m19(value) => Intl.plural(value, zero: 'celsius', one: 'celsius', other: 'celsius');
 
-  static m20(time) => "${Intl.plural(time, zero: 'siècle', one: 'siècle', other: 'siècles')}";
+  static m20(time) => Intl.plural(time, zero: 'siècle', one: 'siècle', other: 'siècles');
 
-  static m21(volume) => "${Intl.plural(volume, zero: 'foot2', one: 'foot2', other: 'foot2')}";
+  static m21(volume) => Intl.plural(volume, zero: 'foot2', one: 'foot2', other: 'foot2');
 
-  static m22(volume) => "${Intl.plural(volume, zero: 'inch2', one: 'inch2', other: 'inch2')}";
+  static m22(volume) => Intl.plural(volume, zero: 'inch2', one: 'inch2', other: 'inch2');
 
-  static m23(volume) => "${Intl.plural(volume, zero: 'mètre2', one: 'mètre2', other: 'mètres2')}";
+  static m23(volume) => Intl.plural(volume, zero: 'mètre2', one: 'mètre2', other: 'mètres2');
 
-  static m24(volume) => "${Intl.plural(volume, zero: 'tasse', one: 'tasses', other: 'tasses')}";
+  static m24(volume) => Intl.plural(volume, zero: 'tasse', one: 'tasses', other: 'tasses');
 
-  static m25(time) => "${Intl.plural(time, zero: 'jour', one: 'jour', other: 'jours')}";
+  static m25(time) => Intl.plural(time, zero: 'jour', one: 'jour', other: 'jours');
 
-  static m26(time) => "${Intl.plural(time, zero: 'décennie', one: 'décennie', other: 'décennies')}";
+  static m26(time) => Intl.plural(time, zero: 'décennie', one: 'décennie', other: 'décennies');
 
-  static m27(value) => "${Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit')}";
+  static m27(value) => Intl.plural(value, zero: 'fahrenheit', one: 'fahrenheit', other: 'fahrenheit');
 
-  static m28(volume) => "${Intl.plural(volume, zero: 'fluid ounces', one: 'fluid ounce', other: 'fluid ounces')}";
+  static m28(volume) => Intl.plural(volume, zero: 'fluid ounces', one: 'fluid ounce', other: 'fluid ounces');
 
-  static m29(volume) => "${Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons')}";
+  static m29(volume) => Intl.plural(volume, zero: 'gallons', one: 'gallon', other: 'gallons');
 
-  static m30(value) => "${Intl.plural(value, zero: 'grammes', one: 'gramme', other: 'grammes')}";
+  static m30(value) => Intl.plural(value, zero: 'grammes', one: 'gramme', other: 'grammes');
 
-  static m31(time) => "${Intl.plural(time, zero: 'heure', one: 'heure', other: 'heures')}";
+  static m31(time) => Intl.plural(time, zero: 'heure', one: 'heure', other: 'heures');
 
-  static m32(length) => "${Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches')}";
+  static m32(length) => Intl.plural(length, zero: 'inches', one: 'inche', other: 'inches');
 
-  static m33(value) => "${Intl.plural(value, zero: 'kelvin', one: 'kelvin', other: 'kelvins')}";
+  static m33(value) => Intl.plural(value, zero: 'kelvin', one: 'kelvin', other: 'kelvins');
 
-  static m34(value) => "${Intl.plural(value, zero: 'kilogramme', one: 'kilogramme', other: 'kilogrammes')}";
+  static m34(value) => Intl.plural(value, zero: 'kilogramme', one: 'kilogramme', other: 'kilogrammes');
 
-  static m35(length) => "${Intl.plural(length, zero: 'kilomètre', one: 'kilomètre', other: 'kilomètres')}";
+  static m35(length) => Intl.plural(length, zero: 'kilomètre', one: 'kilomètre', other: 'kilomètres');
 
-  static m36(value) => "${Intl.plural(value, zero: 'knots', one: 'knot', other: 'knots')}";
+  static m36(value) => Intl.plural(value, zero: 'knots', one: 'knot', other: 'knots');
 
-  static m37(volume) => "${Intl.plural(volume, zero: 'litre', one: 'litre', other: 'litres')}";
+  static m37(volume) => Intl.plural(volume, zero: 'litre', one: 'litre', other: 'litres');
 
-  static m38(length) => "${Intl.plural(length, zero: 'mètres', one: 'mètre', other: 'mètres')}";
+  static m38(length) => Intl.plural(length, zero: 'mètres', one: 'mètre', other: 'mètres');
 
-  static m39(value) => "${Intl.plural(value, zero: 'microgramme', one: 'microgramme', other: 'microgrammes')}";
+  static m39(value) => Intl.plural(value, zero: 'microgramme', one: 'microgramme', other: 'microgrammes');
 
-  static m40(time) => "${Intl.plural(time, zero: 'microseconde', one: 'microseconde', other: 'microsecondes')}";
+  static m40(time) => Intl.plural(time, zero: 'microseconde', one: 'microseconde', other: 'microsecondes');
 
-  static m41(length) => "${Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles')}";
+  static m41(length) => Intl.plural(length, zero: 'miles', one: 'mile', other: 'miles');
 
-  static m42(value) => "${Intl.plural(value, zero: 'milligramme', one: 'milligramme', other: 'milligrammes')}";
+  static m42(value) => Intl.plural(value, zero: 'milligramme', one: 'milligramme', other: 'milligrammes');
 
-  static m43(volume) => "${Intl.plural(volume, zero: 'millilitre', one: 'millilitre', other: 'millilitres')}";
+  static m43(volume) => Intl.plural(volume, zero: 'millilitre', one: 'millilitre', other: 'millilitres');
 
-  static m44(time) => "${Intl.plural(time, zero: 'milliseconde', one: 'milliseconde', other: 'millisecondes')}";
+  static m44(time) => Intl.plural(time, zero: 'milliseconde', one: 'milliseconde', other: 'millisecondes');
 
-  static m45(time) => "${Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes')}";
+  static m45(time) => Intl.plural(time, zero: 'minute', one: 'minute', other: 'minutes');
 
-  static m46(time) => "${Intl.plural(time, zero: 'mois', one: 'mois', other: 'mois')}";
+  static m46(time) => Intl.plural(time, zero: 'mois', one: 'mois', other: 'mois');
 
-  static m47(time) => "${Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos')}";
+  static m47(time) => Intl.plural(time, zero: 'mo', one: 'mo', other: 'mos');
 
-  static m48(value) => "${Intl.plural(value, zero: 'ounces', one: 'ounce', other: 'ounces')}";
+  static m48(value) => Intl.plural(value, zero: 'ounces', one: 'ounce', other: 'ounces');
 
-  static m49(value) => "${Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals')}";
+  static m49(value) => Intl.plural(value, zero: 'pascal', one: 'pascal', other: 'pascals');
 
-  static m50(volume) => "${Intl.plural(volume, zero: 'pint', one: 'pint', other: 'pints')}";
+  static m50(volume) => Intl.plural(volume, zero: 'pint', one: 'pint', other: 'pints');
 
-  static m51(value) => "${Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds')}";
+  static m51(value) => Intl.plural(value, zero: 'pounds', one: 'pound', other: 'pounds');
 
-  static m52(volume) => "${Intl.plural(volume, zero: 'quarts', one: 'quart', other: 'quarts')}";
+  static m52(volume) => Intl.plural(volume, zero: 'quarts', one: 'quart', other: 'quarts');
 
-  static m53(value) => "${Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines')}";
+  static m53(value) => Intl.plural(value, zero: 'rankine', one: 'rankine', other: 'rankines');
 
-  static m54(value) => "${Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer')}";
+  static m54(value) => Intl.plural(value, zero: 'rømer', one: 'rømer', other: 'rømer');
 
-  static m55(time) => "${Intl.plural(time, zero: 'seconde', one: 'seconde', other: 'secondes')}";
+  static m55(time) => Intl.plural(time, zero: 'seconde', one: 'seconde', other: 'secondes');
 
-  static m56(value) => "${Intl.plural(value, zero: 'stones', one: 'stone', other: 'stones')}";
+  static m56(value) => Intl.plural(value, zero: 'stones', one: 'stone', other: 'stones');
 
-  static m57(volume) => "${Intl.plural(volume, zero: 'cuillière à soupe', one: 'cuillière à soupe', other: 'cuillières à soupe')}";
+  static m57(volume) => Intl.plural(volume, zero: 'cuillière à soupe', one: 'cuillière à soupe', other: 'cuillières à soupe');
 
-  static m58(volume) => "${Intl.plural(volume, zero: 'cuillière à café', one: 'cuillière à café', other: 'cuillières à café')}";
+  static m58(volume) => Intl.plural(volume, zero: 'cuillière à café', one: 'cuillière à café', other: 'cuillières à café');
 
-  static m59(value) => "${Intl.plural(value, zero: 'tonne', one: 'tonne', other: 'tonnes')}";
+  static m59(value) => Intl.plural(value, zero: 'tonne', one: 'tonne', other: 'tonnes');
 
-  static m60(time) => "${Intl.plural(time, zero: 'semaine', one: 'semaind', other: 'semaines')}";
+  static m60(time) => Intl.plural(time, zero: 'semaine', one: 'semaind', other: 'semaines');
 
-  static m61(time) => "${Intl.plural(time, zero: 'année', one: 'année', other: 'années')}";
+  static m61(time) => Intl.plural(time, zero: 'année', one: 'année', other: 'années');
 
+  @override
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "_intLocaleMetersPerSeconds" : m0,

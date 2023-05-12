@@ -7,5 +7,5 @@ void main() async {
   final locale = Locale.fromSubtags(languageCode: 'en', countryCode: 'US');
   final intl = await InternationalSystemLocalizations.load(locale);
 
-  length.main(intl);
+  length.mainLength(intl);
 }

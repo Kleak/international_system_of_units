@@ -7,15 +7,15 @@ import 'package:intl/intl.dart';
 
 class LocaleLengthPerTime extends LocaleBase<LengthPerTimeUnit> {
   final String _localeName;
-  final LocaleLength _length;
-  final LocaleTime _time;
+  final LocaleLength? _length;
+  final LocaleTime? _time;
 
   LocaleLengthPerTime(
       NumberFormat numberFormat, this._localeName, this._length, this._time)
       : super(numberFormat);
 
   @override
-  num localeNumberBase(num value, LengthPerTimeUnit unit) {
+  num localeNumberBase(num value, LengthPerTimeUnit? unit) {
     switch (unit) {
       case LengthPerTimeUnit.kilometerPerHour:
         return value.toKilometerPerHour;
@@ -57,11 +57,11 @@ class LocaleLengthPerTime extends LocaleBase<LengthPerTimeUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    LengthPerTimeUnit toInternationalUnit = LengthPerTimeUnit.meterPerSecond,
-    LengthPerTimeUnit toEuUnit = LengthPerTimeUnit.kilometerPerHour,
-    LengthPerTimeUnit toImperialUnit = LengthPerTimeUnit.milePerHour,
-    LengthPerTimeUnit toUsUnit = LengthPerTimeUnit.milePerHour,
+    NumberFormat? customNumberFormat,
+    LengthPerTimeUnit? toInternationalUnit = LengthPerTimeUnit.meterPerSecond,
+    LengthPerTimeUnit? toEuUnit = LengthPerTimeUnit.kilometerPerHour,
+    LengthPerTimeUnit? toImperialUnit = LengthPerTimeUnit.milePerHour,
+    LengthPerTimeUnit? toUsUnit = LengthPerTimeUnit.milePerHour,
   }) =>
       super.locale(
         value,
@@ -76,20 +76,20 @@ class LocaleLengthPerTime extends LocaleBase<LengthPerTimeUnit> {
       );
 
   String localeKilometersPerHours(num value) {
-    final kilometers = _length.localeKilometers(value);
-    final hours = _time.localeHour(2);
+    final kilometers = _length!.localeKilometers(value);
+    final hours = _time!.localeHour(2);
     return _intlLocaleKilometersPerHours(kilometers, hours);
   }
 
   String localeMilesPerHours(num value) {
-    final miles = _length.localeMiles(value);
-    final hours = _time.localeHour(2);
+    final miles = _length!.localeMiles(value);
+    final hours = _time!.localeHour(2);
     return _intlLocaleMilesPerHours(miles, hours);
   }
 
   String localeMetersPerSeconds(num value) {
-    final meters = _length.localeMeters(value);
-    final seconds = _time.localeSecond(value);
+    final meters = _length!.localeMeters(value);
+    final seconds = _time!.localeSecond(value);
     return _intLocaleMetersPerSeconds(meters, seconds);
   }
 

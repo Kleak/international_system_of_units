@@ -6,12 +6,12 @@ abstract class LocaleBase<Unit> {
 
   LocaleBase(this._numberFormat);
 
-  Unit unit(
+  Unit? unit(
     UnitSystem unitSystem, {
-    Unit toInternationalUnit,
-    Unit toEuUnit,
-    Unit toImperialUnit,
-    Unit toUsUnit,
+    Unit? toInternationalUnit,
+    Unit? toEuUnit,
+    Unit? toImperialUnit,
+    Unit? toUsUnit,
   }) {
     switch (unitSystem) {
       case UnitSystem.imperial:
@@ -35,10 +35,10 @@ abstract class LocaleBase<Unit> {
   num localeNumber(
     num value,
     UnitSystem unitSystem, {
-    Unit toInternationalUnit,
-    Unit toImperialUnit,
-    Unit toUsUnit,
-    Unit toEuUnit,
+    Unit? toInternationalUnit,
+    Unit? toImperialUnit,
+    Unit? toUsUnit,
+    Unit? toEuUnit,
   }) {
     switch (unitSystem) {
       case UnitSystem.imperial:
@@ -52,18 +52,18 @@ abstract class LocaleBase<Unit> {
     }
   }
 
-  num localeNumberBase(num value, Unit unit);
+  num localeNumberBase(num value, Unit? unit);
 
   String locale(
     num value,
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    Unit toInternationalUnit,
-    Unit toImperialUnit,
-    Unit toUsUnit,
-    Unit toEuUnit,
+    NumberFormat? customNumberFormat,
+    Unit? toInternationalUnit,
+    Unit? toImperialUnit,
+    Unit? toUsUnit,
+    Unit? toEuUnit,
   }) {
     final _number = localeNumber(
       value,
@@ -84,7 +84,7 @@ abstract class LocaleBase<Unit> {
         StringBuffer((customNumberFormat ?? _numberFormat).format(_number));
     if (withUnit) {
       sb.write(
-          ' ${localeUnit(_number, unitSystem, _unit, shortUnit: shortUnit)}');
+          ' ${localeUnit(_number, unitSystem, _unit!, shortUnit: shortUnit)}');
     }
     return sb.toString();
   }

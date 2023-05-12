@@ -23,22 +23,21 @@ class InternationalSystemLocalizations {
   final String _localeName;
   final NumberFormat _numberFormat;
 
-  LocaleLength length;
-  LocaleVolume volume;
-  LocaleMass mass;
-  LocaleTime time;
-  LocaleTemperature temperature;
-  LocalePressure pressure;
-  LocaleVolumePerLength volumePerLength;
-  LocaleLengthPerVolume lengthPerVolume;
-  LocaleLengthPerTime lengthPerTime;
-  LocaleMassPerLength massPerLength;
-  LocaleFuelEconomy fuelEconomy;
+  LocaleLength? length;
+  LocaleVolume? volume;
+  LocaleMass? mass;
+  LocaleTime? time;
+  LocaleTemperature? temperature;
+  LocalePressure? pressure;
+  LocaleVolumePerLength? volumePerLength;
+  LocaleLengthPerVolume? lengthPerVolume;
+  LocaleLengthPerTime? lengthPerTime;
+  LocaleMassPerLength? massPerLength;
+  LocaleFuelEconomy? fuelEconomy;
 
   InternationalSystemLocalizations(Locale locale)
       : _localeName = Intl.canonicalizedLocale(locale.toString()),
-        _numberFormat =
-            NumberFormat(null, Intl.canonicalizedLocale(locale.toString())) {
+        _numberFormat = NumberFormat(null, Intl.canonicalizedLocale(locale.toString())) {
     length = LocaleLength(_numberFormat, _localeName);
     volume = LocaleVolume(_numberFormat, _localeName);
     mass = LocaleMass(_numberFormat, _localeName);

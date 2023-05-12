@@ -7,15 +7,15 @@ import 'package:intl/intl.dart';
 
 class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
   final String _localeName;
-  final LocaleVolume _volume;
-  final LocaleLength _length;
+  final LocaleVolume? _volume;
+  final LocaleLength? _length;
 
   LocaleLengthPerVolume(
       NumberFormat _numberFormat, this._localeName, this._volume, this._length)
       : super(_numberFormat);
 
   @override
-  num localeNumberBase(num value, LengthPerVolumeUnit unit) {
+  num localeNumberBase(num value, LengthPerVolumeUnit? unit) {
     switch (unit) {
       case LengthPerVolumeUnit.meterPerLiter:
         return value;
@@ -34,7 +34,7 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    LengthPerVolumeUnit unit, {
+    LengthPerVolumeUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -57,13 +57,13 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    LengthPerVolumeUnit toInternationalUnit =
+    NumberFormat? customNumberFormat,
+    LengthPerVolumeUnit? toInternationalUnit =
         LengthPerVolumeUnit.kilometerPerLiter,
-    LengthPerVolumeUnit toEuUnit = LengthPerVolumeUnit.kilometerPerLiter,
-    LengthPerVolumeUnit toImperialUnit =
+    LengthPerVolumeUnit? toEuUnit = LengthPerVolumeUnit.kilometerPerLiter,
+    LengthPerVolumeUnit? toImperialUnit =
         LengthPerVolumeUnit.milePerImperialGallon,
-    LengthPerVolumeUnit toUsUnit = LengthPerVolumeUnit.milePerUsGallon,
+    LengthPerVolumeUnit? toUsUnit = LengthPerVolumeUnit.milePerUsGallon,
   }) =>
       super.locale(
         value,
@@ -78,26 +78,26 @@ class LocaleLengthPerVolume extends LocaleBase<LengthPerVolumeUnit> {
       );
 
   String localeKilometersPerLiters(num value) {
-    final kilometers = _length.localeKilometers(value);
-    final liters = _volume.localeLiters(2);
+    final kilometers = _length!.localeKilometers(value);
+    final liters = _volume!.localeLiters(2);
     return _intlKilometersPerLiters(kilometers, liters);
   }
 
   String localeMetersPerLiters(num value) {
-    final meters = _length.localeMeters(value);
-    final liters = _volume.localeLiters(2);
+    final meters = _length!.localeMeters(value);
+    final liters = _volume!.localeLiters(2);
     return _intlMetersPerLiters(meters, liters);
   }
 
   String localeMilesPerImperialGallons(num value) {
-    final miles = _length.localeMiles(value);
-    final gallons = _volume.localeGallons(2);
+    final miles = _length!.localeMiles(value);
+    final gallons = _volume!.localeGallons(2);
     return _intlMilesPerImperialGallons(miles, gallons);
   }
 
   String localeMilesPerUsGallons(num value) {
-    final miles = _length.localeMiles(value);
-    final gallons = _volume.localeGallons(2);
+    final miles = _length!.localeMiles(value);
+    final gallons = _volume!.localeGallons(2);
     return _intlMilesPerUsGallons(miles, gallons);
   }
 

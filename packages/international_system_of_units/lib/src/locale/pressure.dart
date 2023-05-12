@@ -7,15 +7,15 @@ import 'package:intl/intl.dart';
 
 class LocalePressure extends LocaleBase<PressureUnit> {
   final String _localeName;
-  final LocaleMass _mass;
-  final LocaleLength _length;
+  final LocaleMass? _mass;
+  final LocaleLength? _length;
 
   LocalePressure(
       NumberFormat numberFormat, this._localeName, this._mass, this._length)
       : super(numberFormat);
 
   @override
-  num localeNumberBase(num value, PressureUnit unit) {
+  num localeNumberBase(num value, PressureUnit? unit) {
     switch (unit) {
       case PressureUnit.poundForcePerSquareInch:
         return value.toPoundForcePerSquareInch;
@@ -32,7 +32,7 @@ class LocalePressure extends LocaleBase<PressureUnit> {
   String localeUnit(
     num value,
     UnitSystem unitSystem,
-    PressureUnit unit, {
+    PressureUnit? unit, {
     bool shortUnit = true,
   }) {
     switch (unit) {
@@ -53,11 +53,11 @@ class LocalePressure extends LocaleBase<PressureUnit> {
     UnitSystem unitSystem, {
     bool withUnit = true,
     bool shortUnit = true,
-    NumberFormat customNumberFormat,
-    PressureUnit toInternationalUnit = PressureUnit.pascal,
-    PressureUnit toEuUnit = PressureUnit.bar,
-    PressureUnit toImperialUnit = PressureUnit.poundForcePerSquareInch,
-    PressureUnit toUsUnit = PressureUnit.poundForcePerSquareInch,
+    NumberFormat? customNumberFormat,
+    PressureUnit? toInternationalUnit = PressureUnit.pascal,
+    PressureUnit? toEuUnit = PressureUnit.bar,
+    PressureUnit? toImperialUnit = PressureUnit.poundForcePerSquareInch,
+    PressureUnit? toUsUnit = PressureUnit.poundForcePerSquareInch,
   }) =>
       super.locale(
         value,
@@ -92,8 +92,8 @@ class LocalePressure extends LocaleBase<PressureUnit> {
       );
 
   String localePoundForcePerSquareInch(num value) {
-    final pounds = _mass.localePounds(value);
-    final inches = _length.localeInches(2);
+    final pounds = _mass!.localePounds(value);
+    final inches = _length!.localeInches(2);
     return _intlLocalePoundForcePerSquareInch(pounds, inches);
   }
 
