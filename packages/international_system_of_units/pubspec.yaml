@@ -10,7 +10,11 @@ environment:
 dependencies:
   intl: ^0.18.0
   international_system_of_units_locale:
-    path: ../international_system_of_units_locale
+    git:
+      url: https://github.com/Letalus/international_system_of_units.git
+      ref: null_safety
+      path: packages/international_system_of_units_locale/
+      publish_to: None
 
 dev_dependencies:
   intl_generator: ^0.2.1
